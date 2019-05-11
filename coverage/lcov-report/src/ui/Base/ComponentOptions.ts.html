@@ -1,0 +1,2877 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/ui/Base/ComponentOptions.ts</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../../prettify.css">
+    <link rel="stylesheet" href="../../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header high">
+    <h1>Code coverage report for <span class="entity">src/ui/Base/ComponentOptions.ts</span></h1>
+    <h2>
+        Statements: <span class="metric">96.45% <small>(272 / 282)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">92.03% <small>(127 / 138)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">98% <small>(49 / 50)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">96.4% <small>(268 / 278)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">src/ui/Base/</a> &#187; ComponentOptions.ts</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383
+384
+385
+386
+387
+388
+389
+390
+391
+392
+393
+394
+395
+396
+397
+398
+399
+400
+401
+402
+403
+404
+405
+406
+407
+408
+409
+410
+411
+412
+413
+414
+415
+416
+417
+418
+419
+420
+421
+422
+423
+424
+425
+426
+427
+428
+429
+430
+431
+432
+433
+434
+435
+436
+437
+438
+439
+440
+441
+442
+443
+444
+445
+446
+447
+448
+449
+450
+451
+452
+453
+454
+455
+456
+457
+458
+459
+460
+461
+462
+463
+464
+465
+466
+467
+468
+469
+470
+471
+472
+473
+474
+475
+476
+477
+478
+479
+480
+481
+482
+483
+484
+485
+486
+487
+488
+489
+490
+491
+492
+493
+494
+495
+496
+497
+498
+499
+500
+501
+502
+503
+504
+505
+506
+507
+508
+509
+510
+511
+512
+513
+514
+515
+516
+517
+518
+519
+520
+521
+522
+523
+524
+525
+526
+527
+528
+529
+530
+531
+532
+533
+534
+535
+536
+537
+538
+539
+540
+541
+542
+543
+544
+545
+546
+547
+548
+549
+550
+551
+552
+553
+554
+555
+556
+557
+558
+559
+560
+561
+562
+563
+564
+565
+566
+567
+568
+569
+570
+571
+572
+573
+574
+575
+576
+577
+578
+579
+580
+581
+582
+583
+584
+585
+586
+587
+588
+589
+590
+591
+592
+593
+594
+595
+596
+597
+598
+599
+600
+601
+602
+603
+604
+605
+606
+607
+608
+609
+610
+611
+612
+613
+614
+615
+616
+617
+618
+619
+620
+621
+622
+623
+624
+625
+626
+627
+628
+629
+630
+631
+632
+633
+634
+635
+636
+637
+638
+639
+640
+641
+642
+643
+644
+645
+646
+647
+648
+649
+650
+651
+652
+653
+654
+655
+656
+657
+658
+659
+660
+661
+662
+663
+664
+665
+666
+667
+668
+669
+670
+671
+672
+673
+674
+675
+676
+677
+678
+679
+680
+681
+682
+683
+684
+685
+686
+687
+688
+689
+690
+691
+692
+693
+694
+695
+696
+697
+698
+699
+700
+701
+702
+703
+704
+705
+706
+707
+708
+709
+710
+711
+712
+713
+714
+715
+716
+717
+718
+719
+720
+721
+722
+723
+724
+725
+726
+727
+728
+729
+730
+731
+732
+733
+734
+735
+736
+737
+738
+739
+740
+741
+742
+743
+744
+745
+746
+747
+748
+749
+750
+751
+752
+753
+754
+755
+756
+757
+758
+759
+760
+761
+762
+763
+764
+765
+766
+767
+768
+769
+770
+771
+772
+773
+774
+775
+776
+777
+778
+779
+780
+781
+782
+783
+784
+785
+786
+787
+788
+789
+790
+791
+792
+793
+794
+795
+796
+797
+798
+799
+800
+801
+802
+803
+804
+805
+806
+807
+808
+809
+810
+811
+812
+813
+814
+815
+816
+817
+818
+819
+820
+821
+822
+823
+824
+825
+826
+827
+828
+829
+830
+831
+832
+833
+834
+835
+836
+837
+838
+839
+840
+841
+842
+843
+844
+845
+846
+847
+848
+849
+850
+851
+852
+853
+854
+855
+856
+857
+858
+859
+860
+861
+862
+863
+864
+865
+866
+867
+868
+869
+870
+871
+872
+873
+874
+875
+876
+877
+878
+879
+880
+881
+882
+883
+884
+885
+886
+887
+888
+889
+890
+891
+892
+893
+894
+895
+896
+897
+898
+899
+900
+901
+902
+903
+904
+905
+906
+907
+908
+909
+910
+911
+912
+913
+914
+915
+916
+917
+918
+919
+920
+921
+922
+923
+924
+925
+926
+927
+928
+929
+930
+931
+932
+933
+934
+935
+936
+937
+938
+939
+940
+941
+942
+943
+944
+945</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">135</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">75</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">107</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">12</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">31</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">30</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">16</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-yes">2037</span>
+<span class="cline-any cline-yes">2037</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">98</span>
+<span class="cline-any cline-yes">98</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">174</span>
+<span class="cline-any cline-yes">174</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">174</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">174</span>
+<span class="cline-any cline-yes">684</span>
+<span class="cline-any cline-yes">684</span>
+<span class="cline-any cline-yes">684</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">174</span>
+<span class="cline-any cline-yes">174</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">174</span>
+<span class="cline-any cline-yes">174</span>
+<span class="cline-any cline-yes">684</span>
+<span class="cline-any cline-yes">684</span>
+<span class="cline-any cline-yes">684</span>
+<span class="cline-any cline-yes">244</span>
+<span class="cline-any cline-yes">244</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">174</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">588</span>
+<span class="cline-any cline-yes">472</span>
+<span class="cline-any cline-yes">472</span>
+<span class="cline-any cline-yes">472</span>
+<span class="cline-any cline-yes">472</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">41841</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">41839</span>
+<span class="cline-any cline-yes">41832</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">41833</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1369</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">4468</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4736</span>
+<span class="cline-any cline-yes">4736</span>
+<span class="cline-any cline-yes">414</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4736</span>
+<span class="cline-any cline-yes">4736</span>
+<span class="cline-any cline-yes">41443</span>
+<span class="cline-any cline-yes">41443</span>
+<span class="cline-any cline-yes">41443</span>
+<span class="cline-any cline-yes">41443</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">41443</span>
+<span class="cline-any cline-yes">41443</span>
+<span class="cline-any cline-yes">41435</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">41435</span>
+<span class="cline-any cline-yes">3247</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">41435</span>
+<span class="cline-any cline-yes">37789</span>
+<span class="cline-any cline-yes">22256</span>
+<span class="cline-any cline-yes">568</span>
+<span class="cline-any cline-yes">21688</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">21687</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15533</span>
+<span class="cline-any cline-yes">2033</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">41435</span>
+<span class="cline-any cline-yes">27601</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27598</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-yes">27583</span>
+<span class="cline-any cline-yes">1104</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">26479</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">41432</span>
+<span class="cline-any cline-yes">33</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4728</span>
+<span class="cline-any cline-yes">41435</span>
+<span class="cline-any cline-yes">41435</span>
+<span class="cline-any cline-yes">41435</span>
+<span class="cline-any cline-yes">1525</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4728</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">40338</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">3010</span>
+<span class="cline-any cline-yes">3010</span>
+<span class="cline-any cline-yes">3010</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">293</span>
+<span class="cline-any cline-yes">293</span>
+<span class="cline-any cline-yes">291</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">2152</span>
+<span class="cline-any cline-yes">2152</span>
+<span class="cline-any cline-yes">2152</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2148</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">6406</span>
+<span class="cline-any cline-yes">6406</span>
+<span class="cline-any cline-yes">6402</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">15515</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1316</span>
+<span class="cline-any cline-yes">1316</span>
+<span class="cline-any cline-yes">1316</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">600</span>
+<span class="cline-any cline-yes">600</span>
+<span class="cline-any cline-yes">593</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1419</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">710</span>
+<span class="cline-any cline-yes">710</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1172</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">588</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">588</span>
+<span class="cline-any cline-yes">588</span>
+<span class="cline-any cline-yes">588</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">588</span>
+<span class="cline-any cline-yes">586</span>
+<span class="cline-any cline-yes">586</span>
+<span class="cline-any cline-yes">585</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">586</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">588</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">588</span>
+<span class="cline-any cline-yes">588</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">587</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">303</span>
+<span class="cline-any cline-yes">303</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">226</span>
+<span class="cline-any cline-yes">115</span>
+<span class="cline-any cline-yes">222</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">220</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">113</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">222</span>
+<span class="cline-any cline-yes">222</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">41316</span>
+<span class="cline-any cline-yes">136</span>
+<span class="cline-any cline-yes">136</span>
+<span class="cline-any cline-yes">248</span>
+<span class="cline-any cline-yes">248</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">136</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">41180</span>
+<span class="cline-any cline-yes">281</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">40899</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { contains, each, extend, isArray, keys, map } from 'underscore';
+import { Assert } from '../../misc/Assert';
+import { Logger } from '../../misc/Logger';
+import { IFieldDescription } from '../../rest/FieldDescription';
+import { IStringMap } from '../../rest/GenericParam';
+import { l } from '../../strings/Strings';
+import { $$ } from '../../utils/Dom';
+import { SVGIcons } from '../../utils/SVGIcons';
+import { Utils } from '../../utils/Utils';
+import { Template } from '../Templates/Template';
+import { IComponentOptionsTemplateOptionArgs, TemplateComponentOptions } from './TemplateComponentOptions';
+&nbsp;
+/**
+ * The `IFieldOption` interface declares a type for options that should contain a field to be used in a query.
+ *
+ * The only constraint this type has over a basic string is that it should start with the `@` character.
+ */
+export interface IFieldOption extends String {}
+&nbsp;
+/**
+ * The `IQueryExpression` type is a string type dedicated to query expressions.
+ *
+ * This type is used to build a specific option for query expressions.
+ */
+export type IQueryExpression = string;
+&nbsp;
+export interface IComponentOptionsLoadOption&lt;T&gt; {
+  (element: HTMLElement, name: string, option: IComponentOptionsOption&lt;T&gt;): T;
+}
+&nbsp;
+/**
+ * The `IComponentOptionsPostProcessing&lt;T&gt;` interface describes a post process function that should allow a component
+ * option to further modify its own value once all other options of that component have been built.
+ */
+export interface IComponentOptionsPostProcessing&lt;T&gt; {
+  /**
+   * Specifies a function that should allow a component option to further modify its own value once all other options
+   * of that component have been built.
+   * @param value The value originally specified for the option.
+   * @param options The options of the component.
+   */
+  (value: T, options: any): T;
+}
+&nbsp;
+export interface IComponentOptionsOption&lt;T&gt; extends IComponentOptions&lt;T&gt; {
+  type?: ComponentOptionsType;
+  load?: IComponentOptionsLoadOption&lt;T&gt;;
+}
+&nbsp;
+/**
+ * The `IComponentOptions` interface describes the available parameters when building any kind of component
+ * option.
+ */
+export interface IComponentOptions&lt;T&gt; {
+  /**
+   * Specifies the value the option must take when no other value is explicitly specified.
+   */
+  defaultValue?: T;
+&nbsp;
+  /**
+   * Specifies a function that should return the value the option must take when no other value is explicitly specified.
+   *
+   * @param element The HTMLElement on which the current option is being parsed.
+   * @return The default value of the option.
+   */
+  defaultFunction?: (element: HTMLElement) =&gt; T;
+&nbsp;
+  /**
+   * Specifies whether it is necessary to explicitly specify a value for the option in order for the component to
+   * function properly.
+   *
+   * **Example:**
+   *
+   * &gt; The [`field`]{@link Facet.options.field} option of the `Facet` component is required, since a facet cannot
+   * &gt; function properly without a field.
+   */
+  required?: boolean;
+&nbsp;
+  /**
+   * Specifies a function that should allow a component option to further modify its own value once all other options
+   * of that component have been built.
+   *
+   * **Example:**
+   *
+   * &gt; By default, the [`id`]{@link Facet.options.id} option of the `Facet` component uses a post processing function to
+   * &gt; set its value to that of the [`field`]{@link Facet.options.field} option.
+   */
+  postProcessing?: IComponentOptionsPostProcessing&lt;T&gt;;
+&nbsp;
+  /**
+   * Specifies a different markup name to use for an option, rather than the standard name (i.e., `data-` followed by
+   * the hyphened name of the option).
+   *
+   * **Note:**
+   *
+   * &gt; This should only be used for backward compatibility reasons.
+   */
+  attrName?: string;
+&nbsp;
+  /**
+   * Specifies an alias, or array of aliases, which can be used instead of the actual option name.
+   *
+   * **Note:**
+   *
+   * &gt; This can be useful to modify an option name without introducing a breaking change.
+   */
+  alias?: string | string[];
+&nbsp;
+  /**
+   * Specifies a section name inside which the option should appear in the Coveo JavaScript Interface Editor.
+   */
+  section?: string;
+&nbsp;
+  /**
+   * Specifies the name of a boolean component option which must be `true` in order for this option to function
+   * properly.
+   *
+   * **Note:**
+   *
+   * &gt; This is mostly useful for the Coveo JavaScript Interface Editor.
+   */
+  depend?: string;
+  priority?: number;
+&nbsp;
+  /**
+   * Specifies a message that labels the option as deprecated. This message appears in the console upon initialization
+   * if the deprecated option is used in the page. Consequently, this message should explain as clearly as possible why
+   * the option is deprecated, and what now replaces it.
+   *
+   * **Note:**
+   *
+   * &gt; Deprecated options do not appear in the Coveo JavaScript Interface Editor.
+   */
+  deprecated?: string;
+&nbsp;
+  /**
+   * Specifies a function that should indicate whether the option value is valid.
+   *
+   * @param value The option value to validate.
+   * @returns `true` if the option value is valid; `false` otherwise.
+   */
+  validator?: (value: T) =&gt; boolean;
+}
+&nbsp;
+export interface IComponentOptionsNumberOption extends IComponentOptionsOption&lt;number&gt;, IComponentOptionsNumberOptionArgs {}
+&nbsp;
+/**
+ * The `IComponentOptionsNumberOptionArgs` interface describes the available parameters when building a
+ * [number option]{@link ComponentOptions.buildNumberOption).
+ */
+export interface IComponentOptionsNumberOptionArgs extends IComponentOptions&lt;number&gt; {
+  /**
+   * Specifies the exclusive minimum value the option can take.
+   *
+   * Configuring the option using a value strictly less than this minimum displays a warning message in the console and
+   * automatically sets the option to its minimum value.
+   */
+  min?: number;
+&nbsp;
+  /**
+   * Specifies the exclusive maximum value the option can take.
+   *
+   * Configuring the option using a value strictly greater than this maximum displays a warning message in the console
+   * and automatically sets the option to its maximum value.
+   */
+  max?: number;
+&nbsp;
+  /**
+   * Specifies whether the value of this option is a floating point number.
+   */
+  float?: boolean;
+}
+&nbsp;
+export interface IComponentOptionsListOption extends IComponentOptionsOption&lt;string[]&gt;, IComponentOptionsListOptionArgs {}
+&nbsp;
+/**
+ * The `IComponentOptionsListOptionArgs` interface describes the available parameters when building a
+ * [list option]{@link ComponentOptions.buildListOption).
+ */
+export interface IComponentOptionsListOptionArgs extends IComponentOptions&lt;string[]&gt; {
+  /**
+   * Specifies the regular expression to use to separate the elements of the list option.
+   *
+   * Default value is a regular expression that inserts a comma character (`,`) between each word.
+   */
+  separator?: RegExp;
+&nbsp;
+  /**
+   * Specifies the possible values the list option elements can take.
+   */
+  values?: any;
+}
+&nbsp;
+export interface IComponentOptionsCustomListOptionArgs&lt;T&gt; extends IComponentOptions&lt;T&gt; {
+  separator?: RegExp;
+  values?: any;
+}
+&nbsp;
+export interface IComponentOptionsChildHtmlElementOption
+  extends IComponentOptionsOption&lt;HTMLElement&gt;,
+    IComponentOptionsChildHtmlElementOptionArgs {}
+&nbsp;
+export interface IComponentOptionsChildHtmlElementOptionArgs extends IComponentOptions&lt;HTMLElement&gt; {
+  selectorAttr?: string;
+  childSelector?: string;
+}
+&nbsp;
+/**
+ * The `IComponentOptionsTemplateOptionArgs` interface describes the available parameters when building a
+ * [template option]{@link ComponentOptions.buildTemplateOption}.
+ */
+&nbsp;
+export interface IComponentOptionsFieldOption extends IComponentOptionsOption&lt;string&gt;, IComponentOptionsFieldOptionArgs {}
+&nbsp;
+/**
+ * The `IComponentOptionsFieldOptionArgs` interface describes the available parameters when building a
+ * [field option]{@link ComponentOptions.buildFieldOption}.
+ */
+export interface IComponentOptionsFieldOptionArgs extends IComponentOptions&lt;string&gt; {
+  groupByField?: boolean;
+  includeInResults?: boolean;
+  sortByField?: boolean;
+  splitGroupByField?: boolean;
+  match?: (field: IFieldDescription) =&gt; boolean;
+}
+&nbsp;
+export interface IComponentOptionsFieldsOption extends IComponentOptionsOption&lt;string[]&gt;, IComponentOptionsFieldsOptionArgs {}
+&nbsp;
+/**
+ * The `IComponentOptionsFieldsOptionArgs` interface describes the available parameters when building a
+ * [fields option]{@link ComponentOptions.buildFieldsOption}.
+ */
+export interface IComponentOptionsFieldsOptionArgs extends IComponentOptions&lt;string[]&gt; {
+  groupByField?: boolean;
+  includeInResults?: boolean;
+  sortByField?: boolean;
+  splitGroupByField?: boolean;
+  match?: (field: IFieldDescription) =&gt; boolean;
+}
+&nbsp;
+export interface IComponentOptionsObjectOption extends IComponentOptionsOption&lt;{ [key: string]: any }&gt;, IComponentOptionsObjectOptionArgs {}
+export interface IComponentOptionsObjectOptionArgs extends IComponentOptions&lt;{ [key: string]: any }&gt; {
+  subOptions: { [key: string]: IComponentOptionsOption&lt;any&gt; };
+}
+&nbsp;
+export interface IComponentJsonObjectOption&lt;T&gt; extends IComponentOptions&lt;T&gt; {}
+&nbsp;
+export enum ComponentOptionsType {
+  BOOLEAN,
+  NUMBER,
+  STRING,
+  LOCALIZED_STRING,
+  LIST,
+  SELECTOR,
+  CHILD_HTML_ELEMENT,
+  TEMPLATE,
+  FIELD,
+  FIELDS,
+  ICON,
+  COLOR,
+  OBJECT,
+  QUERY,
+  HELPER,
+  LONG_STRING,
+  JSON,
+  JAVASCRIPT,
+  NONE,
+  QUERY_EXPRESSION
+}
+&nbsp;
+const camelCaseToHyphenRegex = /([A-Z])|\W+(\w)/g;
+const fieldsSeperator = /\s*,\s*/;
+const localizer = /([a-zA-Z\-]+)\s*:\s*(([^,]|,\s*(?!([a-zA-Z\-]+)\s*:))+)/g;
+&nbsp;
+/**
+ * The `ComponentOptions` static class contains methods allowing the Coveo JavaScript Search Framework to initialize
+ * component options.
+ *
+ * Typically, each [`Component`]{@link Component} that exposes a set of options contains a static `options` property.
+ *
+ * This property "builds" each option using the `ComponentOptions` method corresponding to its type (e.g.,
+ * [`buildBooleanOption`]{@link ComponentOptions.buildBooleanOption},
+ * [`buildFieldOption`]{@link ComponentOptions.buildFieldOption},
+ * [`buildStringOption`]{@link ComponentOptions.buildStringOption}, etc.)
+ */
+export class ComponentOptions {
+<span class="fstat-no" title="function not covered" >  static buildTemplateOption(optionArgs?: IComponentOptionsTemplateOptionArgs)</span>: Template {
+<span class="cstat-no" title="statement not covered" >    return TemplateComponentOptions.buildTemplateOption(optionArgs);</span>
+  }
+&nbsp;
+  /**
+   * Builds a boolean option.
+   *
+   * **Markup Examples:**
+   *
+   * &gt; `data-foo="true"`
+   *
+   * &gt; `data-foo="false"`
+   *
+   * @param optionArgs The arguments to apply when building the option.
+   * @returns {boolean} The resulting option value.
+   */
+  static buildBooleanOption(optionArgs?: IComponentOptions&lt;boolean&gt;): boolean {
+    return ComponentOptions.buildOption&lt;boolean&gt;(ComponentOptionsType.BOOLEAN, ComponentOptions.loadBooleanOption, optionArgs);
+  }
+&nbsp;
+  /**
+   * Builds a number option.
+   *
+   * A number option can be an integer or a float in the markup.
+   *
+   * **Note:**
+   *
+   * &gt; To build a float option, you need to set the `float` property in the [`IComponentOptionsNumberOptionArgs`]{@link IComponentOptionsNumberOptionArgs} to `true`.
+   *
+   * **Markup Examples:**
+   *
+   * &gt; `data-foo="3"`
+   *
+   * &gt; `data-foo="1.5"`
+   *
+   * @param optionArgs The arguments to apply when building the option.
+   * @returns {number} The resulting option value.
+   */
+  static buildNumberOption(optionArgs?: IComponentOptionsNumberOptionArgs): number {
+    return ComponentOptions.buildOption&lt;number&gt;(ComponentOptionsType.NUMBER, ComponentOptions.loadNumberOption, optionArgs);
+  }
+&nbsp;
+  /**
+   * Builds a string option.
+   *
+   * A string option can be any arbitrary string in the markup.
+   *
+   * **Markup Example:**
+   *
+   * &gt; `data-foo="bar"`
+   *
+   * @param optionArgs The arguments to apply when building the option.
+   * @returns {string} The resulting option value.
+   */
+  static buildStringOption(optionArgs?: IComponentOptions&lt;string&gt;): string {
+    return ComponentOptions.buildOption&lt;string&gt;(ComponentOptionsType.STRING, ComponentOptions.loadStringOption, optionArgs);
+  }
+&nbsp;
+  /**
+   * Builds an icon option.
+   *
+   * This takes an SVG icon name, validates it and returns the name of the icon.
+   * **Markup Examples:**
+   *
+   * &gt; `data-foo="search"`
+   *
+   * &gt; `data-foo="facet-expand"`
+   *
+   * @param optionArgs The arguments to apply when building the option.
+   * @returns {string} The resulting option value.
+   */
+  static buildIconOption(optionArgs?: IComponentOptions&lt;string&gt;): string {
+    return ComponentOptions.buildOption&lt;string&gt;(ComponentOptionsType.ICON, ComponentOptions.loadIconOption, optionArgs);
+  }
+&nbsp;
+  /**
+   * Builds a color option.
+   *
+   * Normally, this simply builds a string that matches a CSS color.
+   *
+   * **Note:**
+   *
+   * &gt; In the markup, this offers no advantage over using a plain string. This is mostly useful for the Coveo JavaScript
+   * &gt; Interface Editor.
+   *
+   * **Markup Examples:**
+   *
+   * &gt; `data-foo="coveo-sprites-user"`
+   *
+   * &gt; `data-foo="coveo-sprites-database"`
+   *
+   * @param optionArgs The arguments to apply when building the option.
+   * @returns {string} The resulting option value.
+   */
+  static buildColorOption(optionArgs?: IComponentOptions&lt;string&gt;): string {
+    return ComponentOptions.buildOption&lt;string&gt;(ComponentOptionsType.COLOR, ComponentOptions.loadStringOption, optionArgs);
+  }
+&nbsp;
+  /**
+   * Builds a helper option.
+   *
+   * Normally, this simply builds a string that matches the name of a template helper.
+   *
+   * **Note:**
+   *
+   * &gt; In the markup, this offers no advantage over using a plain string. This is mostly useful for the Coveo JavaScript
+   * &gt; Interface Editor.
+   *
+   * **Markup Examples:**
+   *
+   * &gt; `data-foo="date"`
+   *
+   * &gt; `data-foo="dateTime"`
+   *
+   * @param optionArgs The arguments to apply when building the option.
+   * @returns {string} The resulting option value.
+   */
+  static buildHelperOption(optionArgs?: IComponentOptions&lt;string&gt;): string {
+    return ComponentOptions.buildOption&lt;string&gt;(ComponentOptionsType.HELPER, ComponentOptions.loadStringOption, optionArgs);
+  }
+&nbsp;
+  /**
+   * Tries to parse a stringified JSON option.
+   *
+   * If unsuccessful (because of invalid syntax), the JSON option is ignored altogether, and the console displays a warning message.
+   *
+   * **Markup Example:**
+   *
+   * &gt; `data-foo='{"bar" : "baz"}'`
+   *
+   * **Note:**
+   *
+   * A JSON option can always be set as a property in the `init` call of the framework rather than as a `data-` property in the corresponding HTMLElement markup.
+   *
+   * **Initialization Example:**
+   *
+   * ```
+   * Coveo.init(root, {
+   *   Facet : {
+   *     foo : {
+   *       "bar" : "baz"
+   *     }
+   *   }
+   * })
+   * ```
+   * @param optionArgs The arguments to apply when building the option.
+   * @returns {T} The resulting option value.
+   */
+  static buildJsonOption&lt;T extends IStringMap&lt;any&gt;&gt;(optionArgs?: IComponentJsonObjectOption&lt;T&gt;): T {
+    return ComponentOptions.buildOption(ComponentOptionsType.JSON, ComponentOptions.loadJsonObjectOption, optionArgs) as T;
+  }
+&nbsp;
+  /**
+   * @deprecated Use buildJsonOption instead
+   */
+  static buildJsonObjectOption&lt;T&gt;(optionArgs?: IComponentJsonObjectOption&lt;T&gt;): T {
+    return ComponentOptions.buildJsonOption(optionArgs);
+  }
+&nbsp;
+  /**
+   * Builds a localized string option.
+   *
+   * A localized string option can be any arbitrary string.
+   *
+   * When parsing the value, the Coveo JavaScript Search Framework tries to load the localization for that string, if it
+   * is available.
+   *
+   * If it is not available, it returns the non-localized value.
+   *
+   * This should be used for options that will be rendered directly to the end users.
+   *
+   * **Markup Example:**
+   *
+   * &gt; `data-foo="bar"`
+   *
+   * @param optionArgs The arguments to apply when building the option.
+   * @returns {string} The resulting option value.
+   */
+  static buildLocalizedStringOption(optionArgs?: IComponentOptions&lt;string&gt;): string {
+    return ComponentOptions.buildOption&lt;string&gt;(
+      ComponentOptionsType.LOCALIZED_STRING,
+      ComponentOptions.loadLocalizedStringOption,
+      optionArgs
+    );
+  }
+&nbsp;
+  /**
+   * Builds a field option.
+   *
+   * A field option validates whether the field has a valid name. This means that the string must start with the `@`
+   * character.
+   *
+   * **Markup Example:**
+   *
+   * &gt; `data-foo="@bar"`
+   *
+   * @param optionArgs The arguments to apply when building the option.
+   * @returns {string} The resulting option value.
+   */
+  static buildFieldOption(optionArgs?: IComponentOptionsFieldOptionArgs): IFieldOption {
+    return ComponentOptions.buildOption&lt;string&gt;(ComponentOptionsType.FIELD, ComponentOptions.loadFieldOption, optionArgs);
+  }
+&nbsp;
+  /**
+   * Builds an array of fields option.
+   *
+   * As with all options that expect an array, you should use commas to delimit the different values.
+   *
+   * **Markup Example:**
+   *
+   * &gt; `data-foo="@bar,@baz"`
+   *
+   * @param optionArgs The arguments to apply when building the option.
+   * @returns {string[]} The resulting option value.
+   */
+  static buildFieldsOption(optionArgs?: IComponentOptionsFieldsOptionArgs): IFieldOption[] {
+    return ComponentOptions.buildOption&lt;string[]&gt;(ComponentOptionsType.FIELDS, ComponentOptions.loadFieldsOption, optionArgs);
+  }
+&nbsp;
+  /**
+   * Builds a query expression option.
+   *
+   * The query expression option should follow the [Coveo Cloud Query Syntax Reference](http://www.coveo.com/go?dest=cloudhelp&amp;lcid=9&amp;context=357).
+   *
+   * **Markup Example:**
+   *
+   * &gt; `data-foo="@bar==baz"`
+   *
+   * @param optionArgs The arguments to apply when building the option.
+   * @returns {IQueryExpression} The resulting option value.
+   */
+  static buildQueryExpressionOption(optionArgs?: IComponentOptions&lt;string&gt;): IQueryExpression {
+    return ComponentOptions.buildOption&lt;string&gt;(ComponentOptionsType.QUERY_EXPRESSION, ComponentOptions.loadStringOption, optionArgs);
+  }
+&nbsp;
+  /**
+   * Builds an array of strings option.
+   *
+   * As with all options that expect an array, you should use commas to delimit the different values.
+   *
+   * **Markup Example:**
+   *
+   * &gt; `data-foo="bar,baz"`
+   *
+   * @param optionArgs The arguments to apply when building the option.
+   * @returns {string[]} The resulting option value.
+   */
+  static buildListOption&lt;T&gt;(optionArgs?: IComponentOptionsListOptionArgs): T[] | string[] {
+    return ComponentOptions.buildOption&lt;string[]&gt;(ComponentOptionsType.LIST, ComponentOptions.loadListOption, optionArgs);
+  }
+&nbsp;
+  /**
+   * Builds an option that allow to select an HTMLElement.
+   *
+   * The option accepts a CSS selector matching the required HTMLElement. This selector can either be a class, or an ID
+   * selector.
+   *
+   * **Markup Examples:**
+   *
+   * &gt; `data-foo-selector=".bar"`
+   *
+   * &gt; `data-foo-selector="#bar"`
+   *
+   * @param optionArgs The arguments to apply when building the option.
+   * @returns {HTMLElement} The resulting option value.
+   */
+  static buildSelectorOption(optionArgs?: IComponentOptions&lt;HTMLElement&gt;): HTMLElement {
+    return ComponentOptions.buildOption&lt;HTMLElement&gt;(ComponentOptionsType.SELECTOR, ComponentOptions.loadSelectorOption, optionArgs);
+  }
+&nbsp;
+  static buildChildHtmlElementOption(optionArgs?: IComponentOptionsChildHtmlElementOptionArgs): HTMLElement {
+    return ComponentOptions.buildOption&lt;HTMLElement&gt;(
+      ComponentOptionsType.CHILD_HTML_ELEMENT,
+      ComponentOptions.loadChildHtmlElementOption,
+      optionArgs
+    );
+  }
+&nbsp;
+  static buildCustomOption&lt;T&gt;(converter: (value: string) =&gt; T, optionArgs?: IComponentOptions&lt;T&gt;): T {
+    const loadOption: IComponentOptionsLoadOption&lt;T&gt; = (element: HTMLElement, name: string, option: IComponentOptionsOption&lt;T&gt;) =&gt; {
+      const stringvalue = ComponentOptions.loadStringOption(element, name, option);
+      if (!Utils.isNullOrEmptyString(stringvalue)) {
+        return converter(stringvalue);
+      }
+    };
+    return ComponentOptions.buildOption&lt;T&gt;(ComponentOptionsType.STRING, loadOption, optionArgs);
+  }
+&nbsp;
+  static buildCustomListOption&lt;T&gt;(converter: (value: string[]) =&gt; T, optionArgs?: IComponentOptionsCustomListOptionArgs&lt;T&gt;): T {
+    const loadOption: IComponentOptionsLoadOption&lt;T&gt; = (element: HTMLElement, name: string, option: any) =&gt; {
+      const stringvalue = ComponentOptions.loadListOption(element, name, option);
+      return converter(stringvalue);
+    };
+    return ComponentOptions.buildOption&lt;any&gt;(ComponentOptionsType.LIST, loadOption, optionArgs);
+  }
+&nbsp;
+  static buildObjectOption(optionArgs?: IComponentOptionsObjectOptionArgs): any {
+    const loadOption: IComponentOptionsLoadOption&lt;{
+      [key: string]: any;
+    }&gt; = (element: HTMLElement, name: string, option: IComponentOptionsOption&lt;any&gt;) =&gt; {
+      const extractedKeys = keys(optionArgs.subOptions);
+      const scopedOptions: {
+        [name: string]: IComponentOptionsOption&lt;any&gt;;
+      } = {};
+      const scopedValues: {
+        [name: string]: any;
+      } = {};
+      for (let i = 0; i &lt; extractedKeys.length; i++) {
+        const key = extractedKeys[i];
+        const scopedkey = ComponentOptions.mergeCamelCase(name, key);
+        scopedOptions[scopedkey] = optionArgs.subOptions[key];
+      }
+      ComponentOptions.initOptions(element, scopedOptions, scopedValues);
+      const resultValues: {
+        [name: string]: any;
+      } = {};
+      let resultFound = false;
+      for (let i = 0; i &lt; extractedKeys.length; i++) {
+        const key = extractedKeys[i];
+        const scopedkey = ComponentOptions.mergeCamelCase(name, key);
+        if (scopedValues[scopedkey] != null) {
+          resultValues[key] = scopedValues[scopedkey];
+          resultFound = true;
+        }
+      }
+      return resultFound ? resultValues : null;
+    };
+    return ComponentOptions.buildOption&lt;{
+      [key: string]: any;
+    }&gt;(ComponentOptionsType.OBJECT, loadOption, optionArgs);
+  }
+&nbsp;
+  static buildOption&lt;T&gt;(type: ComponentOptionsType, load: IComponentOptionsLoadOption&lt;T&gt;, optionArg: IComponentOptions&lt;T&gt; = {}): T {
+    const option: IComponentOptionsOption&lt;T&gt; = &lt;any&gt;optionArg;
+    option.type = type;
+    option.load = load;
+    return &lt;any&gt;option;
+  }
+&nbsp;
+  static attrNameFromName(name: string, optionArgs?: IComponentOptions&lt;any&gt;) {
+    if (optionArgs &amp;&amp; optionArgs.attrName) {
+      return optionArgs.attrName;
+    }
+    if (name) {
+      return 'data-' + ComponentOptions.camelCaseToHyphen(name);
+    }
+    return name;
+  }
+&nbsp;
+  static camelCaseToHyphen(name: string) {
+    return name.replace(camelCaseToHyphenRegex, '-$1$2').toLowerCase();
+  }
+&nbsp;
+  static mergeCamelCase(parent: string, name: string) {
+    return parent + name.substr(0, 1).toUpperCase() + name.substr(1);
+  }
+&nbsp;
+  /**
+   * Loads and parses the options of the current element.
+   *
+   * Each component calls this method in its constructor.
+   *
+   * @param element The element whose markup options the method should load and parse.
+   * @param component The class of the component whose options the method should load and parse (e.g., `Searchbox`,
+   * `Facet`, etc.)
+   * @param values The additional options which the method should merge with the specified markup option values.
+   */
+  static initComponentOptions(element: HTMLElement, component: any, values?: any) {
+    return ComponentOptions.initOptions(element, component.options, values, component.ID);
+  }
+&nbsp;
+  static initOptions(
+    element: HTMLElement,
+    options: {
+      [name: string]: IComponentOptionsOption&lt;any&gt;;
+    },
+    values?: any,
+    componentID?: any
+  ) {
+    const logger = new Logger(this);
+    if (values == null) {
+      values = {};
+    }
+    const names: string[] = keys(options);
+    for (let i = 0; i &lt; names.length; i++) {
+      const name = names[i];
+      const optionDefinition = options[name];
+      let value: any;
+      const loadFromAttribute = optionDefinition.load;
+&nbsp;
+      <span class="missing-if-branch" title="else path not taken" >E</span>if (loadFromAttribute != null) {
+        value = loadFromAttribute(element, name, optionDefinition);
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (value &amp;&amp; optionDefinition.deprecated) {
+<span class="cstat-no" title="statement not covered" >          logger.warn(componentID + '.' + name + ': ' + optionDefinition.deprecated);</span>
+        }
+      }
+&nbsp;
+      if (Utils.isNullOrUndefined(value) &amp;&amp; values[name] != undefined) {
+        value = values[name];
+      }
+&nbsp;
+      if (value == null &amp;&amp; values[name] == undefined) {
+        if (optionDefinition.defaultValue != null) {
+          if (optionDefinition.type == ComponentOptionsType.LIST) {
+            value = extend([], optionDefinition.defaultValue);
+          } else if (optionDefinition.type == ComponentOptionsType.OBJECT) {
+            value = extend({}, optionDefinition.defaultValue);
+          } else {
+            value = optionDefinition.defaultValue;
+          }
+        } else if (optionDefinition.defaultFunction != null) {
+          value = optionDefinition.defaultFunction(element);
+        }
+      }
+      if (value != null) {
+        if (optionDefinition.validator) {
+          const isValid = optionDefinition.validator(value);
+          if (!isValid) {
+            logger.warn(`${componentID} .${name} has invalid value: ${value}`);
+            if (optionDefinition.required) {
+              logger.error(`${componentID} .${name} is required and has an invalid value: ${value}. ***THIS COMPONENT WILL NOT WORK***`);
+            }
+            delete values[name];
+            continue;
+          }
+        }
+        if (optionDefinition.type == ComponentOptionsType.OBJECT &amp;&amp; values[name] != null) {
+          values[name] = extend(values[name], value);
+        } else if (optionDefinition.type == ComponentOptionsType.LOCALIZED_STRING) {
+          values[name] = l(value);
+        } else {
+          values[name] = value;
+        }
+      }
+      if (values[name] == undefined &amp;&amp; optionDefinition.required) {
+        logger.warn(
+          `Option "${name}" is *REQUIRED* on the component "${componentID}". The component or the search page might *NOT WORK PROPERLY*.`,
+          element
+        );
+      }
+    }
+&nbsp;
+    for (let i = 0; i &lt; names.length; i++) {
+      const name = names[i];
+      const optionDefinition = options[name];
+      if (optionDefinition.postProcessing) {
+        values[name] = optionDefinition.postProcessing(values[name], values);
+      }
+    }
+    return values;
+  }
+&nbsp;
+  static loadStringOption(element: HTMLElement, name: string, option: IComponentOptions&lt;any&gt;): string {
+    return element.getAttribute(ComponentOptions.attrNameFromName(name, option)) || ComponentOptions.getAttributeFromAlias(element, option);
+  }
+&nbsp;
+  static loadIconOption(element: HTMLElement, name: string, option: IComponentOptions&lt;any&gt;): string {
+    let svgIconName = ComponentOptions.loadStringOption(element, name, option);
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (svgIconName == null) {
+      return null;
+    }
+&nbsp;
+    // Old card templates icons used these values as the icon option. These names have changed since we moved to SVG.
+    // This avoids breaking old default templates that people may still have after moving to 2.0.
+<span class="cstat-no" title="statement not covered" >    svgIconName = svgIconName.replace('coveo-sprites-replies', 'replies');</span>
+<span class="cstat-no" title="statement not covered" >    svgIconName = svgIconName.replace('coveo-sprites-main-search-active', 'search');</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    if (Utils.isNullOrUndefined(SVGIcons.icons[svgIconName])) {</span>
+<span class="cstat-no" title="statement not covered" >      new Logger(element).warn(`Icon with name ${svgIconName} not found.`);</span>
+<span class="cstat-no" title="statement not covered" >      return null;</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    svgIconName = Utils.toCamelCase(svgIconName);</span>
+<span class="cstat-no" title="statement not covered" >    return svgIconName;</span>
+  }
+&nbsp;
+  static loadFieldOption(element: HTMLElement, name: string, option: IComponentOptionsOption&lt;any&gt;): string {
+    const field = ComponentOptions.loadStringOption(element, name, option);
+    Assert.check(!Utils.isNonEmptyString(field) || Utils.isCoveoField(field), field + ' is not a valid field');
+    return field;
+  }
+&nbsp;
+  static loadFieldsOption(element: HTMLElement, name: string, option: IComponentOptionsOption&lt;any&gt;): string[] {
+    const fieldsAttr = ComponentOptions.loadStringOption(element, name, option);
+    if (fieldsAttr == null) {
+      return null;
+    }
+    const fields = fieldsAttr.split(fieldsSeperator);
+    each(fields, (field: string) =&gt; {
+      Assert.check(Utils.isCoveoField(field), field + ' is not a valid field');
+    });
+    return fields;
+  }
+&nbsp;
+  static loadLocalizedStringOption(element: HTMLElement, name: string, option: IComponentOptionsOption&lt;any&gt;): string {
+    const attributeValue = ComponentOptions.loadStringOption(element, name, option);
+    const locale: string = String['locale'] || <span class="branch-1 cbranch-no" title="branch not covered" >String['defaultLocale'];</span>
+    if (locale != null &amp;&amp; attributeValue != null) {
+      const localeParts = locale.toLowerCase().split('-');
+      const locales = map(localeParts, (part, i) =&gt; localeParts.slice(0, i + 1).join('-'));
+      const localizers = attributeValue.match(localizer);
+      if (localizers != null) {
+        for (let i = 0; i &lt; localizers.length; i++) {
+          const groups = localizer.exec(localizers[i]);
+          <span class="missing-if-branch" title="else path not taken" >E</span>if (groups != null) {
+            const lang = groups[1].toLowerCase();
+            <span class="missing-if-branch" title="else path not taken" >E</span>if (contains(locales, lang)) {
+              return groups[2].replace(/^\s+|\s+$/g, '');
+            }
+          }
+        }
+      }
+      return attributeValue != null ? attributeValue.toLocaleString() : <span class="branch-1 cbranch-no" title="branch not covered" >null;</span>
+    }
+    return attributeValue;
+  }
+&nbsp;
+  static loadNumberOption(element: HTMLElement, name: string, option: IComponentOptionsNumberOption): number {
+    const attributeValue = ComponentOptions.loadStringOption(element, name, option);
+    if (attributeValue == null) {
+      return null;
+    }
+    let numberValue = option.float === true ? Utils.parseFloatIfNotUndefined(attributeValue) : Utils.parseIntIfNotUndefined(attributeValue);
+    if (option.min != null &amp;&amp; option.min &gt; numberValue) {
+      new Logger(element).info(
+        `Value for option ${name} is less than the possible minimum (Value is ${numberValue}, minimum is ${
+          option.min
+        }). It has been forced to its minimum value.`,
+        option
+      );
+      numberValue = option.min;
+    }
+    if (option.max != null &amp;&amp; option.max &lt; numberValue) {
+      new Logger(element).info(
+        `Value for option ${name} is higher than the possible maximum (Value is ${numberValue}, maximum is ${
+          option.max
+        }). It has been forced to its maximum value.`,
+        option
+      );
+      numberValue = option.max;
+    }
+    return numberValue;
+  }
+&nbsp;
+  static loadBooleanOption(element: HTMLElement, name: string, option: IComponentOptionsOption&lt;any&gt;): boolean {
+    return Utils.parseBooleanIfNotUndefined(ComponentOptions.loadStringOption(element, name, option));
+  }
+&nbsp;
+  static loadListOption(element: HTMLElement, name: string, option: IComponentOptionsListOption): string[] {
+    const separator = option.separator || /\s*,\s*/;
+    const attributeValue = ComponentOptions.loadStringOption(element, name, option);
+    return Utils.isNonEmptyString(attributeValue) ? attributeValue.split(separator) : null;
+  }
+&nbsp;
+  static loadEnumOption(element: HTMLElement, name: string, option: IComponentOptionsOption&lt;any&gt;, _enum: any): number {
+    const enumAsString = ComponentOptions.loadStringOption(element, name, option);
+    return enumAsString != null ? _enum[enumAsString] : <span class="branch-1 cbranch-no" title="branch not covered" >null;</span>
+  }
+&nbsp;
+  static loadJsonObjectOption&lt;T&gt;(element: HTMLElement, name: string, option: IComponentOptions&lt;any&gt;): T {
+    const jsonAsString = ComponentOptions.loadStringOption(element, name, option);
+    if (jsonAsString == null) {
+      return null;
+    }
+    try {
+      return JSON.parse(jsonAsString) as T;
+    } catch (exception) {
+      new Logger(element).info(
+        `Value for option ${name} is not a valid JSON string (Value is ${jsonAsString}). It has been disabled.`,
+        exception
+      );
+      return null;
+    }
+  }
+&nbsp;
+  static loadSelectorOption(
+    element: HTMLElement,
+    name: string,
+    option: IComponentOptionsOption&lt;any&gt;,
+    doc: Document = document
+  ): HTMLElement {
+    const attributeValue = ComponentOptions.loadStringOption(element, name, option);
+    return Utils.isNonEmptyString(attributeValue) ? &lt;HTMLElement&gt;doc.querySelector(attributeValue) : null;
+  }
+&nbsp;
+  static loadChildHtmlElementOption(
+    element: HTMLElement,
+    name: string,
+    option: IComponentOptionsChildHtmlElementOption,
+    doc: Document = document
+  ): HTMLElement {
+    let htmlElement: HTMLElement;
+    // Attribute: selector
+    const selectorAttr = option.selectorAttr || ComponentOptions.attrNameFromName(name, option) + '-selector';
+    const selector = element.getAttribute(selectorAttr) || ComponentOptions.getAttributeFromAlias(element, option);
+    if (selector != null) {
+      htmlElement = &lt;HTMLElement&gt;doc.body.querySelector(selector);
+    }
+    // Child
+    if (htmlElement == null) {
+      let childSelector = option.childSelector;
+      if (childSelector == null) {
+        childSelector = '.' + name;
+      }
+      htmlElement = ComponentOptions.loadChildHtmlElementFromSelector(element, childSelector);
+    }
+    return htmlElement;
+  }
+&nbsp;
+  static loadChildHtmlElementFromSelector(element: HTMLElement, selector: string): HTMLElement {
+    Assert.isNonEmptyString(selector);
+    if ($$(element).is(selector)) {
+      return element;
+    }
+    return &lt;HTMLElement&gt;$$(element).find(selector);
+  }
+&nbsp;
+  static loadChildrenHtmlElementFromSelector(element: HTMLElement, selector: string): HTMLElement[] {
+    Assert.isNonEmptyString(selector);
+    return $$(element).findAll(selector);
+  }
+&nbsp;
+  static findParentScrolling(element: HTMLElement, doc: Document = document): HTMLElement {
+    while (&lt;Node&gt;element != doc &amp;&amp; element != null) {
+      if (ComponentOptions.isElementScrollable(element)) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (element.tagName.toLowerCase() !== 'body') {
+          return element;
+        }
+<span class="cstat-no" title="statement not covered" >        return &lt;any&gt;window;</span>
+      }
+      element = element.parentElement;
+    }
+    return &lt;any&gt;window;
+  }
+&nbsp;
+  static isElementScrollable(element: HTMLElement) {
+    const overflowProperty = $$(element).css('overflow-y');
+    return overflowProperty == 'scroll' || overflowProperty == 'auto';
+  }
+&nbsp;
+  static getAttributeFromAlias(element: HTMLElement, option: IComponentOptions&lt;any&gt;) {
+    if (isArray(option.alias)) {
+      let attributeFound;
+      each(option.alias, alias =&gt; {
+        const attributeFoundWithThisAlias = element.getAttribute(ComponentOptions.attrNameFromName(alias));
+        if (attributeFoundWithThisAlias) {
+          attributeFound = attributeFoundWithThisAlias;
+        }
+      });
+      return attributeFound;
+    }
+    if (option.alias) {
+      return element.getAttribute(ComponentOptions.attrNameFromName(option.alias));
+    } else {
+      return undefined;
+    }
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri May 10 2019 15:31:54 GMT+0000 (UTC)</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

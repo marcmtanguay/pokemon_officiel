@@ -1,0 +1,687 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/rest/AnalyticsEndpoint.ts</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../prettify.css">
+    <link rel="stylesheet" href="../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header medium">
+    <h1>Code coverage report for <span class="entity">src/rest/AnalyticsEndpoint.ts</span></h1>
+    <h2>
+        Statements: <span class="metric">77.89% <small>(74 / 95)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">54.55% <small>(12 / 22)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">83.33% <small>(15 / 18)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">78.65% <small>(70 / 89)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">src/rest/</a> &#187; AnalyticsEndpoint.ts</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">67</span>
+<span class="cline-any cline-yes">67</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">67</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">67</span>
+<span class="cline-any cline-yes">67</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { first } from 'underscore';
+import { Assert } from '../misc/Assert';
+import { Logger } from '../misc/Logger';
+import { IAPIAnalyticsSearchEventsResponse } from '../rest/APIAnalyticsSearchEventsResponse';
+import { IClickEvent } from '../rest/ClickEvent';
+import { IEndpointCallerOptions, IErrorResponse, ISuccessResponse } from '../rest/EndpointCaller';
+import { AnalyticsEndpointCaller } from '../rest/AnalyticsEndpointCaller';
+import { IStringMap } from '../rest/GenericParam';
+import { ISearchEvent } from '../rest/SearchEvent';
+import { Cookie } from '../utils/CookieUtils';
+import { UrlUtils, IUrlNormalizedParts } from '../utils/UrlUtils';
+import { Utils } from '../utils/Utils';
+import { AccessToken } from './AccessToken';
+import { IAPIAnalyticsEventResponse } from './APIAnalyticsEventResponse';
+import { IAPIAnalyticsVisitResponseRest } from './APIAnalyticsVisitResponse';
+import { ICustomEvent } from './CustomEvent';
+import { ITopQueries } from './TopQueries';
+&nbsp;
+export interface IAnalyticsEndpointOptions {
+  accessToken: AccessToken;
+  serviceUrl: string;
+  organization: string;
+}
+&nbsp;
+export class AnalyticsEndpoint {
+  logger: Logger;
+&nbsp;
+  static DEFAULT_ANALYTICS_URI = 'https://usageanalytics.coveo.com';
+  static DEFAULT_ANALYTICS_VERSION = 'v15';
+  static CUSTOM_ANALYTICS_VERSION = undefined;
+  static VISITOR_COOKIE_TIME = 10000 * 24 * 60 * 60 * 1000;
+&nbsp;
+  static pendingRequest: Promise&lt;any&gt;;
+&nbsp;
+  private visitId: string;
+  private organization: string;
+  public endpointCaller: AnalyticsEndpointCaller;
+&nbsp;
+  constructor(public options: IAnalyticsEndpointOptions) {
+    this.logger = new Logger(this);
+&nbsp;
+    const endpointCallerOptions: IEndpointCallerOptions = {
+      accessToken: this.options.accessToken.token
+    };
+&nbsp;
+    this.endpointCaller = new AnalyticsEndpointCaller(endpointCallerOptions);
+    this.organization = options.organization;
+  }
+&nbsp;
+  public getCurrentVisitId(): string {
+    return this.visitId;
+  }
+&nbsp;
+  public getCurrentVisitIdPromise(): Promise&lt;string&gt; {
+    return new Promise((resolve, reject) =&gt; {
+      <span class="missing-if-branch" title="if path not taken" >I</span>if (this.getCurrentVisitId()) {
+<span class="cstat-no" title="statement not covered" >        resolve(this.getCurrentVisitId());</span>
+      } else {
+        const url = this.buildAnalyticsUrl('/analytics/visit');
+        this.getFromService&lt;IAPIAnalyticsVisitResponseRest&gt;(url, {})
+          .then((response: IAPIAnalyticsVisitResponseRest) =&gt; {
+            this.visitId = response.id;
+            resolve(this.visitId);
+          })
+          .catch(<span class="fstat-no" title="function not covered" >(response: IErrorResponse)</span> =&gt; {
+<span class="cstat-no" title="statement not covered" >            reject(response);</span>
+          });
+      }
+    });
+  }
+&nbsp;
+  public sendSearchEvents(searchEvents: ISearchEvent[]): Promise&lt;IAPIAnalyticsSearchEventsResponse&gt; {
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (searchEvents.length &gt; 0) {
+      this.logger.info('Logging analytics search events', searchEvents);
+      return this.sendToService(searchEvents, 'searches', 'searchEvents');
+    }
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  public sendDocumentViewEvent(documentViewEvent: IClickEvent)</span>: Promise&lt;IAPIAnalyticsEventResponse&gt; {
+<span class="cstat-no" title="statement not covered" >    Assert.exists(documentViewEvent);</span>
+<span class="cstat-no" title="statement not covered" >    this.logger.info('Logging analytics document view', documentViewEvent);</span>
+<span class="cstat-no" title="statement not covered" >    return this.sendToService(documentViewEvent, 'click', 'clickEvent');</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  public sendCustomEvent(customEvent: ICustomEvent)</span> {
+<span class="cstat-no" title="statement not covered" >    Assert.exists(customEvent);</span>
+<span class="cstat-no" title="statement not covered" >    this.logger.info('Logging analytics custom event', customEvent);</span>
+<span class="cstat-no" title="statement not covered" >    return this.sendToService(customEvent, 'custom', 'customEvent');</span>
+  }
+&nbsp;
+  public getTopQueries(params: ITopQueries): Promise&lt;string[]&gt; {
+    const url = this.buildAnalyticsUrl('/stats/topQueries');
+    return this.getFromService&lt;string[]&gt;(url, params);
+  }
+&nbsp;
+  private async sendToService(data: Record&lt;string, any&gt;, path: string, paramName: string): Promise&lt;any&gt; {
+    // We use pendingRequest because we don't want to have 2 request to analytics at the same time.
+    // Otherwise the cookie visitId won't be set correctly.
+    if (AnalyticsEndpoint.pendingRequest != null) {
+<span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" >      await AnalyticsEndpoint.pendingRequest;</span></span>
+    }
+&nbsp;
+    const url = this.getURL(path);
+    const request = this.executeRequest(url, data);
+&nbsp;
+    try {
+      const results = await request;
+      AnalyticsEndpoint.pendingRequest = null;
+      this.handleAnalyticsEventResponse(results.data);
+      return results.data;
+    } catch (error) {
+<span class="cstat-no" title="statement not covered" >      AnalyticsEndpoint.pendingRequest = null;</span>
+      if (<span class="cstat-no" title="statement not covered" >this.options.accessToken.isExpired(error))</span> {
+        const <span class="cstat-no" title="statement not covered" >successfullyRenewed = <span class="cstat-no" title="statement not covered" >await this.options.accessToken.doRenew();</span></span>
+<span class="cstat-no" title="statement not covered" >        if (successfullyRenewed) {</span>
+<span class="cstat-no" title="statement not covered" >          return this.sendToService(data, path, paramName);</span>
+        }
+      }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      throw error;</span>
+    }
+  }
+&nbsp;
+  private executeRequest(
+    urlNormalized: IUrlNormalizedParts,
+    data: Record&lt;string, any&gt;
+  ): Promise&lt;ISuccessResponse&lt;IAPIAnalyticsEventResponse&gt;&gt; {
+    const request = this.endpointCaller.call&lt;IAPIAnalyticsEventResponse&gt;({
+      errorsAsSuccess: false,
+      method: 'POST',
+      queryString: urlNormalized.queryNormalized,
+      requestData: data,
+      url: urlNormalized.path,
+      responseType: 'text',
+      requestDataType: 'application/json'
+    });
+&nbsp;
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (request) {
+      AnalyticsEndpoint.pendingRequest = request;
+      return request;
+    }
+&nbsp;
+    // In some case, (eg: using navigator.sendBeacon), there won't be any response to read from the service
+    // In those case, send back an empty object upstream.
+<span class="cstat-no" title="statement not covered" >    return Promise.resolve({</span>
+      data: {
+        visitId: '',
+        visitorId: ''
+      },
+      duration: 0
+    });
+  }
+&nbsp;
+  private getURL(path: string): IUrlNormalizedParts {
+    const versionToCall = AnalyticsEndpoint.CUSTOM_ANALYTICS_VERSION || AnalyticsEndpoint.DEFAULT_ANALYTICS_VERSION;
+    const urlNormalized = UrlUtils.normalizeAsParts({
+      paths: [this.options.serviceUrl, '/rest/', versionToCall, '/analytics/', path],
+      query: {
+        org: this.organization,
+        visitor: Cookie.get('visitorId')
+      }
+    });
+    return urlNormalized;
+  }
+&nbsp;
+  private getFromService&lt;T&gt;(url: string, params: IStringMap&lt;string&gt;): Promise&lt;T&gt; {
+    const paramsToSend = { ...params, access_token: this.options.accessToken.token };
+    return this.endpointCaller
+      .call&lt;T&gt;({
+        errorsAsSuccess: false,
+        method: 'GET',
+        queryString: this.options.organization ? ['org=' + Utils.safeEncodeURIComponent(this.options.organization)] : <span class="branch-1 cbranch-no" title="branch not covered" >[],</span>
+        requestData: paramsToSend,
+        responseType: 'json',
+        url: url
+      })
+      .then((res: ISuccessResponse&lt;T&gt;) =&gt; {
+        return res.data;
+      });
+  }
+&nbsp;
+  private handleAnalyticsEventResponse(response: IAPIAnalyticsEventResponse | IAPIAnalyticsSearchEventsResponse) {
+    let visitId: string;
+    let visitorId: string;
+&nbsp;
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (response['visitId']) {
+<span class="cstat-no" title="statement not covered" >      visitId = response['visitId'];</span>
+<span class="cstat-no" title="statement not covered" >      visitorId = response['visitorId'];</span>
+    } else <span class="missing-if-branch" title="else path not taken" >E</span>if (response['searchEventResponses']) {
+      visitId = (&lt;IAPIAnalyticsEventResponse&gt;first(response['searchEventResponses'])).visitId;
+      visitorId = (&lt;IAPIAnalyticsEventResponse&gt;first(response['searchEventResponses'])).visitorId;
+    }
+&nbsp;
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (visitId) {
+      this.visitId = visitId;
+    }
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (visitorId) {
+<span class="cstat-no" title="statement not covered" >      Cookie.set('visitorId', visitorId, AnalyticsEndpoint.VISITOR_COOKIE_TIME);</span>
+    }
+&nbsp;
+    return response;
+  }
+&nbsp;
+  private buildAnalyticsUrl(path: string) {
+    return UrlUtils.normalizeAsString({
+      paths: [
+        this.options.serviceUrl,
+        '/rest/',
+        AnalyticsEndpoint.CUSTOM_ANALYTICS_VERSION || AnalyticsEndpoint.DEFAULT_ANALYTICS_VERSION,
+        path
+      ]
+    });
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri May 10 2019 15:31:54 GMT+0000 (UTC)</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

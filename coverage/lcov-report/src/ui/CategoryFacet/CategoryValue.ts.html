@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/ui/CategoryFacet/CategoryValue.ts</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../../prettify.css">
+    <link rel="stylesheet" href="../../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header high">
+    <h1>Code coverage report for <span class="entity">src/ui/CategoryFacet/CategoryValue.ts</span></h1>
+    <h2>
+        Statements: <span class="metric">98.39% <small>(61 / 62)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">75% <small>(6 / 8)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">100% <small>(14 / 14)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">98.33% <small>(59 / 60)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">src/ui/CategoryFacet/</a> &#187; CategoryValue.ts</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">883</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">883</span>
+<span class="cline-any cline-yes">883</span>
+<span class="cline-any cline-yes">883</span>
+<span class="cline-any cline-yes">883</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">883</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">883</span>
+<span class="cline-any cline-yes">883</span>
+<span class="cline-any cline-yes">883</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">875</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">875</span>
+<span class="cline-any cline-yes">458</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">417</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">875</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">129</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">97</span>
+<span class="cline-any cline-yes">97</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">39</span>
+<span class="cline-any cline-yes">39</span>
+<span class="cline-any cline-yes">39</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">378</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">272</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">840</span>
+<span class="cline-any cline-yes">840</span>
+<span class="cline-any cline-yes">840</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">840</span>
+<span class="cline-any cline-yes">840</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">840</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">840</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">378</span>
+<span class="cline-any cline-yes">378</span>
+<span class="cline-any cline-yes">378</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">378</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1723</span>
+<span class="cline-any cline-yes">1723</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">878</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Dom, $$ } from '../../utils/Dom';
+import { CategoryFacetTemplates } from './CategoryFacetTemplates';
+import { CategoryChildrenValueRenderer } from './CategoryValueChildrenRenderer';
+import { CategoryFacet, CategoryValueDescriptor } from './CategoryFacet';
+import { ICategoryFacetValue } from '../../rest/CategoryFacetValue';
+import { analyticsActionCauseList } from '../Analytics/AnalyticsActionListMeta';
+import { AccessibleButton } from '../../utils/AccessibleButton';
+import { l } from '../../strings/Strings';
+&nbsp;
+export interface CategoryValueParent {
+  listRoot: Dom;
+  path: string[];
+  categoryChildrenValueRenderer: CategoryChildrenValueRenderer;
+  renderAsParent(categoryFacetValue: ICategoryFacetValue): CategoryValue;
+  renderChildren(categoryFacetValues: ICategoryFacetValue[]): void;
+}
+&nbsp;
+export class CategoryValue implements CategoryValueParent {
+  private collapseArrow: Dom;
+&nbsp;
+  public path: string[];
+  public element: Dom;
+  public isActive = false;
+  public categoryChildrenValueRenderer: CategoryChildrenValueRenderer;
+&nbsp;
+  constructor(
+    public listRoot: Dom,
+    public categoryValueDescriptor: CategoryValueDescriptor,
+    private categoryFacetTemplates: CategoryFacetTemplates,
+    private categoryFacet: CategoryFacet
+  ) {
+    this.element = this.categoryFacetTemplates.buildListElement({
+      value: this.captionedValueDescriptorValue,
+      count: this.categoryValueDescriptor.count
+    });
+    this.collapseArrow = this.categoryFacetTemplates.buildCollapseArrow();
+    this.categoryChildrenValueRenderer = new CategoryChildrenValueRenderer(this.element, categoryFacetTemplates, this, this.categoryFacet);
+    this.path = this.categoryValueDescriptor.path;
+  }
+&nbsp;
+  public render(isChild: boolean) {
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (this.pastMaximumDepth()) {
+<span class="cstat-no" title="statement not covered" >      this.element.addClass('coveo-category-facet-last-value');</span>
+    }
+&nbsp;
+    if (isChild) {
+      this.element.addClass('coveo-category-facet-child-value');
+    } else {
+      this.element.addClass('coveo-category-facet-parent-value');
+    }
+&nbsp;
+    this.listRoot.append(this.element.el);
+  }
+&nbsp;
+  public getDescriptor() {
+    return {
+      value: this.categoryValueDescriptor.value,
+      count: this.categoryValueDescriptor.count,
+      path: this.path
+    };
+  }
+&nbsp;
+  public clear() {
+    this.element.detach();
+    this.categoryChildrenValueRenderer.clearChildren();
+  }
+&nbsp;
+  public renderChildren(values: ICategoryFacetValue[]) {
+    this.isActive = true;
+    this.element.addClass('coveo-active-category-facet-parent');
+    this.categoryChildrenValueRenderer.renderChildren(values);
+  }
+&nbsp;
+  public renderAsParent(value: ICategoryFacetValue) {
+    return this.categoryChildrenValueRenderer.renderAsParent(value);
+  }
+&nbsp;
+  public get children() {
+    return this.categoryChildrenValueRenderer.children;
+  }
+&nbsp;
+  public makeSelectable() {
+    const element = $$(this.element.find('.coveo-category-facet-value-label'));
+    element.addClass('coveo-selectable');
+&nbsp;
+    const countLabel = l('ResultCount', this.categoryValueDescriptor.count.toString());
+    const label = l('SelectValueWithResultCount', this.captionedValueDescriptorValue, countLabel);
+&nbsp;
+    new AccessibleButton()
+      .withElement(element)
+      .withSelectAction(() =&gt; this.onSelect())
+      .withLabel(label)
+      .build();
+&nbsp;
+    return this;
+  }
+&nbsp;
+  public showCollapseArrow() {
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (!this.collapseArrow.el.parentElement) {
+      const label = this.element.find('label');
+      $$(label).prepend(this.collapseArrow.el);
+    }
+&nbsp;
+    return this;
+  }
+&nbsp;
+  private get captionedValueDescriptorValue() {
+    const value = this.categoryValueDescriptor.value;
+    return this.categoryFacet.getCaption(value);
+  }
+&nbsp;
+  private onSelect() {
+    if (!this.pastMaximumDepth()) {
+      this.categoryFacet.logAnalyticsEvent(analyticsActionCauseList.categoryFacetSelect, this.path);
+      this.categoryFacet.changeActivePath(this.path);
+      this.categoryFacet.executeQuery();
+    }
+  }
+&nbsp;
+  private pastMaximumDepth() {
+    return this.path.length - this.categoryFacet.options.basePath.length &gt;= this.categoryFacet.options.maximumDepth;
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri May 10 2019 15:31:54 GMT+0000 (UTC)</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

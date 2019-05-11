@@ -1,0 +1,540 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/models/QueryStateModel.ts</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../prettify.css">
+    <link rel="stylesheet" href="../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header high">
+    <h1>Code coverage report for <span class="entity">src/models/QueryStateModel.ts</span></h1>
+    <h2>
+        Statements: <span class="metric">93.88% <small>(46 / 49)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">86.36% <small>(19 / 22)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">100% <small>(10 / 10)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">93.33% <small>(42 / 45)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">src/models/</a> &#187; QueryStateModel.ts</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3862</span>
+<span class="cline-any cline-yes">2074</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">286</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">282</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">544</span>
+<span class="cline-any cline-yes">543</span>
+<span class="cline-any cline-yes">543</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">113</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">237</span>
+<span class="cline-any cline-yes">233</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">237</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Model, IModelSetOptions } from './Model';
+import { Assert } from '../misc/Assert';
+import { IStringMap } from '../rest/GenericParam';
+import * as _ from 'underscore';
+import { Utils } from '../utils/Utils';
+&nbsp;
+export const QUERY_STATE_ATTRIBUTES = {
+  Q: 'q',
+  FIRST: 'first',
+  T: 't',
+  TG: 'tg',
+  SORT: 'sort',
+  LAYOUT: 'layout',
+  HD: 'hd',
+  HQ: 'hq',
+  QUICKVIEW: 'quickview',
+  DEBUG: 'debug',
+  NUMBER_OF_RESULTS: 'numberOfResults'
+};
+&nbsp;
+export interface IQueryStateIncludedAttribute {
+  title: string;
+  included: string[];
+}
+&nbsp;
+export interface IQueryStateExcludedAttribute {
+  title: string;
+  excluded: string[];
+}
+&nbsp;
+/**
+ * The `QueryStateModel` class is a key-value store which contains the current state of the components that can affect
+ * the query (see [State](https://developers.coveo.com/x/RYGfAQ)). This class inherits from the [`Model`]{@link Model}
+ * class. Optionally, it is possible to persist the state in the query string in order to enable browser history
+ * management (see the [`HistoryController`]{@link HistoryController} class).
+ *
+ * Components set values in the `QueryStateModel` instance to reflect their current state. The `QueryStateModel`
+ * triggers state events (see [`eventTypes`]{@link Model.eventTypes}) whenever one of its values is modified. Components
+ * listen to triggered state events to update themselves when appropriate.
+ *
+ * For instance, when a query is triggered, the [`Searchbox`]{@link Searchbox} component sets the `q` attribute (the
+ * basic query expression), while the [`Pager`]{@link Pager} component sets the `first` attribute (the index of the
+ * first result to display in the result list), and so on.
+ *
+ * **Example:**
+ *
+ * &gt; The user modifies the content of the `Searchbox` and submits a query. This triggers the following state events:
+ * &gt; - `state:change:q` (because the value of `q` has changed).
+ * &gt; - `state:change` (because at least one value has changed in the `QueryStateModel`).
+ * &gt;
+ * &gt; Components or external code can attach handlers to those events:
+ * &gt; ```javascript
+ * &gt; Coveo.$$(document).on('state:change:q', function() {
+ * &gt;   [ ... ]
+ * &gt; });
+ * &gt; ```
+ *
+ * **Note:**
+ * &gt; Normally, you should interact with the `QueryStateModel` instance using the [`Coveo.state`]{@link state} top-level
+ * &gt; function.
+ */
+export class QueryStateModel extends Model {
+  static ID = 'state';
+&nbsp;
+  static defaultAttributes = {
+    q: '',
+    first: 0,
+    fv: '',
+    t: '',
+    hd: '',
+    hq: '',
+    sort: '',
+    layout: 'list',
+    tg: '',
+    quickview: '',
+    debug: false,
+    numberOfResults: 10
+  };
+&nbsp;
+  static attributesEnum = {
+    q: 'q',
+    first: 'first',
+    fv: 'fv',
+    t: 't',
+    sort: 'sort',
+    layout: 'layout',
+    hd: 'hd',
+    hq: 'hq',
+    tg: 'tg',
+    quickview: 'quickview',
+    debug: 'debug',
+    numberOfResults: 'numberOfResults'
+  };
+&nbsp;
+  static getFacetId(id: string, include: boolean = true) {
+    return 'f:' + id + (include ? '' : ':not');
+  }
+&nbsp;
+  static getFacetOperator(id: string) {
+    return 'f:' + id + ':operator';
+  }
+&nbsp;
+  static getFacetLookupValue(id: string) {
+    return QueryStateModel.getFacetId(id) + ':lookupvalues';
+  }
+&nbsp;
+  /**
+   * Creates a new `QueryStateModel` instance.
+   * @param element The HTMLElement on which to instantiate the `QueryStateModel`.
+   * @param attributes The state key-value store to instantiate the `QueryStateModel` with.
+   */
+  constructor(element: HTMLElement, attributes?: IStringMap&lt;string&gt;) {
+    const merged = { ...QueryStateModel.defaultAttributes, ...attributes };
+    super(element, QueryStateModel.ID, merged)<span class="branch-1 cbranch-no" title="branch not covered" >;</span>
+  }
+&nbsp;
+  /**
+   * Validates whether at least one facet is currently active (has selected or excluded values) in the interface.
+   *
+   * @returns {boolean} `true` if at least one facet is active; `false` otherwise.
+   */
+  public atLeastOneFacetIsActive() {
+    return !_.isUndefined(
+      _.find(this.attributes, (value, key: any) =&gt; {
+        return key.indexOf('f:') == 0 &amp;&amp; !Utils.arrayEqual(this.getDefault(key), value);
+      })
+    );
+  }
+&nbsp;
+  public set(attribute: string, value: any, options?: IModelSetOptions) {
+    this.validate(attribute, value);
+    super.set(attribute, value, options);
+  }
+&nbsp;
+  private validate(attribute: string, value: any) {
+    if (attribute == QueryStateModel.attributesEnum.first) {
+      Assert.isNumber(value);
+      Assert.isLargerOrEqualsThan(0, value);
+    }
+  }
+}
+&nbsp;
+export function setState(model: Model, args: any[]): any {
+  Assert.exists(model);
+&nbsp;
+  if (args.length == 0 || args[0] == undefined) {
+    // No args means return the model
+    return model;
+  } else if (args.length == 1 &amp;&amp; Utils.isNonEmptyString(args[0])) {
+    // One string arg means retrieve value from model
+    return model.get(args[0]);
+  } else <span class="missing-if-branch" title="if path not taken" >I</span>if (_.isObject(args[0])) {
+    // One dictionary means set multiple values
+<span class="cstat-no" title="statement not covered" >    let toSet = args[0];</span>
+<span class="cstat-no" title="statement not covered" >    let options = _.extend(&lt;IModelSetOptions&gt;{ customAttribute: true }, &lt;IModelSetOptions&gt;args[1]);</span>
+<span class="cstat-no" title="statement not covered" >    return model.setMultiple(toSet, options);</span>
+  } else <span class="missing-if-branch" title="else path not taken" >E</span>if (args.length &gt; 1) {
+    // Otherwise we're setting a value
+    let name = &lt;string&gt;args[0];
+    let value = args[1];
+    let options = _.extend(&lt;IModelSetOptions&gt;{ customAttribute: true }, &lt;IModelSetOptions&gt;args[2]);
+    Assert.isNonEmptyString(name);
+    return model.set(name, value, options);
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri May 10 2019 15:31:54 GMT+0000 (UTC)</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

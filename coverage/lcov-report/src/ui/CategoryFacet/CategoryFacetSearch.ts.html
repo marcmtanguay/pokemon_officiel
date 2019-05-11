@@ -1,0 +1,822 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/ui/CategoryFacet/CategoryFacetSearch.ts</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../../prettify.css">
+    <link rel="stylesheet" href="../../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header high">
+    <h1>Code coverage report for <span class="entity">src/ui/CategoryFacet/CategoryFacetSearch.ts</span></h1>
+    <h2>
+        Statements: <span class="metric">96.55% <small>(140 / 145)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">77.27% <small>(17 / 22)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">88.89% <small>(24 / 27)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">96.38% <small>(133 / 138)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">src/ui/CategoryFacet/</a> &#187; CategoryFacetSearch.ts</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">124</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">125</span>
+<span class="cline-any cline-yes">124</span>
+<span class="cline-any cline-yes">124</span>
+<span class="cline-any cline-yes">124</span>
+<span class="cline-any cline-yes">124</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">56</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">56</span>
+<span class="cline-any cline-yes">56</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">56</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">56</span>
+<span class="cline-any cline-yes">56</span>
+<span class="cline-any cline-yes">56</span>
+<span class="cline-any cline-yes">56</span>
+<span class="cline-any cline-yes">56</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">45</span>
+<span class="cline-any cline-yes">45</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">48</span>
+<span class="cline-any cline-yes">48</span>
+<span class="cline-any cline-yes">48</span>
+<span class="cline-any cline-yes">48</span>
+<span class="cline-any cline-yes">48</span>
+<span class="cline-any cline-yes">48</span>
+<span class="cline-any cline-yes">48</span>
+<span class="cline-any cline-yes">48</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">56</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">56</span>
+<span class="cline-any cline-yes">56</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">56</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">56</span>
+<span class="cline-any cline-yes">56</span>
+<span class="cline-any cline-yes">56</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">124</span>
+<span class="cline-any cline-yes">124</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">130</span>
+<span class="cline-any cline-yes">130</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">130</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">130</span>
+<span class="cline-any cline-yes">130</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">130</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">130</span>
+<span class="cline-any cline-yes">130</span>
+<span class="cline-any cline-yes">130</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">130</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">130</span>
+<span class="cline-any cline-yes">130</span>
+<span class="cline-any cline-yes">130</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">130</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">130</span>
+<span class="cline-any cline-yes">130</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">130</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">130</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">61</span>
+<span class="cline-any cline-yes">61</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { CategoryFacet } from './CategoryFacet';
+import { FacetSearchElement } from '../Facet/FacetSearchElement';
+import { pluck, debounce, last } from 'underscore';
+import { $$, Dom } from '../../utils/Dom';
+import { SVGDom } from '../../utils/SVGDom';
+import { SVGIcons } from '../../utils/SVGIcons';
+import { l } from '../../strings/Strings';
+import { IGroupByValue } from '../../rest/GroupByValue';
+import 'styling/_CategoryFacetSearch';
+import { StringUtils } from '../../utils/StringUtils';
+import { analyticsActionCauseList, IAnalyticsCategoryFacetMeta } from '../Analytics/AnalyticsActionListMeta';
+import { IFacetSearch } from '../Facet/IFacetSearch';
+import { IIndexFieldValue } from '../../rest/FieldValue';
+import { AccessibleButton } from '../../utils/AccessibleButton';
+&nbsp;
+export class CategoryFacetSearch implements IFacetSearch {
+  public container: Dom | undefined;
+  public facetSearchElement: FacetSearchElement;
+  public displayNewValues: () =&gt; void;
+  public currentlyDisplayedResults: string[];
+  public moreValuesToFetch = true;
+  public facetSearchPromise: Promise&lt;IIndexFieldValue[]&gt;;
+&nbsp;
+  private numberOfValuesToFetch: number;
+&nbsp;
+  constructor(private categoryFacet: CategoryFacet) {
+    this.facetSearchElement = new FacetSearchElement(this);
+    this.displayNewValues = debounce(this.getDisplayNewValuesFunction(), this.categoryFacet.options.facetSearchDelay);
+    this.categoryFacet.root.addEventListener('click', (e: MouseEvent) =&gt; this.handleClickElsewhere(e));
+    this.numberOfValuesToFetch = this.categoryFacet.options.numberOfResultsInFacetSearch;
+  }
+&nbsp;
+  public get facetType() {
+    return CategoryFacet.ID;
+  }
+&nbsp;
+  public build() {
+    this.container = $$('div', {
+      className: 'coveo-category-facet-search-container',
+      role: 'heading',
+      'aria-level': 3
+    });
+&nbsp;
+    new AccessibleButton()
+      .withElement(this.container)
+      .withSelectAction(<span class="fstat-no" title="function not covered" >() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        $$(this.categoryFacet.element).addClass('coveo-category-facet-searching');</span>
+<span class="cstat-no" title="statement not covered" >        this.focus();</span>
+      })
+      .withLabel(l('Search'))
+      .build();
+&nbsp;
+    const search = this.facetSearchElement.build();
+    const searchPlaceholder = this.buildfacetSearchPlaceholder();
+    this.container.append(search);
+    this.container.append(searchPlaceholder.el);
+    return this.container;
+  }
+&nbsp;
+  public focus() {
+    this.facetSearchElement.focus();
+  }
+&nbsp;
+  public clear() {
+    this.dismissSearchResults();
+    this.container &amp;&amp; this.container.detach();
+  }
+&nbsp;
+  public dismissSearchResults() {
+    this.removeNoResultsCssClasses();
+    $$(this.categoryFacet.element).removeClass('coveo-category-facet-searching');
+    $$(this.facetSearchElement.searchResults).empty();
+    this.facetSearchElement.clearSearchInput();
+    this.facetSearchElement.hideSearchResultsElement();
+    this.currentlyDisplayedResults = null;
+    this.numberOfValuesToFetch = this.categoryFacet.options.numberOfResultsInFacetSearch;
+    this.moreValuesToFetch = true;
+  }
+&nbsp;
+  public keyboardEventDefaultHandler() {
+    this.moreValuesToFetch = true;
+    this.displayNewValues();
+  }
+&nbsp;
+  public keyboardNavigationEnterPressed() {
+    this.selectCurrentResult();
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  public fetchMoreValues() {</span>
+<span class="cstat-no" title="statement not covered" >    this.numberOfValuesToFetch += this.categoryFacet.options.numberOfResultsInFacetSearch;</span>
+<span class="cstat-no" title="statement not covered" >    this.displayNewValues();</span>
+  }
+&nbsp;
+  public getCaptions() {
+    const searchResults = $$(this.facetSearchElement.searchResults);
+    const captions = searchResults
+      .findAll('.coveo-category-facet-search-value-caption')
+      .concat(searchResults.findAll('.coveo-category-facet-search-path-parents'))
+      .concat(searchResults.findAll('.coveo-category-facet-search-path-last-value'));
+    return captions;
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  public updateAriaLive(text: string)</span> {
+<span class="cstat-no" title="statement not covered" >    this.categoryFacet.searchInterface.ariaLive.updateText(text);</span>
+  }
+&nbsp;
+  private selectCurrentResult() {
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (this.facetSearchElement.currentResult) {
+      const currentResultPathData = this.facetSearchElement.currentResult.el.dataset.path;
+      const delimiter = this.categoryFacet.options.delimitingCharacter;
+      const path = currentResultPathData.split(delimiter);
+      this.categoryFacet.changeActivePath(path);
+      this.categoryFacet.logAnalyticsEvent(analyticsActionCauseList.categoryFacetSelect, path);
+      this.categoryFacet.executeQuery();
+    }
+  }
+&nbsp;
+  private handleClickElsewhere(e: MouseEvent) {
+    const closestContainer = $$(&lt;HTMLElement&gt;e.target).closest('.coveo-category-facet-search-container');
+&nbsp;
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (!closestContainer || <span class="branch-1 cbranch-no" title="branch not covered" >closestContainer != this.container.el)</span> {
+      this.dismissSearchResults();
+    }
+  }
+&nbsp;
+  private buildfacetSearchPlaceholder() {
+    const placeholder = $$('div', { className: 'coveo-category-facet-search-placeholder' });
+&nbsp;
+    const icon = $$('div', { className: 'coveo-category-facet-search-icon' }, SVGIcons.icons.checkboxHookExclusionMore);
+    SVGDom.addClassToSVGInContainer(icon.el, 'coveo-category-facet-search-icon-svg');
+&nbsp;
+    const label = $$('span', { className: 'coveo-category-facet-search-label' }, l('Search'));
+&nbsp;
+    placeholder.append(icon.el);
+    placeholder.append(label.el);
+    return placeholder;
+  }
+&nbsp;
+  private getDisplayNewValuesFunction() {
+    return async () =&gt; {
+      this.facetSearchElement.showFacetSearchWaitingAnimation();
+      this.categoryFacet.logger.info('Triggering new Category Facet search');
+      const categoryFacetValues = await this.categoryFacet.categoryFacetQueryController.searchFacetValues(
+        this.facetSearchElement.input.value,
+        this.numberOfValuesToFetch
+      );
+      this.logAnalyticsEvent();
+      <span class="missing-if-branch" title="else path not taken" >E</span>if (categoryFacetValues.length &lt; this.numberOfValuesToFetch) {
+        this.moreValuesToFetch = false;
+      }
+      if (categoryFacetValues.length == 0) {
+        this.noFacetSearchResults();
+        return;
+      }
+      this.removeNoResultsCssClasses();
+      this.setFacetSearchResults(categoryFacetValues);
+&nbsp;
+      <span class="missing-if-branch" title="else path not taken" >E</span>if (this.shouldPositionSearchResults) {
+        this.facetSearchElement.positionSearchResults(
+          this.categoryFacet.root,
+          this.categoryFacet.element.clientWidth,
+          this.facetSearchElement.search
+        );
+      }
+&nbsp;
+      this.facetSearchElement.hideFacetSearchWaitingAnimation();
+    };
+  }
+&nbsp;
+  private setFacetSearchResults(categoryFacetValues: IGroupByValue[]) {
+    $$(this.facetSearchElement.searchResults).empty();
+    this.currentlyDisplayedResults = pluck(categoryFacetValues, 'value');
+    for (let i = 0; i &lt; categoryFacetValues.length; i++) {
+      const searchResult = this.buildFacetSearchValue(categoryFacetValues[i], i);
+      if (i == 0) {
+        this.facetSearchElement.setAsCurrentResult(searchResult);
+      }
+      this.facetSearchElement.appendToSearchResults(searchResult.el);
+    }
+    this.highlightCurrentQueryWithinSearchResults();
+  }
+&nbsp;
+  private buildFacetSearchValue(categoryFacetValue: IGroupByValue, index: number) {
+    const path = categoryFacetValue.value.split(this.categoryFacet.options.delimitingCharacter);
+&nbsp;
+    const pathParents = path.slice(0, -1).length != 0 ? `${path.slice(0, -1).join('/')}/` : '';
+&nbsp;
+    const value = $$('span', { className: 'coveo-category-facet-search-value-caption' }, last(path));
+    const number = $$('span', { className: 'coveo-category-facet-search-value-number' }, categoryFacetValue.numberOfResults.toString(10));
+    const pathParentsCaption = $$('span', { className: 'coveo-category-facet-search-path-parents' }, pathParents);
+&nbsp;
+    const pathToValueCaption = $$('span', { className: 'coveo-category-facet-search-path' }, pathParentsCaption);
+&nbsp;
+    const firstRow = $$('div', { className: 'coveo-category-facet-search-first-row' }, value, number);
+    const secondRow = $$('div', { className: 'coveo-category-facet-search-second-row' }, pathToValueCaption);
+    const item = $$(
+      'li',
+      {
+        id: `coveo-category-facet-search-suggestion-${index}`,
+        role: 'option',
+        ariaSelected: 'false',
+        className: 'coveo-category-facet-search-value',
+        title: path
+      },
+      firstRow,
+      secondRow
+    );
+    item.el.dataset.path = categoryFacetValue.value;
+&nbsp;
+    const countLabel = l('ResultCount', categoryFacetValue.numberOfResults.toString());
+    const label = l('SelectValueWithResultCount', last(path), countLabel);
+&nbsp;
+    new AccessibleButton()
+      .withElement(item)
+      .withSelectAction(() =&gt; {
+        this.categoryFacet.changeActivePath(path);
+        this.categoryFacet.logAnalyticsEvent(analyticsActionCauseList.categoryFacetSelect, path);
+        this.categoryFacet.executeQuery();
+      })
+      .withLabel(label)
+      .build();
+&nbsp;
+    return item;
+  }
+&nbsp;
+  private noFacetSearchResults() {
+    this.facetSearchElement.hideFacetSearchWaitingAnimation();
+    this.facetSearchElement.hideSearchResultsElement();
+    $$(this.facetSearchElement.search).addClass('coveo-facet-search-no-results');
+    $$(this.categoryFacet.element).addClass('coveo-no-results');
+  }
+&nbsp;
+  private removeNoResultsCssClasses() {
+    this.facetSearchElement.search &amp;&amp; $$(this.facetSearchElement.search).removeClass('coveo-facet-search-no-results');
+    $$(this.categoryFacet.element).removeClass('coveo-no-results');
+  }
+&nbsp;
+  private highlightCurrentQueryWithinSearchResults() {
+    const regex = new RegExp(`(${StringUtils.stringToRegex(this.facetSearchElement.input.value, true)})`, 'ig');
+    this.facetSearchElement.highlightCurrentQueryInSearchResults(regex);
+  }
+&nbsp;
+  private logAnalyticsEvent() {
+    this.categoryFacet.usageAnalytics.logCustomEvent&lt;IAnalyticsCategoryFacetMeta&gt;(
+      analyticsActionCauseList.categoryFacetSearch,
+      {
+        categoryFacetId: this.categoryFacet.options.id,
+        categoryFacetField: this.categoryFacet.options.field.toString(),
+        categoryFacetTitle: this.categoryFacet.options.title
+      },
+      this.categoryFacet.root
+    );
+  }
+&nbsp;
+  private get shouldPositionSearchResults() {
+    const searchResults = this.facetSearchElement.searchResults;
+    return searchResults &amp;&amp; !searchResults.parentElement;
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri May 10 2019 15:31:54 GMT+0000 (UTC)</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

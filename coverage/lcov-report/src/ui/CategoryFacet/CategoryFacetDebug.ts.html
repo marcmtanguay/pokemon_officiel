@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/ui/CategoryFacet/CategoryFacetDebug.ts</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../../prettify.css">
+    <link rel="stylesheet" href="../../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header medium">
+    <h1>Code coverage report for <span class="entity">src/ui/CategoryFacet/CategoryFacetDebug.ts</span></h1>
+    <h2>
+        Statements: <span class="metric">72.46% <small>(50 / 69)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">75% <small>(6 / 8)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">55% <small>(11 / 20)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">75.41% <small>(46 / 61)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">src/ui/CategoryFacet/</a> &#187; CategoryFacetDebug.ts</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">21</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">21</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-yes">26</span>
+<span class="cline-any cline-yes">26</span>
+<span class="cline-any cline-yes">26</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-yes">12</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">21</span>
+<span class="cline-any cline-yes">21</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">12</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { CategoryFacet } from './CategoryFacet';
+import { IBuildingQueryEventArgs, QueryEvents, IQuerySuccessEventArgs } from '../../events/QueryEvents';
+import { IGroupByResult } from '../../rest/GroupByResult';
+import { QueryBuilder } from '../Base/QueryBuilder';
+import { sortBy, chain } from 'underscore';
+import { Logger } from '../../misc/Logger';
+import { IGroupByValue } from '../../rest/GroupByValue';
+&nbsp;
+class PathMap {
+  get: (key: string) =&gt; PathMap;
+  set: (key: string, value?: PathMap) =&gt; void;
+}
+&nbsp;
+type DebugGroupByPositionInQuery = {
+  start: number;
+  end: number;
+};
+&nbsp;
+export class CategoryFacetDebug {
+  private static logger = new Logger(CategoryFacet);
+  private positionInQuery: DebugGroupByPositionInQuery;
+<span class="fstat-no" title="function not covered" >  constructor(private <span class="cstat-no" title="statement not covered" >categoryFacet: CategoryFacet)</span></span> {
+<span class="cstat-no" title="statement not covered" >    this.categoryFacet.bind.onRootElement&lt;IBuildingQueryEventArgs&gt;(QueryEvents.buildingQuery, <span class="fstat-no" title="function not covered" >args </span>=&gt; <span class="cstat-no" title="statement not covered" >this.handleBuildingQuery(args))</span>;</span>
+<span class="cstat-no" title="statement not covered" >    this.categoryFacet.bind.onRootElement&lt;IQuerySuccessEventArgs&gt;(QueryEvents.querySuccess, <span class="fstat-no" title="function not covered" >args </span>=&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      this.handleQuerySuccess(args);</span>
+    });
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  private handleBuildingQuery(args: IBuildingQueryEventArgs)</span> {
+<span class="cstat-no" title="statement not covered" >    const firstPositionInQuery = args.queryBuilder.groupByRequests.length;</span>
+<span class="cstat-no" title="statement not covered" >    if (this.categoryFacet.activePath.length == 0) {</span>
+<span class="cstat-no" title="statement not covered" >      this.positionInQuery = { start: firstPositionInQuery, end: firstPositionInQuery + 1 };</span>
+<span class="cstat-no" title="statement not covered" >      this.addGroupByForEmptyPath(args.queryBuilder);</span>
+    } else {
+<span class="cstat-no" title="statement not covered" >      const path = this.categoryFacet.activePath;</span>
+<span class="cstat-no" title="statement not covered" >      this.positionInQuery = { start: firstPositionInQuery, end: firstPositionInQuery + path.length };</span>
+<span class="cstat-no" title="statement not covered" >      this.addGroupByForEachPathElement(args.queryBuilder, path);</span>
+    }
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >  private handleQuerySuccess(args: IQuerySuccessEventArgs)</span> {</span>
+<span class="cstat-no" title="statement not covered" >    args.results.groupByResults</span>
+      .slice(this.positionInQuery.start, this.positionInQuery.end)
+      .forEach(<span class="fstat-no" title="function not covered" >groupByResult </span>=&gt; <span class="cstat-no" title="statement not covered" >CategoryFacetDebug.analyzeResults(groupByResult, this.categoryFacet.options.delimitingCharacter))</span>;
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  private addGroupByForEmptyPath(queryBuilder: QueryBuilder)</span> {
+<span class="cstat-no" title="statement not covered" >    queryBuilder.groupByRequests.push({</span>
+      field: this.categoryFacet.options.field as string,
+      injectionDepth: this.categoryFacet.options.injectionDepth
+    });
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >  private addGroupByForEachPathElement(queryBuilder: QueryBuilder, path: string[])</span> {</span>
+<span class="cstat-no" title="statement not covered" >    path.forEach(<span class="fstat-no" title="function not covered" >pathElement </span>=&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      this.categoryFacet.categoryFacetQueryController.addDebugGroupBy(queryBuilder, pathElement);</span>
+    });
+  }
+&nbsp;
+  public static analyzeResults(groupByResults: IGroupByResult, delimiter: string) {
+    const treeRoot: PathMap = new Map&lt;string, PathMap&gt;();
+    const orphans: string[] = [];
+&nbsp;
+    let paths = this.buildPathsFromGroupByValues(groupByResults.values, delimiter);
+    paths = sortBy(paths, value =&gt; value.length);
+&nbsp;
+    paths.forEach(path =&gt; {
+      if (path.length == 1) {
+        this.addFirstNodeToTree(treeRoot, path);
+      } else {
+        let pathIsValid = true;
+        const parentsOnly = path.slice(0, -1);
+        let currentNode = treeRoot;
+        for (const parent of parentsOnly) {
+          currentNode = currentNode.get(parent);
+          if (!currentNode) {
+            this.processOrphan(orphans, path, delimiter);
+            pathIsValid = false;
+            break;
+          }
+        }
+        if (pathIsValid) {
+          this.addValidNodeToTree(currentNode, path);
+        }
+      }
+    });
+    return orphans;
+  }
+&nbsp;
+  private static buildPathsFromGroupByValues(values: IGroupByValue[], delimiter: string) {
+    return chain(values)
+      .pluck('value')
+      .map((value: string) =&gt; value.split(delimiter))
+      .sortBy(value =&gt; value.length)
+      .value();
+  }
+&nbsp;
+  private static addFirstNodeToTree(treeRoot: PathMap, path: string[]) {
+    treeRoot.set(path[0], new Map&lt;string, PathMap&gt;());
+  }
+&nbsp;
+  private static addValidNodeToTree(node: PathMap, path: string[]) {
+    node.set(path.slice(-1)[0], new Map&lt;string, PathMap&gt;());
+  }
+&nbsp;
+  private static processOrphan(orphans: string[], path: string[], delimiter: string) {
+    const formattedOrphan = path.join(delimiter);
+    orphans.push(formattedOrphan);
+    this.logger.error(`Value ${formattedOrphan} has no parent.`);
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri May 10 2019 15:31:54 GMT+0000 (UTC)</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

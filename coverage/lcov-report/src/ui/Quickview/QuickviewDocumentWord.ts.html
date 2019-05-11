@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/ui/Quickview/QuickviewDocumentWord.ts</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../../prettify.css">
+    <link rel="stylesheet" href="../../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header high">
+    <h1>Code coverage report for <span class="entity">src/ui/Quickview/QuickviewDocumentWord.ts</span></h1>
+    <h2>
+        Statements: <span class="metric">94.25% <small>(82 / 87)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">76.67% <small>(23 / 30)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">100% <small>(17 / 17)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">93.98% <small>(78 / 83)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">src/ui/Quickview/</a> &#187; QuickviewDocumentWord.ts</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17</span>
+<span class="cline-any cline-yes">17</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17</span>
+<span class="cline-any cline-yes">17</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">23</span>
+<span class="cline-any cline-yes">23</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">19</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">19</span>
+<span class="cline-any cline-yes">19</span>
+<span class="cline-any cline-yes">19</span>
+<span class="cline-any cline-yes">19</span>
+<span class="cline-any cline-yes">19</span>
+<span class="cline-any cline-yes">19</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">19</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">19</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">19</span>
+<span class="cline-any cline-yes">19</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">19</span>
+<span class="cline-any cline-yes">19</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">18</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">18</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">19</span>
+<span class="cline-any cline-yes">19</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">19</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">19</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">19</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { find, first, keys, without } from 'underscore';
+import { StringUtils } from '../../Core';
+import { Logger } from '../../misc/Logger';
+import { IQueryResult } from '../../rest/QueryResult';
+import { $$ } from '../../utils/Dom';
+import { HIGHLIGHT_PREFIX } from './QuickviewDocument';
+import { QuickviewDocumentWordColor } from './QuickviewDocumentWordColor';
+&nbsp;
+export class QuickviewDocumentWord {
+  public text: string;
+  public count: number = 0;
+  public numberOfEmbeddedWords: number;
+  public occurrence: number;
+  public indexIdentifier: string;
+  public indexTermPart: number;
+  public elements: HTMLElement[] = [];
+  public currentNavigationPosition = -1;
+  public color: QuickviewDocumentWordColor;
+&nbsp;
+  private logger: Logger;
+&nbsp;
+  constructor(public result: IQueryResult) {
+    this.logger = new Logger(this);
+  }
+&nbsp;
+  public addElement(element: HTMLElement) {
+    this.count++;
+    this.elements.push(element);
+  }
+&nbsp;
+  public navigateForward() {
+    this.currentNavigationPosition++;
+    if (this.currentNavigationPosition &gt;= this.elements.length) {
+      this.currentNavigationPosition = 0;
+    }
+    this.highlightNavigation();
+    this.putElementIntoView();
+    return this.elements[this.currentNavigationPosition];
+  }
+&nbsp;
+  public navigateBackward() {
+    this.currentNavigationPosition--;
+    if (this.currentNavigationPosition &lt; 0) {
+      this.currentNavigationPosition = this.elements.length - 1;
+    }
+    this.highlightNavigation();
+    this.putElementIntoView();
+    return this.elements[this.currentNavigationPosition];
+  }
+&nbsp;
+  public navigateTo(position: number): HTMLElement {
+    this.currentNavigationPosition = position;
+    if (this.currentNavigationPosition &lt; 0 || this.currentNavigationPosition &gt;= this.elements.length) {
+      this.currentNavigationPosition = 0;
+      this.logger.warn(`Invalid position in quickview navigation: ${position}`);
+    }
+    this.highlightNavigation();
+    return this.elements[this.currentNavigationPosition];
+  }
+&nbsp;
+  public doCompleteInitialScanForKeywordInDocument(element: HTMLElement) {
+    const parsed = this.parseKeywordIdentifier(element);
+&nbsp;
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (parsed) {
+      this.indexIdentifier = parsed.keywordIdentifier;
+      this.occurrence = parsed.keywordOccurrencesInDocument;
+      this.indexTermPart = parsed.keywordTermPart;
+      this.text = this.getText(element);
+      this.color = new QuickviewDocumentWordColor(element.style.backgroundColor);
+&nbsp;
+      this.addElement(element);
+    }
+  }
+&nbsp;
+  public isTaggedWord(element: HTMLElement) {
+    return element.nodeName.toLowerCase() == 'coveotaggedword';
+  }
+&nbsp;
+  private highlightNavigation() {
+    const currentElement = this.elements[this.currentNavigationPosition];
+    const otherElements = without(this.elements, currentElement);
+    currentElement.style.color = this.color.htmlColor;
+    currentElement.style.backgroundColor = this.color.invert();
+    otherElements.forEach(element =&gt; {
+      element.style.color = '';
+      element.style.backgroundColor = this.color.htmlColor;
+    });
+  }
+&nbsp;
+  private putElementIntoView() {
+    const element = this.elements[this.currentNavigationPosition];
+    element.scrollIntoView();
+  }
+&nbsp;
+  private getText(element: HTMLElement) {
+    const innerTextOfHTMLElement = this.getHighlightedInnerText(element);
+    return this.resolveOriginalTerm(innerTextOfHTMLElement);
+  }
+&nbsp;
+  private resolveOriginalTerm(highlight: string): string {
+    if (!this.result || !this.result.termsToHighlight) {
+      return highlight;
+    }
+&nbsp;
+    const found = find(keys(this.result.termsToHighlight), (originalTerm: string) =&gt; {
+      // The expansions do NOT include the original term (makes sense), so be sure to check
+      // the original term for a match too.
+      const originalTermMatch = StringUtils.equalsCaseInsensitive(originalTerm, highlight);
+      const expansionMatch =
+        find(this.result.termsToHighlight[originalTerm], (expansion: string) =&gt; StringUtils.equalsCaseInsensitive(expansion, highlight)) !=
+        undefined;
+      return originalTermMatch || expansionMatch;
+    });
+&nbsp;
+    return found || highlight;
+  }
+&nbsp;
+  private getHighlightedInnerText(element: HTMLElement): string {
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (!this.isTaggedWord(element)) {
+      return $$(element).text() || '';
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    const children = $$(element).children();</span>
+<span class="cstat-no" title="statement not covered" >    if (children.length &gt;= 1) {</span>
+<span class="cstat-no" title="statement not covered" >      return $$(first(children)).text() || '';</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return '';</span>
+  }
+&nbsp;
+  private parseKeywordIdentifier(element: HTMLElement) {
+    const parts = element.id.substr(HIGHLIGHT_PREFIX.length + 1).match(/^([0-9]+)\.([0-9]+)\.([0-9]+)$/);
+&nbsp;
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (!parts || parts.length &lt;= 3) {
+<span class="cstat-no" title="statement not covered" >      return null;</span>
+    }
+&nbsp;
+    return {
+      keywordIdentifier: parts[1],
+      keywordOccurrencesInDocument: parseInt(parts[2], 10),
+      keywordTermPart: parseInt(parts[3], 10)
+    };
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri May 10 2019 15:31:54 GMT+0000 (UTC)</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

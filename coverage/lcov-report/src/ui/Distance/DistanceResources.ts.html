@@ -1,0 +1,1167 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/ui/Distance/DistanceResources.ts</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../../prettify.css">
+    <link rel="stylesheet" href="../../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header high">
+    <h1>Code coverage report for <span class="entity">src/ui/Distance/DistanceResources.ts</span></h1>
+    <h2>
+        Statements: <span class="metric">92.59% <small>(100 / 108)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">78.13% <small>(25 / 32)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">100% <small>(19 / 19)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">91.84% <small>(90 / 98)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">src/ui/Distance/</a> &#187; DistanceResources.ts</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">18</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17</span>
+<span class="cline-any cline-yes">17</span>
+<span class="cline-any cline-yes">17</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">10</span>
+<span class="cline-any cline-yes">10</span>
+<span class="cline-any cline-yes">10</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10</span>
+<span class="cline-any cline-yes">10</span>
+<span class="cline-any cline-yes">10</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17</span>
+<span class="cline-any cline-yes">17</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { $$ } from '../../utils/Dom';
+import {
+  DistanceEvents,
+  IResolvingPositionEventArgs,
+  IGeolocationPosition,
+  IGeolocationPositionProvider,
+  IPositionResolvedEventArgs
+} from '../../events/DistanceEvents';
+&nbsp;
+import { analyticsActionCauseList } from '../Analytics/AnalyticsActionListMeta';
+import { Component } from '../Base/Component';
+import { IFieldOption, ComponentOptions } from '../Base/ComponentOptions';
+import { IComponentBindings } from '../Base/ComponentBindings';
+import { InitializationEvents, QueryEvents } from '../../EventsModules';
+import { IQueryFunction } from '../../rest/QueryFunction';
+import { IBuildingQueryEventArgs } from '../../events/QueryEvents';
+import { Initialization } from '../Base/Initialization';
+import { get } from '../Base/RegisteredNamedMethods';
+import { exportGlobally } from '../../GlobalExports';
+import { NavigatorPositionProvider } from './NavigatorPositionProvider';
+import { GoogleApiPositionProvider } from './GoogleApiPositionProvider';
+import { StaticPositionProvider } from './StaticPositionProvider';
+import { IInitializationEventArgs } from '../../events/InitializationEvents';
+&nbsp;
+export interface IDistanceOptions {
+  distanceField: IFieldOption;
+  latitudeField: IFieldOption;
+  longitudeField: IFieldOption;
+  unitConversionFactor: number;
+  disabledDistanceCssClass: string;
+  latitudeValue: number;
+  longitudeValue: number;
+  googleApiKey: string;
+  useNavigator: boolean;
+  triggerNewQueryOnNewPosition: boolean;
+  cancelQueryUntilPositionResolved: boolean;
+}
+&nbsp;
+/**
+ * The `DistanceResources` component defines a field that computes the distance according to the current position of the
+ * end user.
+ *
+ * Components relying on the current distance should be disabled until this component successfully provides a distance.
+ *
+ * See also [`DistanceEvents`]{@link DistanceEvents}.
+ */
+export class DistanceResources extends Component {
+  public static ID = 'DistanceResources';
+  static doExport = () =&gt; {
+    exportGlobally({
+      DistanceResources: DistanceResources
+    });
+  };
+  private latitude: number;
+  private longitude: number;
+  private lastPositionRequest: Promise&lt;void&gt;;
+  private isFirstPositionResolved = false;
+&nbsp;
+  /**
+   * The possible options for a DistanceResources.
+   * @componentOptions
+   */
+  public static options: IDistanceOptions = {
+    /**
+     * Specifies the name of the field in which to store the distance value.
+     *
+     * Specifying a value for this option is required for the `DistanceResources` component to work.
+     */
+    distanceField: ComponentOptions.buildFieldOption({
+      required: true
+    }),
+&nbsp;
+    /**
+     * Specifies the name of the field that contains the latitude value.
+     *
+     * **Note:**
+     * &gt; The field you specify for this option must be an existing numerical field in your index (see
+     * &gt; [Fields - Page](http://www.coveo.com/go?dest=cloudhelp&amp;lcid=9&amp;context=287). Otherwise, your query responses
+     * &gt; will contain a `QueryExceptionInvalidQueryFunctionField` or QueryExceptionInvalidQueryFunctionFieldType`
+     * &gt; exception, and the DistanceResources component will be unable to evaluate distances.
+     *
+     * Specifying a value for this option is required for the `DistanceResources` component to work.
+     */
+    latitudeField: ComponentOptions.buildFieldOption({
+      required: true
+    }),
+&nbsp;
+    /**
+     * Specifies the name of the field that contains the longitude value.
+     *
+     * **Note:**
+     * &gt; The field you specify for this option must be an existing numerical field in your index (see
+     * &gt; [Fields - Page](http://www.coveo.com/go?dest=cloudhelp&amp;lcid=9&amp;context=287). Otherwise, your query responses
+     * &gt; will contain a `QueryExceptionInvalidQueryFunctionField` or QueryExceptionInvalidQueryFunctionFieldType`
+     * &gt; exception, and the DistanceResources component will be unable to evaluate distances.
+     *
+     * Specifying a value for this option is required for the `DistanceResources` component to work.
+     */
+    longitudeField: ComponentOptions.buildFieldOption({
+      required: true
+    }),
+&nbsp;
+    /**
+     * The conversion factor to apply to the base distance unit (meter).
+     *
+     * **Note:**
+     * &gt; - If you want to convert distances to kilometers, you should set the `unitConversionFactor` to `1000`.
+     * &gt; - If you want to convert distance to miles, you should set the `unitConversionFactor` to `1610` (one mile is
+     * &gt; approximately equal to 1610 meters).
+     *
+     * Default value is `1000`.
+     */
+    unitConversionFactor: ComponentOptions.buildNumberOption({
+      defaultValue: 1000,
+      validator: value =&gt; {
+        return !!value &amp;&amp; value &gt; 0;
+      }
+    }),
+&nbsp;
+    /**
+     * The CSS class for components that need to be re-enabled when the `DistanceResources` component successfully
+     * provides a distance.
+     *
+     * Default value is `coveo-distance-disabled`.
+     */
+    disabledDistanceCssClass: ComponentOptions.buildStringOption({
+      defaultValue: 'coveo-distance-disabled'
+    }),
+&nbsp;
+    /**
+     * The latitude to use if no other position was provided.
+     *
+     * **Note:**
+     * &gt; You must also specify a [`longitudeValue`]{@link DistanceResources.options.longitudeValue} if you specify a
+     * &gt; `latitudeValue`.
+     */
+    latitudeValue: ComponentOptions.buildNumberOption({
+      float: true
+    }),
+&nbsp;
+    /**
+     * The longitude to use if no other position was provided.
+     *
+     * **Note:**
+     * &gt; You must also specify a [`latitudeValue`]{@link DistanceResources.options.latitudeValue} if you specify a
+     * &gt; `longitudeValue`.
+     */
+    longitudeValue: ComponentOptions.buildNumberOption({
+      float: true
+    }),
+&nbsp;
+    /**
+     * The API key to use to request the Google API geolocation service.
+     *
+     * If you do not specify a value for this option, the `DistanceResources` component does not try to request the
+     * service.
+     */
+    googleApiKey: ComponentOptions.buildStringOption(),
+&nbsp;
+    /**
+     * Whether to request the geolocation service of the web browser.
+     *
+     * If not defined, will not try to request the service.
+     *
+     * **Note:**
+     * &gt; Recent web browsers typically require a site to be in HTTPS to enable their geolocation service.
+     *
+     * If you do not specify a value for this option, the `DistanceResources` component does not try to request the
+     * service.
+     */
+    useNavigator: ComponentOptions.buildBooleanOption(),
+&nbsp;
+    /**
+     * Whether to execute a new query when the `DistanceResources` component successfully provides a new position.
+     *
+     * Default value is `false`.
+     */
+    triggerNewQueryOnNewPosition: ComponentOptions.buildBooleanOption({
+      defaultValue: false
+    }),
+&nbsp;
+    /**
+     * Whether to cancel all the queries until the `DistanceResources` component successfully resolves a position.
+     *
+     * Default value is `true`
+     */
+    cancelQueryUntilPositionResolved: ComponentOptions.buildBooleanOption({
+      defaultValue: true
+    })
+  };
+&nbsp;
+  /**
+   * Creates a new `DistanceResources` component.
+   * @param element The HTMLElement on which to instantiate the component.
+   * @param options The options for the `DistanceResources` component.
+   * @param bindings The bindings that the component requires to function normally. If not set, these will be
+   * automatically resolved (with a slower execution time).
+   */
+  constructor(public element: HTMLElement, public options: IDistanceOptions, public bindings: IComponentBindings) {
+    super(element, DistanceResources.ID, bindings)<span class="branch-1 cbranch-no" title="branch not covered" >;</span>
+&nbsp;
+    this.options = ComponentOptions.initComponentOptions(element, DistanceResources, options);
+    this.registerDistanceQuery();
+    this.bind.onRootElement(InitializationEvents.afterComponentsInitialization, (args: IInitializationEventArgs) =&gt;
+      this.onAfterComponentsInitialization(args)
+    );
+  }
+&nbsp;
+  /**
+   * Overrides the current position with the provided values.
+   *
+   * **Note:**
+   * &gt; Calling this method does not automatically trigger a query.
+   *
+   * @param latitude The latitude to set.
+   * @param longitude The longitude to set.
+   */
+  public setPosition(latitude: number, longitude: number): void {
+    this.enable();
+    this.latitude = latitude;
+    this.longitude = longitude;
+&nbsp;
+    const args: IPositionResolvedEventArgs = {
+      position: {
+        latitude: latitude,
+        longitude: longitude
+      }
+    };
+&nbsp;
+    this.bind.trigger(this.element, DistanceEvents.onPositionResolved, args);
+&nbsp;
+    const shouldTriggerQuery = this.shouldTriggerQueryWhenPositionSet();
+    this.isFirstPositionResolved = true;
+    if (shouldTriggerQuery) {
+      this.sendAnalytics();
+      this.queryController.executeQuery();
+    }
+  }
+&nbsp;
+  /**
+   * Returns a promise of the last position resolved using the registered position providers.
+   *
+   * @returns {Promise&lt;IGeolocationPosition&gt;} A promise of the last resolved position value.
+   */
+  public async getLastPositionRequest(): Promise&lt;IGeolocationPosition&gt; {
+    if (<span class="cstat-no" title="statement not covered" >!!this.lastPositionRequest)</span> {
+      await this.lastPositionRequest;
+      return {
+        latitude: this.latitude,
+        longitude: this.longitude
+      };
+    } else {
+<span class="cstat-no" title="statement not covered" >      Promise.reject('No position request was executed yet.');</span>
+    }
+  }
+&nbsp;
+  private sendAnalytics() {
+    this.usageAnalytics.logSearchEvent(analyticsActionCauseList.positionSet, {});
+  }
+&nbsp;
+  private shouldTriggerQueryWhenPositionSet() {
+    // Don't trigger the query if the first one is not yet executed.
+    return !this.queryController.firstQuery &amp;&amp; this.options.triggerNewQueryOnNewPosition;
+  }
+&nbsp;
+  private onAfterComponentsInitialization(afterComponentsInitializationArgs: IInitializationEventArgs): void {
+    const args: IResolvingPositionEventArgs = {
+      providers: this.getProvidersFromOptions()
+    };
+&nbsp;
+    this.bind.trigger(this.element, DistanceEvents.onResolvingPosition, args);
+&nbsp;
+    this.lastPositionRequest = this.tryToSetPositionFromProviders(args.providers);
+&nbsp;
+    if (this.options.cancelQueryUntilPositionResolved) {
+      afterComponentsInitializationArgs.defer.push(this.lastPositionRequest);
+    }
+  }
+&nbsp;
+  private async tryToSetPositionFromProviders(providers: IGeolocationPositionProvider[]): Promise&lt;void&gt; {
+    try {
+      const position = await this.tryGetPositionFromProviders(providers);
+      if (position) {
+        this.setPosition(position.latitude, position.longitude);
+      } else {
+        this.triggerDistanceNotSet();
+      }
+    } catch (error) {
+<span class="cstat-no" title="statement not covered" >      this.logger.error('An error occurred while trying to resolve the current position.', error);</span>
+<span class="cstat-no" title="statement not covered" >      this.triggerDistanceNotSet();</span>
+    }
+  }
+&nbsp;
+  private getProvidersFromOptions(): IGeolocationPositionProvider[] {
+    const providers: IGeolocationPositionProvider[] = [];
+&nbsp;
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (this.options.useNavigator) {
+<span class="cstat-no" title="statement not covered" >      providers.push(new NavigatorPositionProvider());</span>
+    }
+&nbsp;
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (this.options.googleApiKey) {
+<span class="cstat-no" title="statement not covered" >      providers.push(new GoogleApiPositionProvider(this.options.googleApiKey));</span>
+    }
+&nbsp;
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (this.options.longitudeValue &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >this.options.latitudeValue)</span> {
+<span class="cstat-no" title="statement not covered" >      providers.push(new StaticPositionProvider(this.options.latitudeValue, this.options.longitudeValue));</span>
+    }
+&nbsp;
+    return providers;
+  }
+&nbsp;
+  private async tryGetPositionFromProviders(providers: IGeolocationPositionProvider[]): Promise&lt;IGeolocationPosition&gt; {
+    while (providers.length &gt; 0) {
+      const provider = providers.shift();
+      try {
+        const position = await provider.getPosition();
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (!!position.latitude &amp;&amp; !!position.longitude) {
+          return position;
+        }
+      } catch (error) {
+        this.logger.warn('An error occurred while trying to resolve the position within a position provider.', error);
+      }
+    }
+    return;
+  }
+&nbsp;
+  private triggerDistanceNotSet(): void {
+    this.isFirstPositionResolved = true;
+    this.logger.warn(
+      `None of the given position providers could resolve the current position. The distance field will not be calculated and the distance components will be disabled until the next call to 'setPosition'.`
+    );
+    this.bind.trigger(this.element, DistanceEvents.onPositionNotResolved, {});
+    this.disable();
+  }
+&nbsp;
+  private registerDistanceQuery(): void {
+    this.bind.onRootElement(QueryEvents.buildingQuery, (args: IBuildingQueryEventArgs) =&gt; {
+      if (this.isFirstPositionResolved) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (args &amp;&amp; args.queryBuilder) {
+          const geoQueryFunction: IQueryFunction = {
+            function: this.getConvertedUnitsFunction(
+              `dist(${this.options.latitudeField}, ${this.options.longitudeField}, ${this.latitude}, ${this.longitude})`
+            ),
+            fieldName: `${this.options.distanceField}`
+          };
+          args.queryBuilder.queryFunctions.push(geoQueryFunction);
+          this.enableDistanceComponents();
+        }
+      }
+    });
+  }
+&nbsp;
+  private enableDistanceComponents(): void {
+    $$(this.root)
+      .findAll(`.${this.options.disabledDistanceCssClass}`)
+      .forEach(element =&gt; {
+        try {
+          element.classList.remove(this.options.disabledDistanceCssClass);
+          const coveoComponent = get(element);
+          if (coveoComponent) {
+            coveoComponent.enable();
+          }
+        } catch (exception) {
+<span class="cstat-no" title="statement not covered" >          this.logger.error('Could not re-enable distance component.', exception, element);</span>
+        }
+      });
+  }
+&nbsp;
+  private getConvertedUnitsFunction(queryFunction: string): string {
+    return `${queryFunction}/${this.options.unitConversionFactor}`;
+  }
+}
+&nbsp;
+Initialization.registerAutoCreateComponent(DistanceResources);
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri May 10 2019 15:31:54 GMT+0000 (UTC)</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

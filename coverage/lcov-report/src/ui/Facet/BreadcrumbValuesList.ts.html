@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/ui/Facet/BreadcrumbValuesList.ts</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../../prettify.css">
+    <link rel="stylesheet" href="../../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header high">
+    <h1>Code coverage report for <span class="entity">src/ui/Facet/BreadcrumbValuesList.ts</span></h1>
+    <h2>
+        Statements: <span class="metric">98.48% <small>(65 / 66)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">83.33% <small>(5 / 6)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">100% <small>(16 / 16)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">98.28% <small>(57 / 58)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">src/ui/Facet/</a> &#187; BreadcrumbValuesList.ts</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-yes">27</span>
+<span class="cline-any cline-yes">27</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import * as Globalize from 'globalize';
+import { each, filter, first, map, rest } from 'underscore';
+import { Assert } from '../../misc/Assert';
+import { l } from '../../strings/Strings';
+import { $$ } from '../../utils/Dom';
+import { IBreadcrumbValueElementKlass } from './BreadcrumbValueElement';
+import { Facet } from './Facet';
+import { FacetValue } from './FacetValues';
+&nbsp;
+export class BreadcrumbValueList {
+  private expanded: FacetValue[];
+  private collapsed: FacetValue[];
+  protected elem: HTMLElement;
+  private valueContainer: HTMLElement;
+&nbsp;
+  constructor(public facet: Facet, public facetValues: FacetValue[], public breadcrumbValueElementKlass: IBreadcrumbValueElementKlass) {
+    this.setExpandedAndCollapsed();
+    this.elem = $$('div', {
+      className: 'coveo-facet-breadcrumb'
+    }).el;
+&nbsp;
+    const title = $$('span');
+    title.addClass('coveo-facet-breadcrumb-title');
+    title.text(this.facet.options.title + ':');
+    this.elem.appendChild(title.el);
+&nbsp;
+    this.valueContainer = $$('span', {
+      className: 'coveo-facet-breadcrumb-values'
+    }).el;
+&nbsp;
+    this.elem.appendChild(this.valueContainer);
+  }
+&nbsp;
+  public build(): HTMLElement {
+    this.buildExpanded();
+    if (this.collapsed.length != 0) {
+      this.buildCollapsed();
+    }
+    return this.elem;
+  }
+&nbsp;
+  public buildAsString(): string {
+    this.build();
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (this.elem) {
+      return (
+        `${this.facet.options.title}: ` +
+        map($$(this.elem).findAll('.coveo-facet-breadcrumb-value'), (value: HTMLElement) =&gt; {
+          return $$(value).text();
+        }).join(', ')
+      );
+    }
+<span class="cstat-no" title="statement not covered" >    return '';</span>
+  }
+&nbsp;
+  private buildExpanded() {
+    each(this.expanded, (value: FacetValue, index?: number) =&gt; {
+      const elementBreadcrumb = new this.breadcrumbValueElementKlass(this.facet, value).build();
+      this.valueContainer.appendChild(elementBreadcrumb.el);
+    });
+  }
+&nbsp;
+  private buildCollapsed() {
+    const numberOfSelected = filter(this.collapsed, (value: FacetValue) =&gt; value.selected).length;
+    const numberOfExcluded = filter(this.collapsed, (value: FacetValue) =&gt; value.excluded).length;
+    Assert.check(numberOfSelected + numberOfExcluded == this.collapsed.length);
+&nbsp;
+    const elem = $$('div', {
+      className: 'coveo-facet-breadcrumb-value'
+    });
+&nbsp;
+    const multiCount = $$('span', {
+      className: 'coveo-facet-breadcrumb-multi-count'
+    });
+&nbsp;
+    multiCount.text(l('NMore', Globalize.format(numberOfSelected + numberOfExcluded, 'n0')));
+    elem.append(multiCount.el);
+&nbsp;
+    const valueElements = map(this.collapsed, facetValue =&gt; {
+      return new this.breadcrumbValueElementKlass(this.facet, facetValue);
+    });
+&nbsp;
+    const toolTips = map(valueElements, valueElement =&gt; {
+      return valueElement.getBreadcrumbTooltip();
+    });
+&nbsp;
+    elem.el.setAttribute('title', toolTips.join('\n'));
+    elem.on('click', () =&gt; {
+      const elements: HTMLElement[] = [];
+      each(valueElements, valueElement =&gt; {
+        elements.push(valueElement.build().el);
+      });
+      each(elements, el =&gt; {
+        $$(el).insertBefore(elem.el);
+      });
+      elem.detach();
+    });
+&nbsp;
+    this.valueContainer.appendChild(elem.el);
+  }
+&nbsp;
+  private setExpandedAndCollapsed() {
+    if (this.facetValues.length &gt; this.facet.options.numberOfValuesInBreadcrumb) {
+      this.collapsed = rest(this.facetValues, this.facet.options.numberOfValuesInBreadcrumb);
+      this.expanded = first(this.facetValues, this.facet.options.numberOfValuesInBreadcrumb);
+    } else {
+      this.collapsed = [];
+      this.expanded = this.facetValues;
+    }
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri May 10 2019 15:31:54 GMT+0000 (UTC)</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

@@ -1,0 +1,537 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/ui/Quickview/QuickviewDocument.ts</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../../prettify.css">
+    <link rel="stylesheet" href="../../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header high">
+    <h1>Code coverage report for <span class="entity">src/ui/Quickview/QuickviewDocument.ts</span></h1>
+    <h2>
+        Statements: <span class="metric">93.51% <small>(72 / 77)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">75% <small>(6 / 8)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">90% <small>(9 / 10)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">92.96% <small>(66 / 71)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">src/ui/Quickview/</a> &#187; QuickviewDocument.ts</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import * as _ from 'underscore';
+import { IQuickviewLoadedEventArgs, QuickviewEvents } from '../../events/QuickviewEvents';
+import { IOpenQuickviewEventArgs } from '../../events/ResultListEvents';
+import { Assert } from '../../misc/Assert';
+import { IQuery } from '../../rest/Query';
+import { IQueryResult } from '../../rest/QueryResult';
+import { IViewAsHtmlOptions } from '../../rest/SearchEndpointInterface';
+import { $$ } from '../../utils/Dom';
+import { Utils } from '../../utils/Utils';
+import { Component } from '../Base/Component';
+import { IComponentBindings } from '../Base/ComponentBindings';
+import { ComponentOptions } from '../Base/ComponentOptions';
+import { Initialization } from '../Base/Initialization';
+import { QuickviewDocumentIframe } from './QuickviewDocumentIframe';
+import { QuickviewDocumentHeader } from './QuickviewDocumentHeader';
+import { QuickviewDocumentWords } from './QuickviewDocumentWords';
+import { each } from 'underscore';
+import { QuickviewDocumentWordButton } from './QuickviewDocumentWordButton';
+import { QuickviewDocumentPreviewBar } from './QuickviewDocumentPreviewBar';
+&nbsp;
+export const HIGHLIGHT_PREFIX = 'CoveoHighlight';
+&nbsp;
+export interface IQuickviewDocumentOptions {
+  maximumDocumentSize?: number;
+}
+&nbsp;
+/**
+ * The `QuickviewDocument` component normally exists within a [`Quickview`]{@link Quickview} component. The sole purpose
+ * of this component is to add an `&lt;iframe&gt;` which loads the correct HTML version of the current item.
+ *
+ * The default [`contentTemplate`]{@link Quickview.options.contentTemplate} of the
+ * `Quickview` component includes the `QuickviewDocument` component.
+ *
+ * This component is a result template component (see [Result Templates](https://developers.coveo.com/x/aIGfAQ)).
+ */
+export class QuickviewDocument extends Component {
+  static ID = 'QuickviewDocument';
+&nbsp;
+  /**
+   * The options for the component
+   * @componentOptions
+   */
+  static options: IQuickviewDocumentOptions = {
+    /**
+     * Specifies the maximum preview size that the index should return.
+     *
+     * Default value is `0`, and the index returns the entire preview. Minimum value is `0`.
+     */
+    maximumDocumentSize: ComponentOptions.buildNumberOption({ defaultValue: 0, min: 0 })
+  };
+&nbsp;
+  private iframe: QuickviewDocumentIframe;
+  private header: QuickviewDocumentHeader;
+  private termsToHighlightWereModified: boolean;
+&nbsp;
+  /**
+   * Creates a new `QuickviewDocument` component.
+   * @param element The HTMLElement on which to instantiate the component.
+   * @param options The options for the `QuickviewDocument` component.
+   * @param bindings The bindings that the component requires to function normally. If not set, these will be
+   * automatically resolved (with a slower execution time).
+   * @param result The current result.
+   */
+  constructor(
+    public element: HTMLElement,
+    public options?: IQuickviewDocumentOptions,
+    bindings?: IComponentBindings,
+    public result?: IQueryResult
+  ) {
+    super(element, QuickviewDocument.ID, bindings)<span class="branch-1 cbranch-no" title="branch not covered" >;</span>
+&nbsp;
+    this.options = ComponentOptions.initComponentOptions(element, QuickviewDocument, options);
+    this.result = result || <span class="branch-1 cbranch-no" title="branch not covered" >this.resolveResult();</span>
+    this.termsToHighlightWereModified = false;
+    Assert.exists(this.result);
+  }
+&nbsp;
+  public createDom() {
+    const container = $$('div', {
+      className: 'coveo-quickview-document'
+    });
+    this.element.appendChild(container.el);
+&nbsp;
+    this.header = new QuickviewDocumentHeader();
+    this.iframe = new QuickviewDocumentIframe();
+&nbsp;
+    container.append(this.header.el);
+    container.append(this.iframe.el);
+  }
+&nbsp;
+  public async open() {
+    this.ensureDom();
+&nbsp;
+    const beforeLoad = new Date().getTime();
+    const termsToHighlight = _.keys(this.result.termsToHighlight);
+&nbsp;
+    $$(this.element).trigger(QuickviewEvents.openQuickview, {
+      termsToHighlight
+    } as IOpenQuickviewEventArgs);
+&nbsp;
+    this.checkIfTermsToHighlightWereModified(termsToHighlight);
+&nbsp;
+    if (this.termsToHighlightWereModified) {
+      this.handleTermsToHighlight(termsToHighlight, this.query);
+    }
+&nbsp;
+    try {
+      const documentHTML = await this.queryController.getEndpoint().getDocumentHtml(this.result.uniqueId, {
+        queryObject: this.query,
+        requestedOutputSize: this.options.maximumDocumentSize
+      } as IViewAsHtmlOptions);
+&nbsp;
+      await this.iframe.render(documentHTML);
+&nbsp;
+      const documentWords = new QuickviewDocumentWords(this.iframe, this.result);
+      const previewBar = new QuickviewDocumentPreviewBar(this.iframe, documentWords);
+&nbsp;
+      each(documentWords.words, <span class="fstat-no" title="function not covered" >word </span>=&gt; {
+<span class="cstat-no" title="statement not covered" >        const button = new QuickviewDocumentWordButton(word, previewBar, this.iframe);</span>
+<span class="cstat-no" title="statement not covered" >        this.header.addWord(button);</span>
+      });
+&nbsp;
+      const afterLoad = new Date().getTime();
+&nbsp;
+      this.triggerQuickviewLoaded(afterLoad - beforeLoad);
+    } catch (error) {
+      await this.iframe.renderError(error);
+      const <span class="cstat-no" title="statement not covered" >afterLoad = new Date().getTime();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      this.triggerQuickviewLoaded(afterLoad - beforeLoad);</span>
+    }
+  }
+&nbsp;
+  private get query() {
+    return { ...this.queryController.getLastQuery() };
+  }
+&nbsp;
+  private triggerQuickviewLoaded(duration: number) {
+    $$(this.element).trigger(QuickviewEvents.quickviewLoaded, {
+      duration
+    } as IQuickviewLoadedEventArgs);
+  }
+&nbsp;
+  private handleTermsToHighlight(termsToHighlight: Array&lt;string&gt;, queryObject: IQuery) {
+    for (const term in this.result.termsToHighlight) {
+<span class="cstat-no" title="statement not covered" >      delete this.result.termsToHighlight[term];</span>
+    }
+    let query = '';
+    _.each(termsToHighlight, term =&gt; {
+      query += term + ' ';
+      this.result.termsToHighlight[term] = new Array&lt;string&gt;(term);
+    });
+    query = query.substring(0, query.length - 1);
+    queryObject.q = query;
+  }
+&nbsp;
+  private checkIfTermsToHighlightWereModified(termsToHighlight: Array&lt;string&gt;) {
+    if (!Utils.arrayEqual(termsToHighlight, _.keys(this.result.termsToHighlight))) {
+      this.termsToHighlightWereModified = true;
+    }
+  }
+}
+&nbsp;
+Initialization.registerAutoCreateComponent(QuickviewDocument);
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri May 10 2019 15:31:54 GMT+0000 (UTC)</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

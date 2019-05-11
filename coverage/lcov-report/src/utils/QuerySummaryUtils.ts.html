@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/utils/QuerySummaryUtils.ts</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../prettify.css">
+    <link rel="stylesheet" href="../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header high">
+    <h1>Code coverage report for <span class="entity">src/utils/QuerySummaryUtils.ts</span></h1>
+    <h2>
+        Statements: <span class="metric">100% <small>(60 / 60)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">91.67% <small>(11 / 12)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">100% <small>(14 / 14)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">100% <small>(59 / 59)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">src/utils/</a> &#187; QuerySummaryUtils.ts</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">49</span>
+<span class="cline-any cline-yes">49</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">49</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">43</span>
+<span class="cline-any cline-yes">43</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">64</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">59</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">64</span>
+<span class="cline-any cline-yes">64</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">64</span>
+<span class="cline-any cline-yes">12</span>
+<span class="cline-any cline-yes">12</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">59</span>
+<span class="cline-any cline-yes">59</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">59</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">64</span>
+<span class="cline-any cline-yes">64</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">64</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">62</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">60</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">64</span>
+<span class="cline-any cline-yes">64</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">64</span>
+<span class="cline-any cline-yes">64</span>
+<span class="cline-any cline-yes">64</span>
+<span class="cline-any cline-yes">64</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">64</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">128</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import * as Globalize from 'globalize';
+import { IQuerySuccessEventArgs } from '../events/QueryEvents';
+import { $$ } from './Dom';
+import { l } from '../strings/Strings';
+import { IQuery } from '../rest/Query';
+import { Component } from '../ui/Base/Component';
+import { any } from 'underscore';
+import { get } from '../ui/Base/RegisteredNamedMethods';
+import { IResultListOptions } from '../ui/ResultList/ResultListOptions';
+import { escape } from 'underscore';
+&nbsp;
+interface ISummaryStrings {
+  first: string;
+  last: string;
+  totalCount: string;
+  query: string;
+}
+&nbsp;
+interface ISummaryMessage {
+  includingQuery: string;
+  excludingQuery: string;
+}
+&nbsp;
+export class QuerySummaryUtils {
+  public static message(root: HTMLElement, data: IQuerySuccessEventArgs) {
+    const messageBuilder = QuerySummaryUtils.messageBuilderForMode(root);
+    const strings = QuerySummaryUtils.getSummaryStrings(data);
+&nbsp;
+    return messageBuilder(data, strings);
+  }
+&nbsp;
+  public static htmlMessage(root: HTMLElement, data: IQuerySuccessEventArgs) {
+    const messageBuilder = QuerySummaryUtils.messageBuilderForMode(root);
+    const strings = QuerySummaryUtils.getHtmlSummaryStrings(data);
+&nbsp;
+    return messageBuilder(data, strings);
+  }
+&nbsp;
+  public static replaceQueryTags(template: string, replacement: string) {
+    const queryTag = /\$\{query\}/g;
+    return template ? template.replace(queryTag, replacement) : <span class="branch-1 cbranch-no" title="branch not covered" >'';</span>
+  }
+&nbsp;
+  private static messageBuilderForMode(root: HTMLElement) {
+    if (QuerySummaryUtils.isInfiniteScrollMode(root)) {
+      return QuerySummaryUtils.buildInfiniteScrollMessage;
+    }
+&nbsp;
+    return QuerySummaryUtils.buildStandardMessage;
+  }
+&nbsp;
+  private static isInfiniteScrollMode(root: HTMLElement) {
+    const resultListSelector = `.${Component.computeCssClassNameForType('ResultList')}`;
+    const resultLists = $$(root).findAll(resultListSelector);
+&nbsp;
+    return any(resultLists, resultList =&gt; {
+      const options: IResultListOptions = (get(resultList) as any).options;
+      return options &amp;&amp; options.enableInfiniteScroll;
+    });
+  }
+&nbsp;
+  private static buildStandardMessage(data: IQuerySuccessEventArgs, strings: ISummaryStrings) {
+    const numOfResults = data.results.results.length;
+    const messages: ISummaryMessage = {
+      includingQuery: l('ShowingResultsOfWithQuery', strings.first, strings.last, strings.totalCount, strings.query, numOfResults),
+      excludingQuery: l('ShowingResultsOf', strings.first, strings.last, strings.totalCount, numOfResults)
+    };
+&nbsp;
+    return QuerySummaryUtils.buildMessage(data, messages);
+  }
+&nbsp;
+  private static buildInfiniteScrollMessage(data: IQuerySuccessEventArgs, strings: ISummaryStrings) {
+    const numOfResults = data.results.results.length;
+    const messages: ISummaryMessage = {
+      includingQuery: l('ShowingResultsWithQuery', strings.totalCount, strings.query, numOfResults),
+      excludingQuery: l('ShowingResults', strings.totalCount, numOfResults)
+    };
+&nbsp;
+    return QuerySummaryUtils.buildMessage(data, messages);
+  }
+&nbsp;
+  private static buildMessage(data: IQuerySuccessEventArgs, message: ISummaryMessage) {
+    const numOfResults = data.results.results.length;
+    const sanitizedQuery = QuerySummaryUtils.sanitizeQuery(data.query);
+&nbsp;
+    if (!numOfResults) {
+      return '';
+    }
+&nbsp;
+    return sanitizedQuery ? message.includingQuery : message.excludingQuery;
+  }
+&nbsp;
+  private static getHtmlSummaryStrings(data: IQuerySuccessEventArgs): ISummaryStrings {
+    const strings = QuerySummaryUtils.getSummaryStrings(data);
+&nbsp;
+    return {
+      first: QuerySummaryUtils.wrapWithSpanTag(strings.first),
+      last: QuerySummaryUtils.wrapWithSpanTag(strings.last),
+      totalCount: QuerySummaryUtils.wrapWithSpanTag(strings.totalCount),
+      query: QuerySummaryUtils.wrapWithSpanTag(strings.query)
+    };
+  }
+&nbsp;
+  private static wrapWithSpanTag(word: string) {
+    return $$('span', { className: 'coveo-highlight' }, word).el.outerHTML;
+  }
+&nbsp;
+  private static getSummaryStrings(data: IQuerySuccessEventArgs): ISummaryStrings {
+    const queryPerformed = data.query;
+    const queryResults = data.results;
+&nbsp;
+    const first = Globalize.format(queryPerformed.firstResult + 1, 'n0');
+    const last = Globalize.format(queryPerformed.firstResult + queryResults.results.length, 'n0');
+    const totalCount = Globalize.format(queryResults.totalCountFiltered, 'n0');
+    const query = QuerySummaryUtils.sanitizeQuery(queryPerformed);
+&nbsp;
+    return { first, last, totalCount, query };
+  }
+&nbsp;
+  private static sanitizeQuery(query: IQuery) {
+    return query.q ? escape(query.q.trim()) : '';
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri May 10 2019 15:31:54 GMT+0000 (UTC)</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

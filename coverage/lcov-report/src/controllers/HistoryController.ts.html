@@ -1,0 +1,909 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/controllers/HistoryController.ts</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../prettify.css">
+    <link rel="stylesheet" href="../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header high">
+    <h1>Code coverage report for <span class="entity">src/controllers/HistoryController.ts</span></h1>
+    <h2>
+        Statements: <span class="metric">94.94% <small>(150 / 158)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">84.09% <small>(37 / 44)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">81.82% <small>(18 / 22)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">95.39% <small>(145 / 152)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">src/controllers/</a> &#187; HistoryController.ts</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">23</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-yes">17</span>
+<span class="cline-any cline-yes">17</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-yes">37</span>
+<span class="cline-any cline-yes">37</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1254</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-yes">12</span>
+<span class="cline-any cline-yes">12</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">38</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">38</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">36</span>
+<span class="cline-any cline-yes">36</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17</span>
+<span class="cline-any cline-yes">17</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">50</span>
+<span class="cline-any cline-yes">50</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">50</span>
+<span class="cline-any cline-yes">50</span>
+<span class="cline-any cline-yes">50</span>
+<span class="cline-any cline-yes">611</span>
+<span class="cline-any cline-yes">611</span>
+<span class="cline-any cline-yes">611</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">50</span>
+<span class="cline-any cline-yes">50</span>
+<span class="cline-any cline-yes">50</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">611</span>
+<span class="cline-any cline-yes">611</span>
+<span class="cline-any cline-yes">611</span>
+<span class="cline-any cline-yes">611</span>
+<span class="cline-any cline-yes">611</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">611</span>
+<span class="cline-any cline-yes">575</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">611</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Assert } from '../misc/Assert';
+import { QueryController } from '../controllers/QueryController';
+import { QueryStateModel } from '../models/QueryStateModel';
+import { InitializationEvents } from '../events/InitializationEvents';
+import { $$ } from '../utils/Dom';
+import { HashUtils } from '../utils/HashUtils';
+import { Defer } from '../misc/Defer';
+import { RootComponent } from '../ui/Base/RootComponent';
+import { Utils } from '../utils/Utils';
+import * as _ from 'underscore';
+import { IStringMap } from '../rest/GenericParam';
+import { QUERY_STATE_ATTRIBUTES } from '../models/QueryStateModel';
+import { IAnalyticsClient } from '../ui/Analytics/AnalyticsClient';
+import { analyticsActionCauseList, IAnalyticsFacetMeta, IAnalyticsActionCause } from '../ui/Analytics/AnalyticsActionListMeta';
+import { logSearchBoxSubmitEvent, logSortEvent } from '../ui/Analytics/SharedAnalyticsCalls';
+import { Model } from '../models/Model';
+import { IHistoryManager } from './HistoryManager';
+&nbsp;
+/**
+ * This component is instantiated automatically by the framework on the root if the {@link SearchInterface}.&lt;br/&gt;
+ * When the {@link SearchInterface.options.enableHistory} option is set to true, this component is instantiated.&lt;br/&gt;
+ * It's only job is to apply changes in the {@link QueryStateModel} to the hash in the URL, and vice versa.&lt;br/&gt;
+ * This component does *not* hold the state of the interface, it only represent it in the URL.
+ */
+export class HistoryController extends RootComponent implements IHistoryManager {
+  static ID = 'HistoryController';
+&nbsp;
+  static attributesThatDoNotTriggerQuery = ['quickview'];
+&nbsp;
+  private ignoreNextHashChange = false;
+  private initialHashChange = false;
+  private willUpdateHash: boolean = false;
+  private hashchange: (...args: any[]) =&gt; void;
+  private lastState: IStringMap&lt;any&gt;;
+  private hashUtilsModule: typeof HashUtils;
+&nbsp;
+  /**
+   * Create a new HistoryController
+   * @param element
+   * @param window
+   * @param queryStateModel
+   * @param queryController
+   * @param usageAnalytics
+   */
+  constructor(
+    element: HTMLElement,
+    public window: Window,
+    public queryStateModel: QueryStateModel,
+    public queryController: QueryController,
+    public usageAnalytics?: IAnalyticsClient | undefined
+  ) {
+    super(element, HistoryController.ID)<span class="branch-1 cbranch-no" title="branch not covered" >;</span>
+&nbsp;
+    Assert.exists(this.queryStateModel);
+    Assert.exists(this.queryController);
+&nbsp;
+    $$(this.element).on(InitializationEvents.restoreHistoryState, () =&gt; {
+      this.logger.trace('Restore history state. Update model');
+      this.updateModelFromHash();
+      this.lastState = this.queryStateModel.getAttributes();
+    });
+&nbsp;
+    $$(this.element).on(this.queryStateModel.getEventName(Model.eventTypes.all), () =&gt; {
+      this.logger.trace('Query model changed. Update hash');
+      this.updateHashFromModel();
+    });
+&nbsp;
+    this.hashchange = () =&gt; {
+      this.handleHashChange();
+      this.lastState = this.queryStateModel.getAttributes();
+    };
+&nbsp;
+    this.window.addEventListener('hashchange', this.hashchange);
+    $$(this.element).on(InitializationEvents.nuke, <span class="fstat-no" title="function not covered" >() =&gt; <span class="cstat-no" title="statement not covered" ></span>this.handleNuke())</span>;
+  }
+&nbsp;
+  public set hashUtils(hashUtils: typeof HashUtils) {
+    this.hashUtilsModule = hashUtils;
+  }
+&nbsp;
+  public get hashUtils() {
+    return this.hashUtilsModule ? this.hashUtilsModule : HashUtils;
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  public setState(state: Record&lt;string, any&gt;)</span> {
+<span class="cstat-no" title="statement not covered" >    this.setHashValues(state);</span>
+  }
+&nbsp;
+  public replaceState(state: Record&lt;string, any&gt;) {
+    this.ignoreNextHashChange = true;
+    const hash = '#' + this.hashUtils.encodeValues(state);
+    this.window.location.replace(hash);
+  }
+&nbsp;
+  /**
+   * Set the given map of key value in the hash of the URL
+   * @param values
+   */
+  public setHashValues(values: {}) {
+    this.logger.trace('Update history hash');
+&nbsp;
+    const hash = '#' + this.hashUtils.encodeValues(values);
+    const hashHasChanged = this.window.location.hash != hash;
+    this.ignoreNextHashChange = hashHasChanged;
+&nbsp;
+    this.logger.trace('ignoreNextHashChange', this.ignoreNextHashChange);
+    this.logger.trace('initialHashChange', this.initialHashChange);
+    this.logger.trace('from', this.window.location.hash, 'to', hash);
+&nbsp;
+    if (this.initialHashChange) {
+      this.initialHashChange = false;
+      if (hashHasChanged) {
+        // Using replace avoids adding an entry in the History of the browser.
+        // This means that this new URL will become the new initial URL.
+        this.replaceState(values);
+        this.logger.trace('History hash modified', hash);
+      }
+    } else <span class="missing-if-branch" title="else path not taken" >E</span>if (hashHasChanged) {
+      this.window.location.hash = hash;
+      this.logger.trace('History hash created', hash);
+    }
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  public debugInfo() {</span>
+<span class="cstat-no" title="statement not covered" >    return {</span>
+      state: this.queryStateModel.getAttributes()
+    };
+  }
+&nbsp;
+  public handleHashChange() {
+    this.logger.trace('History hash changed');
+&nbsp;
+    if (this.ignoreNextHashChange) {
+      this.logger.trace('History hash change ignored');
+      this.ignoreNextHashChange = false;
+      return;
+    }
+&nbsp;
+    const attributesThatGotApplied = this.updateModelFromHash();
+    if (_.difference(attributesThatGotApplied, HistoryController.attributesThatDoNotTriggerQuery).length &gt; 0) {
+      <span class="missing-if-branch" title="else path not taken" >E</span>if (this.lastState) {
+        const differenceWithLastState = Utils.differenceBetweenObjects(this.queryStateModel.getAttributes(), this.lastState);
+        this.mapStateDifferenceToUsageAnalyticsCall(differenceWithLastState);
+      }
+      this.queryController.executeQuery();
+    }
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  private handleNuke() {</span>
+<span class="cstat-no" title="statement not covered" >    this.window.removeEventListener('hashchange', this.hashchange);</span>
+  }
+&nbsp;
+  private updateHashFromModel() {
+    this.logger.trace('Model -&gt; history hash');
+&nbsp;
+    if (!this.willUpdateHash) {
+      Defer.defer(() =&gt; {
+        const attributes = this.queryStateModel.getAttributes();
+        this.setHashValues(attributes);
+        this.logger.debug('Saving state to hash', attributes);
+        this.willUpdateHash = false;
+      });
+      this.willUpdateHash = true;
+    }
+  }
+&nbsp;
+  private updateModelFromHash() {
+    this.logger.trace('History hash -&gt; model');
+&nbsp;
+    const toSet: { [key: string]: any } = {};
+    const diff: string[] = [];
+    _.each(&lt;_.Dictionary&lt;any&gt;&gt;this.queryStateModel.attributes, (value, key?, obj?) =&gt; {
+      const valToSet = this.getHashValue(key);
+      toSet[key] = valToSet;
+      if (this.queryStateModel.get(key) != valToSet) {
+        diff.push(key);
+      }
+    });
+    this.initialHashChange = true;
+    this.queryStateModel.setMultiple(toSet);
+    return diff;
+  }
+&nbsp;
+  private getHashValue(key: string): any {
+    Assert.isNonEmptyString(key);
+    let value;
+    try {
+      const hash = this.hashUtils.getHash(this.window);
+      value = this.hashUtils.getValue(key, hash);
+    } catch (error) {
+      this.logger.error(`Could not parse parameter ${key} from URI`);
+    }
+&nbsp;
+    if (Utils.isUndefined(value)) {
+      value = this.queryStateModel.defaultAttributes[key];
+    }
+&nbsp;
+    return value;
+  }
+&nbsp;
+  private mapStateDifferenceToUsageAnalyticsCall(stateDifference: IStringMap&lt;any&gt;) {
+    // In this method, we want to only match a single analytics event for the current state change.
+    // Even though it's technically possible that many property changed at the same time since the last state,
+    // the backend UA service does not support multiple search cause for a single search event.
+    // So we find the first event that match (if any), by order of importance (query expression &gt; sort &gt; facet)
+&nbsp;
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (!this.usageAnalytics) {
+<span class="cstat-no" title="statement not covered" >      this.logger.warn("The query state has been modified directly in the URL and we couldn't log the proper analytics call.");</span>
+<span class="cstat-no" title="statement not covered" >      this.logger.warn('This is caused by an history controller that has been initialized without the usage analytics parameter.');</span>
+<span class="cstat-no" title="statement not covered" >      return;</span>
+    }
+&nbsp;
+    if (QUERY_STATE_ATTRIBUTES.Q in stateDifference) {
+      logSearchBoxSubmitEvent(this.usageAnalytics);
+      return;
+    } else if (QUERY_STATE_ATTRIBUTES.SORT in stateDifference) {
+      logSortEvent(this.usageAnalytics, stateDifference[QUERY_STATE_ATTRIBUTES.SORT]);
+      return;
+    } else {
+      // Facet id are not known at compilation time, so we iterate on all keys,
+      // and try to determine if at least one is linked to a facet selection or exclusion.
+      _.keys(stateDifference).forEach(key =&gt; {
+        const facetInfo = this.extractFacetInfoFromStateDifference(key);
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (facetInfo) {
+          this.usageAnalytics.logSearchEvent&lt;IAnalyticsFacetMeta&gt;(facetInfo.actionCause, {
+            facetId: facetInfo.fieldName,
+            facetField: facetInfo.fieldName,
+            facetTitle: facetInfo.fieldName,
+            facetValue: facetInfo.valueModified
+          });
+        }
+      });
+    }
+  }
+&nbsp;
+  private extractFacetInfoFromStateDifference(key: string) {
+    const regexForFacetInclusion = /f:(?!.*:not)(.*)/;
+    const matchForInclusion = regexForFacetInclusion.exec(key);
+&nbsp;
+    const regexForFacetExclusion = /f:(.*):not/;
+    const matchForExclusion = regexForFacetExclusion.exec(key);
+&nbsp;
+    const currentValue = this.queryStateModel.get(key) || <span class="branch-1 cbranch-no" title="branch not covered" >[];</span>
+    const lastValue = this.lastState[key] || [];
+&nbsp;
+    const valueRemoved = currentValue.length &lt; lastValue.length;
+    let valueModified;
+    if (valueRemoved) {
+      valueModified = _.first(_.difference(lastValue, currentValue));
+    } else {
+      valueModified = _.first(_.difference(currentValue, lastValue));
+    }
+&nbsp;
+    if (matchForInclusion) {
+      const fieldName = matchForInclusion[1];
+      let actionCause: IAnalyticsActionCause;
+      if (valueRemoved) {
+        actionCause = analyticsActionCauseList.facetDeselect;
+      } else {
+        actionCause = analyticsActionCauseList.facetSelect;
+      }
+&nbsp;
+      return {
+        fieldName,
+        actionCause,
+        valueModified
+      };
+    }
+&nbsp;
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (matchForExclusion) {
+      const fieldName = matchForExclusion[1];
+      let actionCause: IAnalyticsActionCause;
+      if (valueRemoved) {
+        actionCause = analyticsActionCauseList.facetUnexclude;
+      } else {
+        actionCause = analyticsActionCauseList.facetExclude;
+      }
+&nbsp;
+      return {
+        fieldName,
+        actionCause,
+        valueModified
+      };
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return null;</span>
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri May 10 2019 15:31:54 GMT+0000 (UTC)</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

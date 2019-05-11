@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/ui/Base/TemplateComponentOptions.ts</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../../prettify.css">
+    <link rel="stylesheet" href="../../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header high">
+    <h1>Code coverage report for <span class="entity">src/ui/Base/TemplateComponentOptions.ts</span></h1>
+    <h2>
+        Statements: <span class="metric">96.15% <small>(50 / 52)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">90% <small>(27 / 30)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">100% <small>(7 / 7)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">96% <small>(48 / 50)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">src/ui/Base/</a> &#187; TemplateComponentOptions.ts</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">606</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">305</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">305</span>
+<span class="cline-any cline-yes">305</span>
+<span class="cline-any cline-yes">305</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">305</span>
+<span class="cline-any cline-yes">304</span>
+<span class="cline-any cline-yes">304</span>
+<span class="cline-any cline-yes">304</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">305</span>
+<span class="cline-any cline-yes">301</span>
+<span class="cline-any cline-yes">301</span>
+<span class="cline-any cline-yes">300</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">301</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">305</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">302</span>
+<span class="cline-any cline-yes">302</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">297</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { TemplateCache } from '../Templates/TemplateCache';
+import { TemplateList } from '../Templates/TemplateList';
+import { UnderscoreTemplate } from '../Templates/UnderscoreTemplate';
+import { HtmlTemplate } from '../Templates/HtmlTemplate';
+import { Template } from '../Templates/Template';
+import { IComponentOptions, IComponentOptionsOption, ComponentOptions, ComponentOptionsType } from './ComponentOptions';
+import { Assert } from '../../misc/Assert';
+import { Utils } from '../../utils/Utils';
+import { compact, indexOf } from 'underscore';
+&nbsp;
+export interface IComponentOptionsTemplateOptionArgs extends IComponentOptions&lt;Template&gt; {
+  /**
+   * Specifies the CSS selector the template must match. The first matching element in the page is used as the template
+   * option value, if this element is a valid template.
+   *
+   * If specified, this parameter takes precedence over [`idAttr`]{@link IComponentOptionsTemplateOptionArgs.idAttr}.
+   */
+  selectorAttr?: string;
+&nbsp;
+  /**
+   * Specifies the CSS selector the templates must match. The list of all matching, valid elements in the page is used
+   * as the template option value.
+   *
+   * Default value is `.`, followed by the hyphened name of the template option being configured (e.g.,
+   * `.content-template`, `.result-template`, `.sub-result-template`, `.preview-template`, etc.).
+   */
+  childSelector?: string;
+&nbsp;
+  /**
+   * Specifies the HTML `id` attribute the template must match. The corresponding template must be registered in
+   * the [`TemplateCache`]{@link TemplateCache} to be usable as the template option value.
+   *
+   * If specified, this parameter takes precedence over
+   * [`childSelector`]{@link IComponentOptionsTemplateOptionArgs.childSelector}.
+   */
+  idAttr?: string;
+}
+&nbsp;
+export interface IComponentOptionsTemplateOption extends IComponentOptionsOption&lt;Template&gt;, IComponentOptionsTemplateOptionArgs {}
+&nbsp;
+export class TemplateComponentOptions {
+  /**
+   * Builds a template option.
+   *
+   * The option accepts a CSS selector matching a valid template. This selector can either be a class, or an ID
+   * selector.
+   *
+   * When building a template option using an ID selector, the matching template must be registered in the
+   * [`TemplateCache`]{@link TemplateCache}, however.
+   *
+   * **Markup Examples:**
+   *
+   * &gt; `data-foo-id="#bar"`
+   *
+   * &gt; `data-foo-selector=".bar"`
+   *
+   * @param optionArgs The arguments to apply when building the option.
+   * @returns {Template} The resulting option value.
+   */
+  static buildTemplateOption(optionArgs?: IComponentOptionsTemplateOptionArgs): Template {
+    return ComponentOptions.buildOption&lt;Template&gt;(ComponentOptionsType.TEMPLATE, TemplateComponentOptions.loadTemplateOption, optionArgs);
+  }
+&nbsp;
+  static loadTemplateOption(
+    element: HTMLElement,
+    name: string,
+    option: IComponentOptionsTemplateOption,
+    doc: Document = document
+  ): Template {
+    let template: Template;
+&nbsp;
+    // Attribute: template selector
+    const selectorAttr = option.selectorAttr || ComponentOptions.attrNameFromName(name, option) + '-selector';
+    const selector = element.getAttribute(selectorAttr) || ComponentOptions.getAttributeFromAlias(element, option);
+    if (selector != null) {
+      const templateElement = &lt;HTMLElement&gt;doc.querySelector(selector);
+      <span class="missing-if-branch" title="else path not taken" >E</span>if (templateElement != null) {
+        template = TemplateComponentOptions.createResultTemplateFromElement(templateElement);
+      }
+    }
+    // Attribute: template id
+    if (template == null) {
+      const idAttr = option.idAttr || ComponentOptions.attrNameFromName(name, option) + '-id';
+      const id = element.getAttribute(idAttr) || ComponentOptions.getAttributeFromAlias(element, option);
+      if (id != null) {
+        template = TemplateComponentOptions.loadResultTemplateFromId(id);
+      }
+    }
+    // Child
+    if (template == null) {
+      let childSelector = option.childSelector;
+      if (childSelector == null) {
+        childSelector = '.' + name.replace(/([A-Z])/g, '-$1').toLowerCase();
+      }
+      template = TemplateComponentOptions.loadChildrenResultTemplateFromSelector(element, childSelector);
+    }
+    return template;
+  }
+&nbsp;
+  static createResultTemplateFromElement(element: HTMLElement): Template {
+    Assert.exists(element);
+    const type = element.getAttribute('type');
+    const mimeTypes =
+      'You must specify the type of template. Valid values are:' +
+      ' ' +
+      UnderscoreTemplate.mimeTypes.toString() +
+      ' ' +
+      HtmlTemplate.mimeTypes.toString();
+    Assert.check(Utils.isNonEmptyString(type), mimeTypes);
+&nbsp;
+    if (indexOf(UnderscoreTemplate.mimeTypes, type.toLowerCase()) != -1) {
+      return UnderscoreTemplate.create(element);
+    } else <span class="missing-if-branch" title="else path not taken" >E</span>if (indexOf(HtmlTemplate.mimeTypes, type.toLowerCase()) != -1) {
+      return new HtmlTemplate(element);
+    } else {
+<span class="cstat-no" title="statement not covered" >      Assert.fail('Cannot guess template type from attribute: ' + type + '. Valid values are ' + mimeTypes);</span>
+<span class="cstat-no" title="statement not covered" >      return undefined;</span>
+    }
+  }
+&nbsp;
+  static loadResultTemplateFromId(templateId: string): Template {
+    return Utils.isNonEmptyString(templateId) ? TemplateCache.getTemplate(templateId) : <span class="branch-1 cbranch-no" title="branch not covered" >null;</span>
+  }
+&nbsp;
+  static loadChildrenResultTemplateFromSelector(element: HTMLElement, selector: string): Template {
+    const foundElements = ComponentOptions.loadChildrenHtmlElementFromSelector(element, selector);
+    if (foundElements.length &gt; 0) {
+      return new TemplateList(compact(foundElements.map(element =&gt; TemplateComponentOptions.createResultTemplateFromElement(element))));
+    }
+    return null;
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri May 10 2019 15:31:54 GMT+0000 (UTC)</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

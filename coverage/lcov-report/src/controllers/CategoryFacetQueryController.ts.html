@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/controllers/CategoryFacetQueryController.ts</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../prettify.css">
+    <link rel="stylesheet" href="../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header high">
+    <h1>Code coverage report for <span class="entity">src/controllers/CategoryFacetQueryController.ts</span></h1>
+    <h2>
+        Statements: <span class="metric">97.5% <small>(39 / 40)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">100% <small>(8 / 8)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">90% <small>(9 / 10)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">97.3% <small>(36 / 37)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">src/controllers/</a> &#187; CategoryFacetQueryController.ts</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">124</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">51</span>
+<span class="cline-any cline-yes">51</span>
+<span class="cline-any cline-yes">51</span>
+<span class="cline-any cline-yes">51</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">16</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">51</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">51</span>
+<span class="cline-any cline-yes">31</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">51</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">51</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { CategoryFacet } from '../ui/CategoryFacet/CategoryFacet';
+import { QueryBuilder } from '../ui/Base/QueryBuilder';
+import { ICategoryFacetRequest } from '../rest/CategoryFacetRequest';
+import { IGroupByRequest } from '../rest/GroupByRequest';
+import { AllowedValuesPatternType } from '../rest/AllowedValuesPatternType';
+import { IGroupByValue } from '../rest/GroupByValue';
+import { Utils } from '../utils/Utils';
+&nbsp;
+export class CategoryFacetQueryController {
+  constructor(private categoryFacet: CategoryFacet) {}
+&nbsp;
+  public putCategoryFacetInQueryBuilder(queryBuilder: QueryBuilder, path: string[], maximumNumberOfValues: number): number {
+    const positionInQuery = queryBuilder.categoryFacets.length;
+    this.addQueryFilter(queryBuilder, path);
+    this.addCategoryFacetRequest(queryBuilder, path, maximumNumberOfValues);
+    return positionInQuery;
+  }
+&nbsp;
+  public async searchFacetValues(value: string, numberOfValues: number): Promise&lt;IGroupByValue[]&gt; {
+    const lastQuery = { ...this.categoryFacet.queryController.getLastQuery() };
+&nbsp;
+    const groupByRequest: IGroupByRequest = {
+      allowedValues: [this.getAllowedValuesPattern(value)],
+      allowedValuesPatternType: AllowedValuesPatternType.Wildcards,
+      maximumNumberOfValues: numberOfValues,
+      field: this.categoryFacet.options.field as string,
+      sortCriteria: 'occurrences',
+      injectionDepth: this.categoryFacet.options.injectionDepth
+    };
+&nbsp;
+    lastQuery.groupBy = [groupByRequest];
+    lastQuery.categoryFacets.splice(this.categoryFacet.positionInQuery, 1);
+    const results = await this.categoryFacet.queryController.getEndpoint().search(lastQuery);
+&nbsp;
+    const sortByNumberOfResultsThenPathLength = (firstGroupByValue: IGroupByValue, secondGroupByValue: IGroupByValue) =&gt; {
+      if (firstGroupByValue.numberOfResults == secondGroupByValue.numberOfResults) {
+        return firstGroupByValue.value.length - secondGroupByValue.value.length;
+      }
+      return secondGroupByValue.numberOfResults - firstGroupByValue.numberOfResults;
+    };
+&nbsp;
+    return results.groupByResults[0].values.sort(sortByNumberOfResultsThenPathLength);
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  public addDebugGroupBy(queryBuilder: QueryBuilder, value: string)</span> {
+<span class="cstat-no" title="statement not covered" >    queryBuilder.groupByRequests.push({</span>
+      field: this.categoryFacet.options.field as string,
+      allowedValues: [`.*${Utils.escapeRegexCharacter(value)}.*`],
+      allowedValuesPatternType: AllowedValuesPatternType.Regex
+    });
+  }
+&nbsp;
+  private shouldAddFilterToQuery(path: string[]) {
+    return path.length != 0 &amp;&amp; !Utils.arrayEqual(path, this.categoryFacet.options.basePath);
+  }
+&nbsp;
+  private addQueryFilter(queryBuilder: QueryBuilder, path: string[]) {
+    if (this.shouldAddFilterToQuery(path)) {
+      queryBuilder.advancedExpression.addFieldExpression(this.categoryFacet.options.field as string, '==', [
+        path.join(this.categoryFacet.options.delimitingCharacter)
+      ]);
+    }
+  }
+&nbsp;
+  private addCategoryFacetRequest(queryBuilder: QueryBuilder, path: string[], maximumNumberOfValues: number) {
+    const categoryFacetsRequest: ICategoryFacetRequest = {
+      field: this.categoryFacet.options.field as string,
+      path,
+      injectionDepth: this.categoryFacet.options.injectionDepth,
+      maximumNumberOfValues,
+      delimitingCharacter: this.categoryFacet.options.delimitingCharacter
+    };
+    queryBuilder.categoryFacets.push(categoryFacetsRequest);
+  }
+&nbsp;
+  private getAllowedValuesPattern(value: string) {
+    const basePath = this.categoryFacet.options.basePath;
+    const delimiter = this.categoryFacet.options.delimitingCharacter;
+&nbsp;
+    if (Utils.isNonEmptyArray(basePath)) {
+      return `${basePath.join(delimiter)}${delimiter}*${value}*`;
+    }
+    return `*${value}*`;
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri May 10 2019 15:31:54 GMT+0000 (UTC)</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

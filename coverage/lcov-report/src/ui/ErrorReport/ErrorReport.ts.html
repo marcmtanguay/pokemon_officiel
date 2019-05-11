@@ -1,0 +1,1029 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/ui/ErrorReport/ErrorReport.ts</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../../prettify.css">
+    <link rel="stylesheet" href="../../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header high">
+    <h1>Code coverage report for <span class="entity">src/ui/ErrorReport/ErrorReport.ts</span></h1>
+    <h2>
+        Statements: <span class="metric">88.59% <small>(132 / 149)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">82.35% <small>(28 / 34)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">72.73% <small>(16 / 22)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">87.68% <small>(121 / 138)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">src/ui/ErrorReport/</a> &#187; ErrorReport.ts</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12</span>
+<span class="cline-any cline-yes">12</span>
+<span class="cline-any cline-yes">12</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12</span>
+<span class="cline-any cline-yes">12</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-yes">12</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10</span>
+<span class="cline-any cline-yes">10</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-yes">21</span>
+<span class="cline-any cline-yes">21</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-yes">21</span>
+<span class="cline-any cline-yes">21</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Component } from '../Base/Component';
+import { ComponentOptions } from '../Base/ComponentOptions';
+import { Dom, $$ } from '../../utils/Dom';
+import { IComponentBindings } from '../Base/ComponentBindings';
+import { QueryEvents, IQueryErrorEventArgs } from '../../events/QueryEvents';
+import { analyticsActionCauseList, IAnalyticsNoMeta } from '../Analytics/AnalyticsActionListMeta';
+import { l } from '../../strings/Strings';
+import { Assert } from '../../misc/Assert';
+import { Initialization } from '../Base/Initialization';
+import { IEndpointError } from '../../rest/EndpointError';
+import { MissingAuthenticationError } from '../../rest/MissingAuthenticationError';
+import { exportGlobally } from '../../GlobalExports';
+import 'styling/_ErrorReport';
+import { AccessibleButton } from '../../utils/AccessibleButton';
+&nbsp;
+export interface IErrorReportOptions {
+  showDetailedError: boolean;
+}
+&nbsp;
+/**
+ * The ErrorReport component takes care of handling fatal error when doing a query on the index / Search API.
+ *
+ * For example, the ErrorReport component displays a message when the service responds with a 401 or 503 error. This
+ * component also renders a small text area with the JSON content of the error response, for debugging purposes.
+ */
+export class ErrorReport extends Component {
+  static ID = 'ErrorReport';
+&nbsp;
+  static doExport = () =&gt; {
+    exportGlobally({
+      ErrorReport: ErrorReport
+    });
+  };
+&nbsp;
+  /**
+   * The options for the component
+   * @componentOptions
+   */
+  static options: IErrorReportOptions = {
+    /**
+     * Specifies whether to display a detailed error message as a JSON in a text content area.
+     *
+     * Default value is `true`.
+     */
+    showDetailedError: ComponentOptions.buildBooleanOption({ defaultValue: true })
+  };
+  private organizationId;
+  private message: Dom;
+  private container: Dom;
+  private helpSuggestion: Dom;
+  private closePopup: () =&gt; void;
+&nbsp;
+  /**
+   * Creates a new ErrorReport component.
+   * @param element The HTMLElement on which to instantiate the component.
+   * @param options The options for the ErrorReport component.
+   * @param bindings The bindings that the component requires to function normally. If not set, these will be
+   * automatically resolved (with a slower execution time).
+   */
+  constructor(public element: HTMLElement, public options?: IErrorReportOptions, bindings?: IComponentBindings) {
+    super(element, ErrorReport.ID, bindings)<span class="branch-1 cbranch-no" title="branch not covered" >;</span>
+    this.options = ComponentOptions.initComponentOptions(element, ErrorReport, options);
+    this.container = $$('div', { className: 'coveo-error-report-container' });
+    this.element.appendChild(this.container.el);
+&nbsp;
+    if (this.options.showDetailedError) {
+      this.message = $$('div', {
+        className: 'coveo-error-report-message'
+      });
+      this.container.append(this.message.el);
+    }
+    this.helpSuggestion = $$('div', {
+      className: 'coveo-error-report-help-suggestion'
+    });
+&nbsp;
+    $$(this.element).hide();
+&nbsp;
+    this.bind.onRootElement(QueryEvents.newQuery, () =&gt; this.handleNewQuery());
+    this.bind.onRootElement(QueryEvents.queryError, (data: IQueryErrorEventArgs) =&gt; this.handleQueryError(data));
+  }
+&nbsp;
+  /**
+   * Performs the "back" action in the browser.
+   * Also logs an `errorBack` event in the usage analytics.
+   */
+<span class="fstat-no" title="function not covered" >  public back(): void {</span>
+<span class="cstat-no" title="statement not covered" >    this.usageAnalytics.logCustomEvent&lt;IAnalyticsNoMeta&gt;(analyticsActionCauseList.errorBack, {}, this.root);</span>
+<span class="cstat-no" title="statement not covered" >    this.usageAnalytics.logSearchEvent&lt;IAnalyticsNoMeta&gt;(analyticsActionCauseList.errorBack, {});</span>
+<span class="cstat-no" title="statement not covered" >    history.back();</span>
+  }
+&nbsp;
+  /**
+   * Resets the current state of the query and triggers a new query.
+   * Also logs an `errorClearQuery` event in the usage analytics.
+   */
+  public reset(): void {
+    this.queryStateModel.reset();
+    this.usageAnalytics.logSearchEvent&lt;IAnalyticsNoMeta&gt;(analyticsActionCauseList.errorClearQuery, {});
+    this.usageAnalytics.logCustomEvent&lt;IAnalyticsNoMeta&gt;(analyticsActionCauseList.errorClearQuery, {}, this.root);
+    this.queryController.executeQuery();
+  }
+&nbsp;
+  /**
+   * Retries the same query, in case of a temporary service error.
+   * Also logs an `errorRetry` event in the usage analytics.
+   */
+  public retry(): void {
+    this.usageAnalytics.logSearchEvent&lt;IAnalyticsNoMeta&gt;(analyticsActionCauseList.errorRetry, {});
+    this.usageAnalytics.logCustomEvent&lt;IAnalyticsNoMeta&gt;(analyticsActionCauseList.errorRetry, {}, this.root);
+    this.queryController.executeQuery();
+  }
+&nbsp;
+  private buildOrGetTitleElements() {
+    const titleElement = $$(this.element).find('.coveo-error-report-title');
+&nbsp;
+    let title: Dom;
+    if (titleElement) {
+      title = $$(titleElement);
+    } else {
+      title = $$('div', { className: 'coveo-error-report-title' });
+      this.container.prepend(title.el);
+    }
+&nbsp;
+    let firstHeading = title.find('h1');
+&nbsp;
+    if (!firstHeading) {
+      firstHeading = $$('h1').el;
+      title.append(firstHeading);
+    }
+&nbsp;
+    let secondHeading = title.find('h2');
+    if (!secondHeading) {
+      secondHeading = $$('h2').el;
+      title.append(secondHeading);
+    }
+&nbsp;
+    return {
+      title,
+      h1: $$(firstHeading),
+      h2: $$(secondHeading)
+    };
+  }
+&nbsp;
+  private setErrorTitle(errorName?: string, helpSuggestion?: string): void {
+    const errorTitle = {
+      h1: errorName ? l(errorName) : l('OopsError'),
+      h2: helpSuggestion ? l(helpSuggestion) : l('ProblemPersists')
+    };
+&nbsp;
+    const { h1, h2 } = this.buildOrGetTitleElements();
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (h1 &amp;&amp; h2) {
+      $$(h1).text(errorTitle.h1);
+      $$(h2).text(errorTitle.h2);
+    }
+  }
+&nbsp;
+  private buildPrevious(): HTMLElement {
+    const previous = $$(
+      'span',
+      {
+        className: 'coveo-error-report-previous'
+      },
+      l('GoBack')
+    );
+&nbsp;
+    new AccessibleButton()
+      .withElement(previous)
+      .withSelectAction(<span class="fstat-no" title="function not covered" >() =&gt; <span class="cstat-no" title="statement not covered" ></span>this.back())</span>
+      .withLabel(l('GoBack'))
+      .build();
+&nbsp;
+    return previous.el;
+  }
+&nbsp;
+  private buildReset(): HTMLElement {
+    const reset = $$(
+      'span',
+      {
+        className: 'coveo-error-report-clear'
+      },
+      l('Reset')
+    );
+&nbsp;
+    new AccessibleButton()
+      .withElement(reset)
+      .withSelectAction(<span class="fstat-no" title="function not covered" >() =&gt; <span class="cstat-no" title="statement not covered" ></span>this.reset())</span>
+      .withLabel(l('Reset'))
+      .build();
+&nbsp;
+    return reset.el;
+  }
+&nbsp;
+  private buildRetry(): HTMLElement {
+    const retry = $$(
+      'span',
+      {
+        className: 'coveo-error-report-retry'
+      },
+      l('Retry')
+    );
+&nbsp;
+    new AccessibleButton()
+      .withElement(retry)
+      .withSelectAction(<span class="fstat-no" title="function not covered" >() =&gt; <span class="cstat-no" title="statement not covered" ></span>this.retry())</span>
+      .withLabel(l('Retry'))
+      .build();
+&nbsp;
+    return retry.el;
+  }
+&nbsp;
+  private handleNewQuery(): void {
+    $$(this.element).hide();
+    const { h1, h2 } = this.buildOrGetTitleElements();
+    h1.remove();
+    h2.remove();
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (this.closePopup != null) {
+<span class="cstat-no" title="statement not covered" >      this.closePopup();</span>
+    }
+  }
+&nbsp;
+  private handleQueryError(data: IQueryErrorEventArgs): void {
+    Assert.exists(data);
+    Assert.exists(data.error);
+&nbsp;
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (data.endpoint.options.queryStringArguments.organizationId) {
+      this.organizationId = data.endpoint.options.queryStringArguments.organizationId;
+    } else {
+<span class="cstat-no" title="statement not covered" >      this.organizationId = l('CoveoOrganization');</span>
+    }
+&nbsp;
+    // Do not display the panel if the error is for missing authentication. The
+    // appropriate authentication provider should take care of redirecting.
+    <span class="missing-if-branch" title="if path not taken" >I</span>if ((&lt;MissingAuthenticationError&gt;data.error).isMissingAuthentication) {
+<span class="cstat-no" title="statement not covered" >      return;</span>
+    }
+&nbsp;
+    switch (data.error.name) {
+      case 'NoEndpointsException':
+        this.options.showDetailedError = false;
+        this.buildEndpointErrorElements('http://www.coveo.com/go?dest=cloudhelp&amp;lcid=9&amp;context=257');
+        this.setErrorTitle(l('NoEndpoints', this.organizationId), l('AddSources'));
+        break;
+&nbsp;
+      case 'InvalidTokenException':
+        this.options.showDetailedError = false;
+        this.buildEndpointErrorElements('https://developers.coveo.com/x/XICE');
+        this.setErrorTitle(l('CannotAccess', this.organizationId), l('InvalidToken'));
+        break;
+&nbsp;
+      case 'GroupByAndFacetBothExistingException':
+        this.options.showDetailedError = false;
+        // TODO: add MLFacet documentation
+        this.setErrorTitle(undefined, l('GroupByAndFacetRequestsCannotCoexist'));
+        break;
+&nbsp;
+      default:
+        this.buildOptionsElement();
+        this.setErrorTitle();
+    }
+&nbsp;
+    if (this.options.showDetailedError) {
+      this.message.empty();
+      const moreInfo = $$(
+        'span',
+        {
+          className: 'coveo-error-report-more-info'
+        },
+        l('MoreInfo')
+      );
+&nbsp;
+      moreInfo.on('click', <span class="fstat-no" title="function not covered" >() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        moreInfo.empty();</span>
+<span class="cstat-no" title="statement not covered" >        this.message.el.appendChild(this.buildErrorInfo(data.error));</span>
+      });
+&nbsp;
+      this.message.el.appendChild(moreInfo.el);
+    }
+&nbsp;
+    $$(this.element).show();
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  private buildErrorInfo(data: IEndpointError)</span>: HTMLElement {
+<span class="cstat-no" title="statement not covered" >    const errorInfo = $$('div', {</span>
+      className: 'coveo-error-info'
+    });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    let textArea = $$('textarea', undefined, JSON.stringify(data, null, 2));</span>
+<span class="cstat-no" title="statement not covered" >    errorInfo.el.appendChild(textArea.el);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    const infoLabel = $$(</span>
+      'div',
+      {
+        className: 'coveo-error-info-label'
+      },
+      l('CopyPasteToSupport')
+    );
+<span class="cstat-no" title="statement not covered" >    errorInfo.el.appendChild(infoLabel.el);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return errorInfo.el;</span>
+  }
+&nbsp;
+  private buildOptionsElement() {
+    const oldOptions = this.container.find('.coveo-error-report-options');
+    if (oldOptions) {
+      $$(oldOptions).remove();
+    }
+    const optionsElement = $$('div', { className: 'coveo-error-report-options' });
+    optionsElement.el.appendChild(this.buildPrevious());
+    optionsElement.el.appendChild(this.buildReset());
+    optionsElement.el.appendChild(this.buildRetry());
+    this.container.append(optionsElement.el);
+  }
+&nbsp;
+  private buildEndpointErrorElements(<span class="missing-if-branch" title="if path not taken" >I</span>helpLink: string = 'http://www.coveo.com/go?dest=cloudhelp&amp;lcid=9&amp;context=254') {
+    this.helpSuggestion.empty();
+&nbsp;
+    const link = $$('a', {
+      href: helpLink,
+      className: 'coveo-error-report-help-link'
+    });
+&nbsp;
+    link.setHtml(l('CoveoOnlineHelp'));
+    this.helpSuggestion.append(link.el);
+    this.container.el.insertBefore(this.helpSuggestion.el, this.message.el);
+  }
+}
+&nbsp;
+Initialization.registerAutoCreateComponent(ErrorReport);
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri May 10 2019 15:31:54 GMT+0000 (UTC)</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

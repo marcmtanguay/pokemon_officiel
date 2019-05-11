@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/utils/DomUtils.ts</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../prettify.css">
+    <link rel="stylesheet" href="../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header medium">
+    <h1>Code coverage report for <span class="entity">src/utils/DomUtils.ts</span></h1>
+    <h2>
+        Statements: <span class="metric">70.83% <small>(51 / 72)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">85.71% <small>(12 / 14)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">70% <small>(7 / 10)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">69.57% <small>(48 / 69)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">src/utils/</a> &#187; DomUtils.ts</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">122</span>
+<span class="cline-any cline-yes">122</span>
+<span class="cline-any cline-yes">122</span>
+<span class="cline-any cline-yes">122</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">122</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">145</span>
+<span class="cline-any cline-yes">96</span>
+<span class="cline-any cline-yes">96</span>
+<span class="cline-any cline-yes">96</span>
+<span class="cline-any cline-yes">56</span>
+<span class="cline-any cline-yes">56</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">40</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">46</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">46</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { $$, Dom } from './Dom';
+import { IQueryResult } from '../rest/QueryResult';
+import { DateUtils } from './DateUtils';
+import { FileTypes } from '../ui/Misc/FileTypes';
+import { Utils } from './Utils';
+import { StringUtils } from './StringUtils';
+import { SVGIcons } from './SVGIcons';
+import { load } from '../ui/Base/RegisteredNamedMethods';
+import { Logger } from '../misc/Logger';
+import { IComponentBindings } from '../ui/Base/ComponentBindings';
+import { Initialization } from '../Core';
+export class DomUtils {
+<span class="fstat-no" title="function not covered" >  static getPopUpCloseButton(captionForClose: string, captionForReminder: string)</span>: string {
+<span class="cstat-no" title="statement not covered" >    let container = document.createElement('span');</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    let closeButton = document.createElement('span');</span>
+<span class="cstat-no" title="statement not covered" >    $$(closeButton).addClass('coveo-close-button');</span>
+<span class="cstat-no" title="statement not covered" >    container.appendChild(closeButton);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    let iconClose = document.createElement('span');</span>
+<span class="cstat-no" title="statement not covered" >    $$(iconClose).addClass('coveo-icon');</span>
+<span class="cstat-no" title="statement not covered" >    $$(iconClose).addClass('coveo-sprites-quickview-close');</span>
+<span class="cstat-no" title="statement not covered" >    closeButton.appendChild(iconClose);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    $$(closeButton).text(captionForClose);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    let closeReminder = document.createElement('span');</span>
+<span class="cstat-no" title="statement not covered" >    $$(closeReminder).addClass('coveo-pop-up-reminder');</span>
+<span class="cstat-no" title="statement not covered" >    $$(closeReminder).text(captionForReminder);</span>
+<span class="cstat-no" title="statement not covered" >    container.appendChild(closeReminder);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return container.outerHTML;</span>
+  }
+&nbsp;
+  static getBasicLoadingAnimation() {
+    let loadDotClass = 'coveo-loading-dot';
+    let dom = document.createElement('div');
+    dom.className = 'coveo-first-loading-animation';
+    dom.innerHTML = `&lt;div class='coveo-logo'&gt;${SVGIcons.icons.coveoLogo}&lt;/div&gt;
+    &lt;div class='coveo-loading-container'&gt;
+      &lt;div class='${loadDotClass}'&gt;&lt;/div&gt;
+      &lt;div class='${loadDotClass}'&gt;&lt;/div&gt;
+      &lt;div class='${loadDotClass}'&gt;&lt;/div&gt;
+      &lt;div class='${loadDotClass}'&gt;&lt;/div&gt;
+    &lt;/div&gt;`;
+    return dom;
+  }
+&nbsp;
+  static highlightElement(initialString: string, valueToSearch: string, classToApply: string = 'coveo-highlight'): string {
+    let regex = new RegExp(Utils.escapeRegexCharacter(StringUtils.latinize(valueToSearch)), 'i');
+    let firstChar = StringUtils.latinize(initialString).search(regex);
+    if (firstChar &gt;= 0) {
+      let lastChar = firstChar + valueToSearch.length;
+      return `${StringUtils.htmlEncode(initialString.slice(0, firstChar))}&lt;span class='${classToApply}'&gt;${StringUtils.htmlEncode(
+        initialString.slice(firstChar, lastChar)
+      )}&lt;/span&gt;${StringUtils.htmlEncode(initialString.slice(lastChar))}`;
+    } else {
+      return initialString;
+    }
+  }
+&nbsp;
+  static getLoadingSpinner(): HTMLElement {
+    let loading = $$('div', {
+      className: 'coveo-loading-spinner'
+    });
+    return loading.el;
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  static getModalBoxHeader(title: string)</span>: Dom {
+<span class="cstat-no" title="statement not covered" >    let header = $$('div');</span>
+<span class="cstat-no" title="statement not covered" >    header.el.innerHTML = `&lt;div class='coveo-modalbox-right-header'&gt;</span>
+        &lt;span class='coveo-modalbox-close-button'&gt;
+          &lt;span class='coveo-icon coveo-sprites-common-clear'&gt;&lt;/span&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div class='coveo-modalbox-left-header'&gt;
+        &lt;span class='coveo-modalbox-pop-up-reminder'&gt; ${title || ''}&lt;/span&gt;
+      &lt;/div&gt;`;
+<span class="cstat-no" title="statement not covered" >    return header;</span>
+  }
+&nbsp;
+  static getQuickviewHeader(result: IQueryResult, options: { showDate: boolean; title: string }, bindings: IComponentBindings): Dom {
+    let date = '';
+    if (options.showDate) {
+      const dateValueFromResult = Utils.getFieldValue(result, 'date');
+      if (dateValueFromResult) {
+        date = DateUtils.dateTimeToString(new Date(dateValueFromResult));
+      }
+    }
+    const fileType = FileTypes.get(result);
+    const header = $$('div');
+&nbsp;
+    header.el.innerHTML = `&lt;div class='coveo-quickview-right-header'&gt;
+        &lt;span class='coveo-quickview-time'&gt;${date}&lt;/span&gt;
+        &lt;span class='coveo-quickview-close-button'&gt;
+          &lt;span class='coveo-icon coveo-sprites-common-clear'&gt;&lt;/span&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div class='coveo-quickview-left-header'&gt;
+        &lt;span class='coveo-quickview-icon coveo-small ${fileType.icon}'&gt;&lt;/span&gt;
+      &lt;/div&gt;`;
+&nbsp;
+    const clickableLinkElement = $$('a', { className: 'coveo-quickview-pop-up-reminder' });
+&nbsp;
+    const toLoad = Coveo['Salesforce'] ? 'SalesforceResultLink' : 'ResultLink';
+    const resultForResultLink = { ...result };
+    if (options.title) {
+      resultForResultLink.title = options.title;
+    }
+&nbsp;
+    load(toLoad)
+      .then(() =&gt; {
+        clickableLinkElement.addClass(`Coveo${toLoad}`);
+        return Initialization.automaticallyCreateComponentsInsideResult(clickableLinkElement.el, resultForResultLink);
+      })
+      .catch(<span class="fstat-no" title="function not covered" >err </span>=&gt; {
+<span class="cstat-no" title="statement not covered" >        const logger = new Logger(this);</span>
+<span class="cstat-no" title="statement not covered" >        logger.error(`Failed to load module ${toLoad} : ${err}`);</span>
+<span class="cstat-no" title="statement not covered" >        logger.info(`Fallback on displaying a non clickable header`);</span>
+<span class="cstat-no" title="statement not covered" >        clickableLinkElement.text(options.title);</span>
+      })
+      .finally(() =&gt; {
+        $$(header.find('.coveo-quickview-left-header')).append(clickableLinkElement.el);
+      });
+&nbsp;
+    return header;
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri May 10 2019 15:31:54 GMT+0000 (UTC)</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

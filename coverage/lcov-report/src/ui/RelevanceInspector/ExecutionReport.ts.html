@@ -1,0 +1,645 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/ui/RelevanceInspector/ExecutionReport.ts</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../../prettify.css">
+    <link rel="stylesheet" href="../../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header high">
+    <h1>Code coverage report for <span class="entity">src/ui/RelevanceInspector/ExecutionReport.ts</span></h1>
+    <h2>
+        Statements: <span class="metric">97.14% <small>(102 / 105)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">57.14% <small>(16 / 28)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">100% <small>(7 / 7)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">96.63% <small>(86 / 89)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">src/ui/RelevanceInspector/</a> &#187; ExecutionReport.ts</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">51</span>
+<span class="cline-any cline-yes">51</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">51</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">51</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">51</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { ExecutionReportAuthenticationSection } from './ExecutionReportAuthenticationSection';
+import { ExecutionReportResolvedPipelineSection } from './ExecutionReportResolvedPipelineSection';
+import { ExecutionReportQueryOverrideSection } from './ExecutionReportQueryOverrideSection';
+import { ExecutionReportSimpleSection } from './ExecutionReportSimpleSection';
+import { ExecutionReportEffectiveIndexQuerySection } from './ExecutionReportEffectiveIndexQuerySection';
+import { IQueryResults } from '../../rest/QueryResults';
+import { $$, Dom } from '../../UtilsModules';
+import { IComponentBindings } from '../Base/ComponentBindings';
+import { IRelevanceInspectorTab } from './RelevanceInspector';
+import agGridModule = require('ag-grid/main');
+import { ExecutionReportRankingModifiers } from './ExecutionReportRankingModifiers';
+import { IResultsComponentBindings, Logger } from '../../Core';
+import { ExecutionReportITDSection } from './ExecutionReportITDSection';
+&nbsp;
+export interface IExecutionReport {
+  duration: number;
+  children: IExecutionReportSection[];
+}
+&nbsp;
+export interface IRankingExpressionExecutionReport {
+  expression: string;
+  modifer: number;
+  isConstant: boolean;
+}
+&nbsp;
+export enum EXECUTION_REPORT_SECTION {
+  PERFORM_AUTHENTICATION = 'PerformAuthentication',
+  RESOLVE_PIPELINE = 'ResolvePipeline',
+  QUERY_PARAM_OVERRIDE = 'ApplyQueryParamOverrideFeature',
+  THESAURUS = 'ApplyThesaurusFeature',
+  PREPROCESS_QUERY_EXPRESSION = 'PreprocessQueryExpression',
+  PREPROCESS_QUERY = 'PreprocessQuery',
+  STOP_WORDS = 'ApplyStopWordFeature',
+  FILTERS = 'ApplyFilterFeature',
+  RANKING = 'ApplyRankingFeature',
+  TOP_RESULT = 'ApplyTopResultFeature',
+  RANKING_WEIGHT = 'ApplyRankingWeightFeature',
+  INDEX_QUERY = 'Send query to index',
+  TOP_CLICKS = 'EvaluatingTopClicks',
+  PARTIAL_MATCH = 'PartialMatch',
+  NONE = 'NONE'
+}
+&nbsp;
+export interface IExecutionReportSection {
+  name: string;
+  duration: number;
+  result: Record&lt;string, any&gt;;
+  description: string;
+  children?: IExecutionReportSection[];
+  applied?: string[];
+}
+&nbsp;
+export interface IExecutionReportSectionBuilder {
+  build(executionReport: IExecutionReport): Promise&lt;{ container: Dom; gridOptions?: agGridModule.GridOptions }&gt;;
+}
+&nbsp;
+export class ExecutionReport implements IRelevanceInspectorTab {
+  public gridOptions: agGridModule.GridOptions;
+  constructor(public results: IQueryResults, public bindings: IComponentBindings) {}
+&nbsp;
+  public static standardSectionHeader(title: string) {
+    const container = $$('div');
+    container.append($$('h4', undefined, title).el);
+&nbsp;
+    const agGridElement = $$('div', {
+      className: 'ag-theme-fresh'
+    });
+    container.append(agGridElement.el);
+&nbsp;
+    return {
+      container,
+      agGridElement
+    };
+  }
+&nbsp;
+  public async build() {
+    if (!this.results.executionReport) {
+      new Logger(this).error(
+        'Could not open execution report : Missing execution report on results. Try executing the query in debug mode.'
+      );
+      return $$('div');
+    }
+&nbsp;
+    const container = $$('div', {
+      className: 'execution-report-debug'
+    });
+&nbsp;
+    const gridOptions: agGridModule.GridOptions[] = [];
+&nbsp;
+    const authenticationSection = await new ExecutionReportAuthenticationSection().build(this.results.executionReport);
+    container.append(authenticationSection.container.el);
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (authenticationSection.gridOptions) {
+<span class="cstat-no" title="statement not covered" >      gridOptions.push(authenticationSection.gridOptions);</span>
+    }
+&nbsp;
+    const resolvedPipelineSection = await new ExecutionReportResolvedPipelineSection().build(this.results.executionReport);
+    container.append(resolvedPipelineSection.container.el);
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (resolvedPipelineSection.gridOptions) {
+<span class="cstat-no" title="statement not covered" >      gridOptions.push(resolvedPipelineSection.gridOptions);</span>
+    }
+&nbsp;
+    const resolvedRankingModifiers = await new ExecutionReportRankingModifiers().build(
+      this.results.results,
+      this.results.rankingExpressions,
+      this.bindings as IResultsComponentBindings
+    );
+    container.append(resolvedRankingModifiers.container.el);
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (resolvedRankingModifiers.gridOptions) {
+      gridOptions.push(resolvedRankingModifiers.gridOptions);
+    }
+&nbsp;
+    const queryParamOverrideSection = await new ExecutionReportQueryOverrideSection().build(this.results.executionReport);
+    container.append(queryParamOverrideSection.container.el);
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (queryParamOverrideSection.gridOptions) {
+<span class="cstat-no" title="statement not covered" >      gridOptions.push(queryParamOverrideSection.gridOptions);</span>
+    }
+&nbsp;
+    const thesaurusSection = await new ExecutionReportSimpleSection(
+      EXECUTION_REPORT_SECTION.PREPROCESS_QUERY_EXPRESSION,
+      EXECUTION_REPORT_SECTION.THESAURUS,
+      'Thesaurus'
+    ).build(this.results.executionReport);
+&nbsp;
+    container.append(thesaurusSection.container.el);
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (thesaurusSection.gridOptions) {
+      gridOptions.push(thesaurusSection.gridOptions);
+    }
+&nbsp;
+    const stopWordsSection = await new ExecutionReportSimpleSection(
+      EXECUTION_REPORT_SECTION.PREPROCESS_QUERY_EXPRESSION,
+      EXECUTION_REPORT_SECTION.STOP_WORDS,
+      'Stop words'
+    ).build(this.results.executionReport);
+    container.append(stopWordsSection.container.el);
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (stopWordsSection.gridOptions) {
+      gridOptions.push(stopWordsSection.gridOptions);
+    }
+&nbsp;
+    const filtersSection = await new ExecutionReportSimpleSection(
+      EXECUTION_REPORT_SECTION.PREPROCESS_QUERY,
+      EXECUTION_REPORT_SECTION.FILTERS,
+      'Filters'
+    ).build(this.results.executionReport);
+    container.append(filtersSection.container.el);
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (filtersSection.gridOptions) {
+      gridOptions.push(filtersSection.gridOptions);
+    }
+&nbsp;
+    const rankingSection = await new ExecutionReportSimpleSection(
+      EXECUTION_REPORT_SECTION.PREPROCESS_QUERY,
+      EXECUTION_REPORT_SECTION.RANKING,
+      'Ranking'
+    ).build(this.results.executionReport);
+    container.append(rankingSection.container.el);
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (rankingSection.gridOptions) {
+      gridOptions.push(rankingSection.gridOptions);
+    }
+&nbsp;
+    const topResultsSection = await new ExecutionReportSimpleSection(
+      EXECUTION_REPORT_SECTION.PREPROCESS_QUERY,
+      EXECUTION_REPORT_SECTION.TOP_RESULT,
+      'Featured Results'
+    ).build(this.results.executionReport);
+    container.append(topResultsSection.container.el);
+&nbsp;
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (topResultsSection.gridOptions) {
+      gridOptions.push(topResultsSection.gridOptions);
+    }
+&nbsp;
+    const itdSection = await new ExecutionReportITDSection().build(this.results.executionReport);
+    container.append(itdSection.container.el);
+&nbsp;
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (itdSection.gridOptions) {
+      gridOptions.push(itdSection.gridOptions);
+    }
+&nbsp;
+    const rankingWeightsSection = await new ExecutionReportSimpleSection(
+      EXECUTION_REPORT_SECTION.PREPROCESS_QUERY,
+      EXECUTION_REPORT_SECTION.RANKING_WEIGHT,
+      'Ranking weights'
+    ).build(this.results.executionReport);
+    container.append(rankingWeightsSection.container.el);
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (rankingWeightsSection.gridOptions) {
+      gridOptions.push(rankingWeightsSection.gridOptions);
+    }
+&nbsp;
+    const indexQuerySection = await new ExecutionReportEffectiveIndexQuerySection().build(this.results.executionReport);
+    container.append(indexQuerySection.container.el);
+&nbsp;
+    this.gridOptions = {
+      api: {
+        sizeColumnsToFit: () =&gt; {
+          gridOptions.forEach(option =&gt; (option.api ? option.api.sizeColumnsToFit() : <span class="branch-1 cbranch-no" title="branch not covered" >null)</span>);
+        }
+      }
+    } as any;
+&nbsp;
+    return container;
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri May 10 2019 15:31:54 GMT+0000 (UTC)</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

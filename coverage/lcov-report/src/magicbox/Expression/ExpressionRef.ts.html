@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/magicbox/Expression/ExpressionRef.ts</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../../prettify.css">
+    <link rel="stylesheet" href="../../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header high">
+    <h1>Code coverage report for <span class="entity">src/magicbox/Expression/ExpressionRef.ts</span></h1>
+    <h2>
+        Statements: <span class="metric">95% <small>(57 / 60)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">88.89% <small>(32 / 36)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">85.71% <small>(6 / 7)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">94.44% <small>(51 / 54)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">src/magicbox/Expression/</a> &#187; ExpressionRef.ts</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1291</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">3388</span>
+<span class="cline-any cline-yes">3388</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3388</span>
+<span class="cline-any cline-yes">3192</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">196</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">3192</span>
+<span class="cline-any cline-yes">3192</span>
+<span class="cline-any cline-yes">3192</span>
+<span class="cline-any cline-yes">287</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">118</span>
+<span class="cline-any cline-yes">115</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">169</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2905</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">196</span>
+<span class="cline-any cline-yes">196</span>
+<span class="cline-any cline-yes">196</span>
+<span class="cline-any cline-yes">196</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">196</span>
+<span class="cline-any cline-yes">249</span>
+<span class="cline-any cline-yes">249</span>
+<span class="cline-any cline-yes">249</span>
+<span class="cline-any cline-yes">53</span>
+<span class="cline-any cline-yes">53</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">196</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">196</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">194</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">195</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Expression } from './Expression';
+import { Result } from '../Result/Result';
+import { Grammar } from '../Grammar';
+import { RefResult } from '../Result/RefResult';
+import { ExpressionEndOfInput } from './ExpressionEndOfInput';
+import _ = require('underscore');
+&nbsp;
+export class ExpressionRef implements Expression {
+  constructor(public ref: string, public occurrence: string | number, public id: string, public grammar: Grammar) {}
+&nbsp;
+  parse(input: string, end: boolean): Result {
+    var ref = this.grammar.getExpression(this.ref);
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (ref == null) {
+<span class="cstat-no" title="statement not covered" >      throw new Error('Expression not found:' + this.ref);</span>
+    }
+    if (this.occurrence == '?' || this.occurrence == null) {
+      return this.parseOnce(input, end, ref);
+    } else {
+      return this.parseMany(input, end, ref);
+    }
+  }
+&nbsp;
+  parseOnce(input: string, end: boolean, ref: Expression): Result {
+    var refResult = ref.parse(input, end);
+    var success = refResult.isSuccess();
+    if (!success &amp;&amp; this.occurrence == '?') {
+      if (end) {
+        // if end was found
+        if (input.length == 0) {
+          return new RefResult([], this, input, refResult);
+        }
+        // if end was not found and all error expression are EndOfInput, reparse with end = false.
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (_.all(refResult.getBestExpect(), expect =&gt; expect.expression == ExpressionEndOfInput)) {
+<span class="cstat-no" title="statement not covered" >          return new RefResult([new Result(null, ExpressionEndOfInput, input)], this, input, refResult);</span>
+        }
+        return refResult;
+      }
+      // the ref is not required and it do not need to end the input
+      return new RefResult([], this, input, null);
+    }
+    return new RefResult([refResult], this, input, success ? null : refResult);
+  }
+&nbsp;
+  parseMany(input: string, end: boolean, ref: Expression) {
+    var subResults: Result[] = [];
+    var subResult: Result;
+    var subInput = input;
+    var success: boolean;
+&nbsp;
+    // try to parse until it do not match, do not manage the end yet
+    do {
+      subResult = ref.parse(subInput, false);
+      success = subResult.isSuccess();
+      if (success) {
+        subResults.push(subResult);
+        subInput = subInput.substr(subResult.getLength());
+      }
+    } while (success &amp;&amp; subResult.input != subInput);
+&nbsp;
+    // minimal occurance of a ref
+    var requiredOccurance = _.isNumber(this.occurrence) ? &lt;number&gt;<span class="branch-0 cbranch-no" title="branch not covered" >this.occurrence </span>: this.occurrence == '+' ? 1 : 0;
+&nbsp;
+    // if the minimal occurance is not reached add the fail result to the list
+    if (subResults.length &lt; requiredOccurance) {
+      subResults.push(subResult);
+    } else if (end) {
+      // if there is at least one match, check if the last match is at the end
+      if (subResults.length &gt; 0) {
+        var last = _.last(subResults);
+        subResult = ref.parse(last.input, true);
+        if (subResult.isSuccess()) {
+          // if successful, replace the last subResult by the one with end
+          subResults[subResults.length - 1] = subResult;
+        } else {
+          // if not successful, we keep the last successful result and we add a endOfInputExpected Result after it
+          subResults.push(new Result(null, ExpressionEndOfInput, last.input.substr(last.getLength())));
+          // we parse back the last with the length of the successful Result (at the same place we put the endOfInputExpected) and put it in failAttempt
+          subResult = ref.parse(last.input.substr(last.getLength()), true);
+        }
+      } else <span class="missing-if-branch" title="else path not taken" >E</span>if (input.length != 0) {
+        // if there is no result at all and we are not at the end, return a endOfInputExpected Result
+        var endOfInput = new Result(null, ExpressionEndOfInput, input);
+        return new RefResult([endOfInput], this, input, subResult);
+      }
+    }
+    return new RefResult(subResults, this, input, subResult);
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  public toString() {</span>
+<span class="cstat-no" title="statement not covered" >    return this.id;</span>
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri May 10 2019 15:31:54 GMT+0000 (UTC)</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

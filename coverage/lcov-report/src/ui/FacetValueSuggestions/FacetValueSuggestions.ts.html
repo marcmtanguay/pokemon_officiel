@@ -1,0 +1,879 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/ui/FacetValueSuggestions/FacetValueSuggestions.ts</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../../prettify.css">
+    <link rel="stylesheet" href="../../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header high">
+    <h1>Code coverage report for <span class="entity">src/ui/FacetValueSuggestions/FacetValueSuggestions.ts</span></h1>
+    <h2>
+        Statements: <span class="metric">97.17% <small>(103 / 106)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">80.77% <small>(21 / 26)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">95.83% <small>(23 / 24)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">96.77% <small>(90 / 93)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">src/ui/FacetValueSuggestions/</a> &#187; FacetValueSuggestions.ts</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">20</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">20</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">23</span>
+<span class="cline-any cline-yes">23</span>
+<span class="cline-any cline-yes">23</span>
+<span class="cline-any cline-yes">23</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">21</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">20</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">20</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">20</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">20</span>
+<span class="cline-any cline-yes">20</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">20</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">21</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">21</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">21</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">16</span>
+<span class="cline-any cline-yes">16</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">21</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">21</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">21</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">19</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">19</span>
+<span class="cline-any cline-yes">18</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">19</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">19</span>
+<span class="cline-any cline-yes">19</span>
+<span class="cline-any cline-yes">28</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">24</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">28</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">19</span>
+<span class="cline-any cline-yes">19</span>
+<span class="cline-any cline-yes">19</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">19</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">19</span>
+<span class="cline-any cline-yes">18</span>
+<span class="cline-any cline-yes">18</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">24</span>
+<span class="cline-any cline-yes">24</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">24</span>
+<span class="cline-any cline-yes">24</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Omnibox, IOmniboxSuggestion } from '../Omnibox/Omnibox';
+import { Component } from '../Base/Component';
+import { ComponentOptions, IFieldOption } from '../Base/ComponentOptions';
+import { IComponentBindings } from '../Base/ComponentBindings';
+import { OmniboxEvents, IPopulateOmniboxSuggestionsEventArgs } from '../../events/OmniboxEvents';
+import { Initialization } from '../Base/Initialization';
+import { analyticsActionCauseList, IAnalyticsNoMeta } from '../Analytics/AnalyticsActionListMeta';
+import { $$ } from '../../utils/Dom';
+import { exportGlobally } from '../../GlobalExports';
+import 'styling/_FieldSuggestions';
+import * as _ from 'underscore';
+import { SuggestionsCache } from '../../misc/SuggestionsCache';
+import { QueryStateModel } from '../../ModelsModules';
+import { DomUtils } from '../../UtilsModules';
+import { IFacetValueSuggestionRow, FacetValueSuggestionsProvider, IFacetValueSuggestionsProvider } from './FacetValueSuggestionsProvider';
+import { l } from '../../MiscModules';
+&nbsp;
+export interface IFacetValueSuggestionsOptions {
+  numberOfSuggestions: number;
+  field?: IFieldOption;
+  useQuerySuggestions?: boolean;
+  useValueFromSearchbox?: boolean;
+  displayEstimateNumberOfResults?: boolean;
+  templateHelper?: (row: IFacetValueSuggestionRow, omnibox: Omnibox) =&gt; string;
+}
+&nbsp;
+/**
+ * The `FieldValueSuggestions` component provides query suggestions based on a particular field values.
+ *
+ * For example, if you use a `@category` field, this component will provide suggestions for categories that returns results for the given keywords.
+ *
+ * The query suggestions provided by this component appear in the [`Omnibox`]{@link Omnibox} component.
+ */
+export class FacetValueSuggestions extends Component {
+  static ID = 'FacetValueSuggestions';
+&nbsp;
+  static doExport = () =&gt; {
+    exportGlobally({
+      FacetValueSuggestions: FacetValueSuggestions
+    });
+  };
+&nbsp;
+  /**
+   * @componentOptions
+   */
+  static options: IFacetValueSuggestionsOptions = {
+    /**
+     * Specifies the facet field from which to provide suggestions.
+     *
+     * Specifying a value for this option is required for the `FieldValueSuggestions` component to work.
+     */
+    field: ComponentOptions.buildFieldOption({ required: true }),
+&nbsp;
+    /**
+     * Specifies the number of suggestions to render in the [`Omnibox`]{@link Omnibox}.
+     *
+     * Default value is `5`. Minimum value is `1`.
+     */
+    numberOfSuggestions: ComponentOptions.buildNumberOption({ defaultValue: 5, min: 1 }),
+&nbsp;
+    /**
+     * Specifies whether to use query suggestions as keywords to get facet values suggestions.
+     *
+     * Default value is `true`.
+     *
+     * **Note:**
+     * This option requires that the `enableQuerySuggestAddon` is set to `true` in the [`Omnibox`]{@link Omnibox} component.
+     */
+    useQuerySuggestions: ComponentOptions.buildBooleanOption({ defaultValue: true }),
+&nbsp;
+    /**
+     * Specifies whether to use the current value from the search box to get facet values suggestions.
+     *
+     * Default value is `true` if [`useQuerySuggestions`]{@link useQuerySuggestions} is disabled, `false` otherwise.
+     */
+    useValueFromSearchbox: ComponentOptions.buildBooleanOption({
+      postProcessing: (value, options: IFacetValueSuggestionsOptions) =&gt; {
+        return value || !options.useQuerySuggestions;
+      }
+    }),
+&nbsp;
+    /**
+     * Specifies whether to display the number of results in each of the suggestions.
+     *
+     * Default value is `false`.
+     *
+     * **Note:**
+     * The number of results is an estimate.
+     *
+     * On a Standalone Search Interface, if you are redirecting on a Search Interface that has different filters,
+     *  the number of results on the Standalone Search Interface will be inaccurate.
+     *
+     * Setting this option has no effect when the `templateHelper` options is set.
+     */
+    displayEstimateNumberOfResults: ComponentOptions.buildBooleanOption({ defaultValue: false }),
+&nbsp;
+    /**
+     * Specifies the helper function to execute when generating suggestions shown to the end user in the
+     * [`Omnibox`]{@link Omnibox}.
+     *
+     * If not specified, a default template will be used.
+     *
+     * **Note:**
+     * &gt; You cannot set this option directly in the component markup as an HTML attribute. You must either set it in the
+     * &gt; [`init`]{@link init} call of your search interface (see
+     * &gt; [Components - Passing Component Options in the init Call](https://developers.coveo.com/x/PoGfAQ#Components-PassingComponentOptionsintheinitCall)),
+     * &gt; or before the `init` call, using the `options` top-level function (see
+     * &gt; [Components - Passing Component Options Before the init Call](https://developers.coveo.com/x/PoGfAQ#Components-PassingComponentOptionsBeforetheinitCall)).
+     *
+     * **Example:**
+     *
+     * ```javascript
+     *
+     * var suggestionTemplate = function(row, omnibox) {
+     *   return "Searching for " + row.keyword + " in category " + row.value;
+     * };
+     *
+     * // You can set the option in the 'init' call:
+     * Coveo.init(document.querySelector("#search"), {
+     *    FacetValueSuggestions : {
+     *      templateHelper : suggestionTemplate
+     *    }
+     * });
+     *
+     * // Or before the 'init' call, using the 'options' top-level function:
+     * // Coveo.options(document.querySelector("#search"), {
+     * //   FacetValueSuggestions : {
+     * //     templateHelper : suggestionTemplate
+     * //   }
+     * // });
+     * ```
+     */
+    templateHelper: ComponentOptions.buildCustomOption&lt;(row: IFacetValueSuggestionRow, omnibox: Omnibox) =&gt; string&gt;(<span class="fstat-no" title="function not covered" >() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      return null;</span>
+    })
+  };
+&nbsp;
+  public fieldValueCache: SuggestionsCache&lt;IFacetValueSuggestionRow[]&gt; = new SuggestionsCache();
+&nbsp;
+  public facetValueSuggestionsProvider: IFacetValueSuggestionsProvider;
+&nbsp;
+  private queryStateFieldFacetId;
+&nbsp;
+  static defaultTemplate(this: FacetValueSuggestions, row: IFacetValueSuggestionRow, omnibox: Omnibox): string {
+    const keyword = DomUtils.highlightElement(row.keyword, omnibox.getText(), 'coveo-omnibox-hightlight2');
+    const facetValue = DomUtils.highlightElement(row.value, row.value, 'coveo-omnibox-hightlight');
+    const details = this.options.displayEstimateNumberOfResults ? <span class="branch-0 cbranch-no" title="branch not covered" >` (${l('ResultCount', row.numberOfResults.toString())})` </span>: '';
+    return `${l('KeywordInCategory', keyword, facetValue)}${details}`;
+  }
+&nbsp;
+  /**
+   * Creates a new `FieldSuggestions` component.
+   * @param element The HTMLElement on which to instantiate the component.
+   * @param options The options for the `FieldSuggestions` component.
+   * @param bindings The bindings that the component requires to function normally. If not set, these will be
+   * automatically resolved (with a slower execution time).
+   */
+  constructor(element: HTMLElement, public options: IFacetValueSuggestionsOptions, bindings?: IComponentBindings) {
+    super(element, FacetValueSuggestions.ID, bindings)<span class="branch-1 cbranch-no" title="branch not covered" >;</span>
+&nbsp;
+    this.options = ComponentOptions.initComponentOptions(element, FacetValueSuggestions, options);
+&nbsp;
+    this.facetValueSuggestionsProvider = new FacetValueSuggestionsProvider(this.queryController, {
+      field: &lt;string&gt;this.options.field
+    });
+    this.queryStateFieldFacetId = `f:${this.options.field}`;
+&nbsp;
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (!this.options.templateHelper) {
+      this.options.templateHelper = FacetValueSuggestions.defaultTemplate;
+    }
+&nbsp;
+    $$(this.root).on(OmniboxEvents.populateOmniboxSuggestions, (e: Event, args: IPopulateOmniboxSuggestionsEventArgs) =&gt; {
+      args.suggestions.push(this.getSuggestions(args.omnibox));
+    });
+  }
+&nbsp;
+  public async getSuggestions(omnibox: Omnibox): Promise&lt;IOmniboxSuggestion[]&gt; {
+    if (this.options.numberOfSuggestions == 0) {
+      return [];
+    }
+&nbsp;
+    const text = omnibox.getText();
+&nbsp;
+    const suggestions: IOmniboxSuggestion[] = await this.getFacetValueSuggestions(text, omnibox);
+&nbsp;
+    return suggestions || <span class="branch-1 cbranch-no" title="branch not covered" >[];</span>
+  }
+&nbsp;
+  private async getQuerySuggestionsKeywords(omnibox: Omnibox): Promise&lt;string[]&gt; {
+    if (this.options.useQuerySuggestions &amp;&amp; omnibox.suggestionAddon) {
+      const suggestions = (await omnibox.suggestionAddon.getSuggestion()) || <span class="branch-1 cbranch-no" title="branch not covered" >[];</span>
+      return suggestions.map(s =&gt; s.text);
+    } else {
+      return [];
+    }
+  }
+&nbsp;
+  private async getFacetValueSuggestions(text: string, omnibox: Omnibox): Promise&lt;IOmniboxSuggestion[]&gt; {
+    const wordsToQuery = this.options.useValueFromSearchbox ? [text] : [];
+&nbsp;
+    const suggestionsKeywords: string[] = await this.getQuerySuggestionsKeywords(omnibox);
+    const allWordsToQuery = _.unique(wordsToQuery.concat(suggestionsKeywords).filter(value =&gt; value != ''));
+&nbsp;
+    if (allWordsToQuery.length === 0) {
+      return [];
+    }
+&nbsp;
+    return this.getSuggestionsForWords(allWordsToQuery, omnibox);
+  }
+&nbsp;
+  private async getSuggestionsForWords(wordsToQuery: string[], omnibox: Omnibox): Promise&lt;IOmniboxSuggestion[]&gt; {
+    try {
+      const suggestions = await this.fieldValueCache.getSuggestions(`fv${wordsToQuery.join('')}`, () =&gt;
+        this.facetValueSuggestionsProvider.getSuggestions(wordsToQuery)
+      );
+&nbsp;
+      this.logger.debug('FacetValue Suggestions Results', suggestions);
+&nbsp;
+      const currentSelectedValues: string[] = this.queryStateModel.get(this.queryStateFieldFacetId) || [];
+      const filteredSuggestions = suggestions.filter(suggestion =&gt;
+        this.isSuggestionRowAlreadyCheckedInFacet(suggestion, currentSelectedValues)
+      );
+      return this.rankSuggestionRows(filteredSuggestions).map(result =&gt; this.mapFacetValueSuggestion(result, omnibox));
+    } catch (error) {
+<span class="cstat-no" title="statement not covered" >      this.logger.error(error);</span>
+<span class="cstat-no" title="statement not covered" >      return [];</span>
+    }
+  }
+&nbsp;
+  private isSuggestionRowAlreadyCheckedInFacet(suggestion: IFacetValueSuggestionRow, currentlySelectedValues: string[]): boolean {
+    return !currentlySelectedValues.some(value =&gt; value == suggestion.value);
+  }
+&nbsp;
+  private rankSuggestionRows(suggestions: IFacetValueSuggestionRow[]): IFacetValueSuggestionRow[] {
+    const rankedResults = [...suggestions.sort((a, b) =&gt; b.score.distanceFromTotalForField - a.score.distanceFromTotalForField)];
+    const firstSlice = Math.ceil(this.options.numberOfSuggestions / 2);
+    const lastSlice = -Math.floor(this.options.numberOfSuggestions / 2);
+&nbsp;
+    const firstResultsToReturn = rankedResults.splice(0, firstSlice);
+&nbsp;
+    if (lastSlice != 0) {
+      const lastResultsToReturn = rankedResults.slice(lastSlice);
+      return [...firstResultsToReturn, ...lastResultsToReturn];
+    }
+&nbsp;
+    return firstResultsToReturn;
+  }
+&nbsp;
+  private mapFacetValueSuggestion(resultToShow: IFacetValueSuggestionRow, omnibox: Omnibox) {
+    return &lt;IOmniboxSuggestion&gt;{
+      html: this.buildDisplayNameForRow(resultToShow, omnibox),
+      onSelect: () =&gt; this.onRowSelection(resultToShow, omnibox)
+    };
+  }
+&nbsp;
+  private buildDisplayNameForRow(row: IFacetValueSuggestionRow, omnibox: Omnibox): string {
+    try {
+      return this.options.templateHelper.call(this, row, omnibox);
+    } catch (ex) {
+      this.logger.error('Could not apply template from options for the given row. Will use default template.', ex, row, omnibox);
+      return FacetValueSuggestions.defaultTemplate.call(this, row, omnibox);
+    }
+  }
+&nbsp;
+  private onRowSelection(row: IFacetValueSuggestionRow, omnibox: Omnibox): void {
+    omnibox.setText(row.keyword);
+    // Copy the state here, else it will directly modify queryStateModel.defaultAttributes.fv.
+    const fvState: { [key: string]: string[] } = { ...this.queryStateModel.get(QueryStateModel.attributesEnum.fv) };
+    const existingValues: string[] = fvState[this.options.field.toString()] || [];
+    fvState[this.options.field.toString()] = existingValues.concat([row.value]);
+    this.queryStateModel.set(QueryStateModel.attributesEnum.fv, fvState);
+    omnibox.magicBox.blur();
+    this.usageAnalytics.logSearchEvent&lt;IAnalyticsNoMeta&gt;(analyticsActionCauseList.omniboxField, {});
+    this.queryController.executeQuery();
+  }
+}
+&nbsp;
+Initialization.registerAutoCreateComponent(FacetValueSuggestions);
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri May 10 2019 15:31:54 GMT+0000 (UTC)</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

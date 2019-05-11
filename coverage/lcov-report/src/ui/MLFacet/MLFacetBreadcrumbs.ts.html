@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/ui/MLFacet/MLFacetBreadcrumbs.ts</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../../prettify.css">
+    <link rel="stylesheet" href="../../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header high">
+    <h1>Code coverage report for <span class="entity">src/ui/MLFacet/MLFacetBreadcrumbs.ts</span></h1>
+    <h2>
+        Statements: <span class="metric">100% <small>(47 / 47)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">100% <small>(2 / 2)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">100% <small>(12 / 12)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">100% <small>(39 / 39)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">src/ui/MLFacet/</a> &#187; MLFacetBreadcrumbs.ts</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17</span>
+<span class="cline-any cline-yes">17</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">17</span>
+<span class="cline-any cline-yes">17</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17</span>
+<span class="cline-any cline-yes">17</span>
+<span class="cline-any cline-yes">17</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">17</span>
+<span class="cline-any cline-yes">17</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">19</span>
+<span class="cline-any cline-yes">69</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">69</span>
+<span class="cline-any cline-yes">69</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">69</span>
+<span class="cline-any cline-yes">69</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">69</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">69</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import 'styling/MLFacet/_MLFacetBreadcrumbs';
+import { $$ } from '../../utils/Dom';
+import { l } from '../../strings/Strings';
+import { MLFacet } from './MLFacet';
+import { SVGIcons } from '../../utils/SVGIcons';
+import { MLFacetValue } from './MLFacetValues/MLFacetValue';
+&nbsp;
+export class MLFacetBreadcrumbs {
+  public element: HTMLElement;
+&nbsp;
+  constructor(private facet: MLFacet) {
+    this.create();
+  }
+&nbsp;
+  private create() {
+    this.element = $$('div', { className: 'coveo-ml-facet-breadcrumb coveo-breadcrumb-item' }).el;
+    this.createAndAppendTitle();
+&nbsp;
+    const activeFacetValues = this.facet.values.activeFacetValues;
+    const breadcrumbFacetValues = activeFacetValues.slice(0, this.facet.options.numberOfValuesInBreadcrumb);
+    const collapsedFacetValues = activeFacetValues.slice(this.facet.options.numberOfValuesInBreadcrumb);
+&nbsp;
+    this.createAndAppendBreadcrumbValues(breadcrumbFacetValues);
+&nbsp;
+    if (collapsedFacetValues.length) {
+      this.createAndAppendCollapsedBreadcrumbs(collapsedFacetValues);
+    }
+  }
+&nbsp;
+  private createAndAppendTitle() {
+    const titleElement = $$('h3', { className: 'coveo-ml-facet-breadcrumb-title' }, `${this.facet.options.title}:`).el;
+    this.element.appendChild(titleElement);
+  }
+&nbsp;
+  private createAndAppendBreadcrumbValues(facetValues: MLFacetValue[]) {
+    facetValues.forEach(facetValue =&gt; this.createAndAppendBreadcrumbValue(facetValue));
+  }
+&nbsp;
+  private createAndAppendBreadcrumbValue(facetValue: MLFacetValue) {
+    const valueElement = $$(
+      'button',
+      {
+        className: 'coveo-ml-facet-breadcrumb-value',
+        ariaLabel: l('RemoveFilterOn', facetValue.valueCaption)
+      },
+      facetValue.valueCaption
+    ).el;
+    const clearElement = $$('span', { className: 'coveo-ml-facet-breadcrumb-value-clear' }, SVGIcons.icons.mainClear).el;
+    valueElement.appendChild(clearElement);
+&nbsp;
+    $$(valueElement).on('click', () =&gt; this.valueSelectAction(facetValue));
+&nbsp;
+    this.element.appendChild(valueElement);
+  }
+&nbsp;
+  private valueSelectAction(facetValue: MLFacetValue) {
+    this.facet.deselectValue(facetValue.value);
+    this.facet.triggerNewQuery();
+  }
+&nbsp;
+  private createAndAppendCollapsedBreadcrumbs(facetValues: MLFacetValue[]) {
+    const label = l('NMore', `${facetValues.length}`);
+    const title = facetValues.map(({ value }) =&gt; value).join('\n');
+    const collapsedElement = $$(
+      'button',
+      {
+        className: 'coveo-ml-facet-breadcrumb-collapse',
+        title
+      },
+      label
+    ).el;
+&nbsp;
+    $$(collapsedElement).on('click', () =&gt; {
+      $$(collapsedElement).remove();
+      this.createAndAppendBreadcrumbValues(facetValues);
+    });
+&nbsp;
+    this.element.appendChild(collapsedElement);
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri May 10 2019 15:31:54 GMT+0000 (UTC)</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

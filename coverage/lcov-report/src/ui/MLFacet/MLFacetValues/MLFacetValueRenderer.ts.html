@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/ui/MLFacet/MLFacetValues/MLFacetValueRenderer.ts</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../../../prettify.css">
+    <link rel="stylesheet" href="../../../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header high">
+    <h1>Code coverage report for <span class="entity">src/ui/MLFacet/MLFacetValues/MLFacetValueRenderer.ts</span></h1>
+    <h2>
+        Statements: <span class="metric">100% <small>(45 / 45)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">87.5% <small>(7 / 8)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">100% <small>(11 / 11)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">100% <small>(38 / 38)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../../../index.html">All files</a> &#187; <a href="index.html">src/ui/MLFacet/MLFacetValues/</a> &#187; MLFacetValueRenderer.ts</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">553</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">203</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">203</span>
+<span class="cline-any cline-yes">203</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">203</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">203</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">203</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">205</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">203</span>
+<span class="cline-any cline-yes">203</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">203</span>
+<span class="cline-any cline-yes">203</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">203</span>
+<span class="cline-any cline-yes">203</span>
+<span class="cline-any cline-yes">203</span>
+<span class="cline-any cline-yes">203</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">203</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">203</span>
+<span class="cline-any cline-yes">203</span>
+<span class="cline-any cline-yes">203</span>
+<span class="cline-any cline-yes">203</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">552</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">203</span>
+<span class="cline-any cline-yes">203</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">203</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { $$, Dom } from '../../../utils/Dom';
+import { MLFacet } from '../MLFacet';
+import { MLFacetValue } from './MLFacetValue';
+import { Checkbox } from '../../FormWidgets/Checkbox';
+import { l } from '../../../strings/Strings';
+&nbsp;
+export class MLFacetValueRenderer {
+  private dom: Dom;
+  private checkbox: Checkbox;
+&nbsp;
+  constructor(private facetValue: MLFacetValue, private facet: MLFacet) {}
+&nbsp;
+  public render() {
+    this.dom = $$('li', {
+      className: 'coveo-ml-facet-value coveo-ml-facet-selectable',
+      dataValue: this.facetValue.value
+    });
+&nbsp;
+    this.createCheckbox();
+    this.dom.append(this.checkbox.getElement());
+&nbsp;
+    this.addFocusAndBlurEventListeners();
+&nbsp;
+    this.toggleSelectedClass();
+&nbsp;
+    return this.dom.el;
+  }
+&nbsp;
+  private toggleSelectedClass() {
+    this.dom.toggleClass('coveo-selected', this.facetValue.isSelected);
+  }
+&nbsp;
+  private createCheckbox() {
+    this.checkbox = new Checkbox(
+      () =&gt; this.selectAction(),
+      this.facetValue.valueCaption,
+      this.ariaLabel,
+      `(${this.facetValue.formattedCount})`
+    );
+&nbsp;
+    const label = $$(this.checkbox.getElement()).find('.coveo-checkbox-span-label');
+    const labelSuffix = $$(this.checkbox.getElement()).find('.coveo-checkbox-span-label-suffix');
+&nbsp;
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (label &amp;&amp; labelSuffix) {
+      label.setAttribute('title', this.facetValue.valueCaption);
+      label.setAttribute('aria-hidden', 'true');
+      labelSuffix.setAttribute('aria-hidden', 'true');
+    }
+&nbsp;
+    this.facetValue.isSelected &amp;&amp; this.checkbox.select(false);
+  }
+&nbsp;
+  private addFocusAndBlurEventListeners() {
+    const checkboxButton = $$(this.checkbox.getElement()).find('button');
+    $$(checkboxButton).on('focusin', () =&gt; this.dom.addClass('coveo-focused'));
+    $$(checkboxButton).on('focusout', () =&gt; this.dom.removeClass('coveo-focused'));
+  }
+&nbsp;
+  private selectAction = () =&gt; {
+    this.facet.toggleSelectValue(this.facetValue.value);
+    this.toggleSelectedClass();
+    this.facet.enableFreezeCurrentValuesFlag();
+    this.facet.triggerNewQuery();
+  };
+&nbsp;
+  private get ariaLabel() {
+    const selectOrUnselect = !this.facetValue.isSelected ? 'SelectValueWithResultCount' : 'UnselectValueWithResultCount';
+    const resultCount = l('ResultCount', this.facetValue.formattedCount);
+&nbsp;
+    return `${l(selectOrUnselect, this.facetValue.valueCaption, resultCount)}`;
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri May 10 2019 15:31:54 GMT+0000 (UTC)</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

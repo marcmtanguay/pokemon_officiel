@@ -1,0 +1,1047 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/magicbox/SuggestionsManager.ts</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../prettify.css">
+    <link rel="stylesheet" href="../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header high">
+    <h1>Code coverage report for <span class="entity">src/magicbox/SuggestionsManager.ts</span></h1>
+    <h2>
+        Statements: <span class="metric">82.68% <small>(148 / 179)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">66.22% <small>(49 / 74)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">77.14% <small>(27 / 35)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">82.76% <small>(144 / 174)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">src/magicbox/</a> &#187; SuggestionsManager.ts</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">209</span>
+<span class="cline-any cline-yes">208</span>
+<span class="cline-any cline-yes">208</span>
+<span class="cline-any cline-yes">208</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">208</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">208</span>
+<span class="cline-any cline-yes">108</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">208</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">208</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">208</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">208</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">31</span>
+<span class="cline-any cline-yes">31</span>
+<span class="cline-any cline-yes">31</span>
+<span class="cline-any cline-yes">31</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">31</span>
+<span class="cline-any cline-yes">31</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">31</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">31</span>
+<span class="cline-any cline-yes">89</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">89</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">31</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">31</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">31</span>
+<span class="cline-any cline-yes">31</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">31</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">31</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">33</span>
+<span class="cline-any cline-yes">33</span>
+<span class="cline-any cline-yes">33</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">33</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">33</span>
+<span class="cline-any cline-yes">33</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">33</span>
+<span class="cline-any cline-yes">30</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">10</span>
+<span class="cline-any cline-yes">10</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10</span>
+<span class="cline-any cline-yes">10</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">18</span>
+<span class="cline-any cline-yes">18</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">208</span>
+<span class="cline-any cline-yes">208</span>
+<span class="cline-any cline-yes">208</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { $$ } from '../utils/Dom';
+import { InputManager } from './InputManager';
+import { each, defaults, indexOf, compact } from 'underscore';
+&nbsp;
+export interface Suggestion {
+  text?: string;
+  index?: number;
+  html?: string;
+  dom?: HTMLElement;
+  separator?: string;
+  onSelect?: () =&gt; void;
+}
+&nbsp;
+export interface SuggestionsManagerOptions {
+  selectableClass?: string;
+  selectedClass?: string;
+  timeout?: number;
+}
+&nbsp;
+export class SuggestionsManager {
+  public hasSuggestions: boolean;
+  private pendingSuggestion: Promise&lt;Suggestion[]&gt;;
+  private options: SuggestionsManagerOptions;
+  private keyboardFocusedSuggestion: HTMLElement;
+&nbsp;
+  constructor(
+    private element: HTMLElement,
+    private magicBoxContainer: HTMLElement,
+    private inputManager: InputManager,
+    options?: SuggestionsManagerOptions
+  ) {
+    this.options = defaults(options, &lt;SuggestionsManagerOptions&gt;{
+      selectableClass: 'magic-box-suggestion',
+      selectedClass: 'magic-box-selected'
+    });
+    // Put in a sane default, so as to not reject every suggestions if not set on initialization
+    if (this.options.timeout == undefined) {
+      this.options.timeout = 500;
+    }
+&nbsp;
+    this.hasSuggestions = false;
+&nbsp;
+    $$(this.element).on('mouseover', <span class="fstat-no" title="function not covered" >e </span>=&gt; {
+<span class="cstat-no" title="statement not covered" >      this.handleMouseOver(e);</span>
+    });
+&nbsp;
+    $$(this.element).on('mouseout', <span class="fstat-no" title="function not covered" >e </span>=&gt; {
+<span class="cstat-no" title="statement not covered" >      this.handleMouseOut(e);</span>
+    });
+&nbsp;
+    this.addAccessibilityProperties();
+  }
+&nbsp;
+  public handleMouseOver(e) {
+    let target = $$(&lt;HTMLElement&gt;e.target);
+    let parents = target.parents(this.options.selectableClass);
+    if (target.hasClass(this.options.selectableClass)) {
+      this.processMouseSelection(target.el);
+    } else <span class="missing-if-branch" title="else path not taken" >E</span>if (parents.length &gt; 0 &amp;&amp; this.element.contains(parents[0])) {
+      this.processMouseSelection(parents[0]);
+    }
+  }
+&nbsp;
+  public handleMouseOut(e) {
+    let target = $$(&lt;HTMLElement&gt;e.target);
+    let targetParents = target.parents(this.options.selectableClass);
+&nbsp;
+    //e.relatedTarget is not available if moving off the browser window or is an empty object `{}` when moving out of namespace in LockerService.
+    if (e.relatedTarget &amp;&amp; $$(e.relatedTarget).isValid()) {
+      let relatedTargetParents = $$(&lt;HTMLElement&gt;e.relatedTarget).parents(this.options.selectableClass);
+      if (target.hasClass(this.options.selectedClass) &amp;&amp; !$$(&lt;HTMLElement&gt;e.relatedTarget).hasClass(this.options.selectableClass)) {
+        this.removeSelectedStatus(target.el);
+      } else if (relatedTargetParents.length == 0 &amp;&amp; targetParents.length &gt; 0) {
+        this.removeSelectedStatus(targetParents[0]);
+      }
+    } else {
+      if (target.hasClass(this.options.selectedClass)) {
+        this.removeSelectedStatus(target.el);
+      } else <span class="missing-if-branch" title="else path not taken" >E</span>if (targetParents.length &gt; 0) {
+        this.removeSelectedStatus(targetParents[0]);
+      }
+    }
+  }
+&nbsp;
+  public moveDown(): Suggestion {
+    return this.returnMoved(this.move('down'));
+  }
+&nbsp;
+  public moveUp(): Suggestion {
+    return this.returnMoved(this.move('up'));
+  }
+&nbsp;
+  public selectAndReturnKeyboardFocusedElement(): HTMLElement {
+    const selected = this.keyboardFocusedSuggestion;
+    if (selected != null) {
+      $$(selected).trigger('keyboardSelect');
+      // By definition, once an element has been "selected" with the keyboard,
+      // it is not longer "active" since the event has been processed.
+      this.keyboardFocusedSuggestion = null;
+    }
+    return selected;
+  }
+&nbsp;
+  public mergeSuggestions(suggestions: Array&lt;Promise&lt;Suggestion[]&gt; | Suggestion[]&gt;, callback?: (suggestions: Suggestion[]) =&gt; void) {
+    let results: Suggestion[] = [];
+    let timeout;
+    let stillNeedToResolve = true;
+    // clean empty / null values in the array of suggestions
+    suggestions = compact(suggestions);
+    const promise = (this.pendingSuggestion = new Promise&lt;Suggestion[]&gt;((resolve, reject) =&gt; {
+      // Concat all promises results together in one flat array.
+      // If one promise take too long to resolve, simply skip it
+      each(suggestions, (suggestion: Promise&lt;Suggestion[]&gt;) =&gt; {
+        let shouldRejectPart = false;
+        setTimeout(function() {
+          shouldRejectPart = true;
+          stillNeedToResolve = false;
+        }, this.options.timeout);
+        suggestion.then(<span class="fstat-no" title="function not covered" >(item: Suggestion[])</span> =&gt; {
+<span class="cstat-no" title="statement not covered" >          if (!shouldRejectPart &amp;&amp; item) {</span>
+<span class="cstat-no" title="statement not covered" >            results = results.concat(item);</span>
+          }
+        });
+      });
+&nbsp;
+      // Resolve the promise when one of those conditions is met first :
+      // - All suggestions resolved
+      // - Timeout is reached before all promises have processed -&gt; resolve with what we have so far
+      // - No suggestions given (length 0 or undefined)
+      const onResolve = () =&gt; {
+        if (stillNeedToResolve) {
+          <span class="missing-if-branch" title="if path not taken" >I</span>if (timeout) {
+<span class="cstat-no" title="statement not covered" >            clearTimeout(timeout);</span>
+          }
+          <span class="missing-if-branch" title="else path not taken" >E</span>if (results.length == 0) {
+            resolve([]);
+          } else <span class="cstat-no" title="statement not covered" >if (promise == this.pendingSuggestion || this.pendingSuggestion == null) {</span>
+<span class="cstat-no" title="statement not covered" >            resolve(results.sort(<span class="fstat-no" title="function not covered" >(a, b)</span> =&gt; <span class="cstat-no" title="statement not covered" >b.index - a.index)</span>);</span>
+          } else {
+<span class="cstat-no" title="statement not covered" >            reject('new request queued');</span>
+          }
+        }
+        stillNeedToResolve = false;
+      };
+&nbsp;
+      if (suggestions.length == 0) {
+        onResolve();
+      }
+      <span class="missing-if-branch" title="if path not taken" >I</span>if (suggestions == undefined) {
+<span class="cstat-no" title="statement not covered" >        onResolve();</span>
+      }
+&nbsp;
+      timeout = setTimeout(function() {
+        onResolve();
+      }, this.options.timeout);
+&nbsp;
+      Promise.all(suggestions).then(() =&gt; onResolve());
+    }));
+&nbsp;
+    promise
+      .then((suggestions: Suggestion[]) =&gt; {
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (callback) {
+          callback(suggestions);
+        }
+        this.updateSuggestions(suggestions);
+        return suggestions;
+      })
+      .catch(<span class="fstat-no" title="function not covered" >() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        return null;</span>
+      });
+  }
+&nbsp;
+  public updateSuggestions(suggestions: Suggestion[]) {
+    $$(this.element).empty();
+    this.element.className = 'magic-box-suggestions';
+&nbsp;
+    this.hasSuggestions = suggestions.length &gt; 0;
+&nbsp;
+    $$(this.element).toggleClass('magic-box-hasSuggestion', this.hasSuggestions);
+    $$(this.magicBoxContainer).setAttribute('aria-expanded', this.hasSuggestions.toString());
+&nbsp;
+    if (!this.hasSuggestions) {
+      return;
+    }
+&nbsp;
+    const suggestionsContainer = this.buildSuggestionsContainer();
+    $$(this.element).append(suggestionsContainer.el);
+&nbsp;
+    each(suggestions, (suggestion: Suggestion) =&gt; {
+      const dom = suggestion.dom ? <span class="branch-0 cbranch-no" title="branch not covered" >this.modifyDomFromExistingSuggestion(suggestion.dom) </span>: this.createDomFromSuggestion(suggestion);
+&nbsp;
+      dom.setAttribute('id', `magic-box-suggestion-${indexOf(suggestions, suggestion)}`);
+      dom.setAttribute('role', 'option');
+      dom.setAttribute('aria-selected', 'false');
+&nbsp;
+      dom['suggestion'] = suggestion;
+      suggestionsContainer.append(dom.el);
+    });
+  }
+&nbsp;
+  private processKeyboardSelection(suggestion: HTMLElement) {
+    this.addSelectedStatus(suggestion);
+    this.keyboardFocusedSuggestion = suggestion;
+    $$(this.inputManager.input).setAttribute('aria-activedescendant', $$(suggestion).getAttribute('id'));
+  }
+&nbsp;
+  private processMouseSelection(suggestion: HTMLElement) {
+    this.addSelectedStatus(suggestion);
+    this.keyboardFocusedSuggestion = null;
+  }
+&nbsp;
+  private buildSuggestionsContainer() {
+    return $$('div', {
+      id: 'coveo-magicbox-suggestions',
+      role: 'listbox'
+    });
+  }
+&nbsp;
+  private createDomFromSuggestion(suggestion: Suggestion) {
+    const dom = $$('div', {
+      className: `magic-box-suggestion ${this.options.selectableClass}`
+    });
+&nbsp;
+    dom.on('click', <span class="fstat-no" title="function not covered" >() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      suggestion.onSelect();</span>
+    });
+&nbsp;
+    dom.on('keyboardSelect', <span class="fstat-no" title="function not covered" >() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      suggestion.onSelect();</span>
+    });
+&nbsp;
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (suggestion.html) {
+<span class="cstat-no" title="statement not covered" >      dom.el.innerHTML = suggestion.html;</span>
+<span class="cstat-no" title="statement not covered" >      return dom;</span>
+    }
+&nbsp;
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (suggestion.text) {
+<span class="cstat-no" title="statement not covered" >      dom.text(suggestion.text);</span>
+<span class="cstat-no" title="statement not covered" >      return dom;</span>
+    }
+&nbsp;
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (suggestion.separator) {
+<span class="cstat-no" title="statement not covered" >      dom.addClass('magic-box-suggestion-seperator');</span>
+<span class="cstat-no" title="statement not covered" >      const suggestionLabel = $$(</span>
+        'div',
+        {
+          className: 'magic-box-suggestion-seperator-label'
+        },
+        suggestion.separator
+      );
+<span class="cstat-no" title="statement not covered" >      dom.append(suggestionLabel.el);</span>
+<span class="cstat-no" title="statement not covered" >      return dom;</span>
+    }
+&nbsp;
+    return dom;
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  private modifyDomFromExistingSuggestion(dom: HTMLElement)</span> {
+    // this need to be done if the selection is in cache and the dom is set in the suggestion
+<span class="cstat-no" title="statement not covered" >    this.removeSelectedStatus(dom);</span>
+<span class="cstat-no" title="statement not covered" >    const found = $$(dom).find('.' + this.options.selectableClass);</span>
+<span class="cstat-no" title="statement not covered" >    this.removeSelectedStatus(found);</span>
+<span class="cstat-no" title="statement not covered" >    return $$(dom);</span>
+  }
+&nbsp;
+  private move(direction: 'up' | 'down') {
+    const currentlySelected = $$(this.element).find(`.${this.options.selectedClass}`);
+    const selectables = $$(this.element).findAll(`.${this.options.selectableClass}`);
+    const currentIndex = indexOf(selectables, currentlySelected);
+&nbsp;
+    let index = direction == 'up' ? currentIndex - 1 : currentIndex + 1;
+    if (index &lt; -1) {
+      index = selectables.length - 1;
+    }
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (index &gt; selectables.length) {
+<span class="cstat-no" title="statement not covered" >      index = 0;</span>
+    }
+&nbsp;
+    const newlySelected = selectables[index];
+&nbsp;
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (newlySelected) {
+      this.processKeyboardSelection(newlySelected);
+    } else {
+<span class="cstat-no" title="statement not covered" >      this.keyboardFocusedSuggestion = null;</span>
+<span class="cstat-no" title="statement not covered" >      this.inputManager.input.removeAttribute('aria-activedescendant');</span>
+    }
+&nbsp;
+    return newlySelected;
+  }
+&nbsp;
+  private returnMoved(selected) {
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (selected != null) {
+      <span class="missing-if-branch" title="if path not taken" >I</span>if (selected['suggestion']) {
+<span class="cstat-no" title="statement not covered" >        return selected['suggestion'];</span>
+      }
+      <span class="missing-if-branch" title="if path not taken" >I</span>if (selected['no-text-suggestion']) {
+<span class="cstat-no" title="statement not covered" >        return null;</span>
+      }
+      <span class="missing-if-branch" title="else path not taken" >E</span>if (selected instanceof HTMLElement) {
+        return {
+          text: $$(selected).text()
+        };
+      }
+    }
+<span class="cstat-no" title="statement not covered" >    return null;</span>
+  }
+&nbsp;
+  private addSelectedStatus(suggestion: HTMLElement): void {
+    const selected = this.element.getElementsByClassName(this.options.selectedClass);
+    for (let i = 0; i &lt; selected.length; i++) {
+      const elem = &lt;HTMLElement&gt;selected.item(i);
+      this.removeSelectedStatus(elem);
+    }
+    $$(suggestion).addClass(this.options.selectedClass);
+    this.updateAreaSelectedIfDefined(suggestion, 'true');
+  }
+&nbsp;
+  private removeSelectedStatus(suggestion: HTMLElement): void {
+    $$(suggestion).removeClass(this.options.selectedClass);
+    this.updateAreaSelectedIfDefined(suggestion, 'false');
+  }
+&nbsp;
+  private updateAreaSelectedIfDefined(suggestion: HTMLElement, value: string): void {
+    <span class="missing-if-branch" title="else path not taken" >E</span>if ($$(suggestion).getAttribute('aria-selected')) {
+      $$(suggestion).setAttribute('aria-selected', value);
+    }
+  }
+&nbsp;
+  private addAccessibilityProperties() {
+    $$(this.magicBoxContainer).setAttribute('aria-expanded', 'false');
+    $$(this.magicBoxContainer).setAttribute('aria-haspopup', 'listbox');
+    this.inputManager.input.removeAttribute('aria-activedescendant');
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri May 10 2019 15:31:54 GMT+0000 (UTC)</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

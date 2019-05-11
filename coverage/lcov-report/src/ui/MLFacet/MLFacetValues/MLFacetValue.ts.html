@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/ui/MLFacet/MLFacetValues/MLFacetValue.ts</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../../../prettify.css">
+    <link rel="stylesheet" href="../../../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header high">
+    <h1>Code coverage report for <span class="entity">src/ui/MLFacet/MLFacetValues/MLFacetValue.ts</span></h1>
+    <h2>
+        Statements: <span class="metric">100% <small>(35 / 35)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">100% <small>(10 / 10)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">100% <small>(11 / 11)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">100% <small>(33 / 33)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../../../index.html">All files</a> &#187; <a href="index.html">src/ui/MLFacet/MLFacetValues/</a> &#187; MLFacetValue.ts</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">543</span>
+<span class="cline-any cline-yes">543</span>
+<span class="cline-any cline-yes">543</span>
+<span class="cline-any cline-yes">543</span>
+<span class="cline-any cline-yes">543</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">819</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">249</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">19</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">117</span>
+<span class="cline-any cline-yes">117</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">409</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">750</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">750</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">750</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">191</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import * as Globalize from 'globalize';
+import { MLFacetValueRenderer } from './MLFacetValueRenderer';
+import { FacetUtils } from '../../Facet/FacetUtils';
+import { MLFacet } from '../MLFacet';
+import { FacetValueState } from '../../../rest/Facet/FacetValueState';
+&nbsp;
+export interface IMLFacetValue {
+  value: string;
+  state: FacetValueState;
+  numberOfResults: number;
+}
+&nbsp;
+export class MLFacetValue implements IMLFacetValue {
+  public value: string;
+  public state: FacetValueState;
+  public numberOfResults: number;
+  private renderer: MLFacetValueRenderer;
+&nbsp;
+  constructor({ value, state, numberOfResults }: IMLFacetValue, private facet: MLFacet) {
+    this.value = value;
+    this.state = state;
+    this.numberOfResults = numberOfResults;
+    this.renderer = new MLFacetValueRenderer(this, facet);
+  }
+&nbsp;
+  public get isSelected() {
+    return this.state === FacetValueState.selected;
+  }
+&nbsp;
+  public get isIdle() {
+    return this.state === FacetValueState.idle;
+  }
+&nbsp;
+  public toggleSelect() {
+    this.state = this.state === FacetValueState.selected ? FacetValueState.idle : FacetValueState.selected;
+  }
+&nbsp;
+  public select() {
+    this.state = FacetValueState.selected;
+  }
+&nbsp;
+  public deselect() {
+    this.state = FacetValueState.idle;
+  }
+&nbsp;
+  public equals(arg: string | MLFacetValue) {
+    const value = typeof arg === 'string' ? arg : arg.value;
+    return value.toLowerCase() === this.value.toLowerCase();
+  }
+&nbsp;
+  public get formattedCount(): string {
+    return Globalize.format(this.numberOfResults, 'n0');
+  }
+&nbsp;
+  public get valueCaption(): string {
+    let returnValue = FacetUtils.tryToGetTranslatedCaption(&lt;string&gt;this.facet.options.field, this.value);
+&nbsp;
+    if (this.facet.options.valueCaption &amp;&amp; typeof this.facet.options.valueCaption === 'object') {
+      returnValue = this.facet.options.valueCaption[this.value] || returnValue;
+    }
+&nbsp;
+    return returnValue;
+  }
+&nbsp;
+  public render() {
+    return this.renderer.render();
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri May 10 2019 15:31:54 GMT+0000 (UTC)</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

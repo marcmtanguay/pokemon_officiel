@@ -1,0 +1,846 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/magicbox/MagicBox.ts</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../prettify.css">
+    <link rel="stylesheet" href="../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header medium">
+    <h1>Code coverage report for <span class="entity">src/magicbox/MagicBox.ts</span></h1>
+    <h2>
+        Statements: <span class="metric">71.14% <small>(106 / 149)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">31.43% <small>(22 / 70)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">67.65% <small>(23 / 34)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">70% <small>(98 / 140)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">src/magicbox/</a> &#187; MagicBox.ts</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">190</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">383</span>
+<span class="cline-any cline-yes">190</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">190</span>
+<span class="cline-any cline-yes">190</span>
+<span class="cline-any cline-yes">88</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">190</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">190</span>
+<span class="cline-any cline-yes">190</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">190</span>
+<span class="cline-any cline-yes">190</span>
+<span class="cline-any cline-yes">190</span>
+<span class="cline-any cline-yes">190</span>
+<span class="cline-any cline-yes">190</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">190</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">190</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">190</span>
+<span class="cline-any cline-yes">190</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">190</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">190</span>
+<span class="cline-any cline-yes">190</span>
+<span class="cline-any cline-yes">190</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">190</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">190</span>
+<span class="cline-any cline-yes">190</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">21</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">58</span>
+<span class="cline-any cline-yes">58</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">58</span>
+<span class="cline-any cline-yes">58</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">58</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">32</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">12</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">190</span>
+<span class="cline-any cline-yes">190</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">190</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">190</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">190</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">190</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">25</span>
+<span class="cline-any cline-yes">25</span>
+<span class="cline-any cline-yes">25</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">25</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">380</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">44</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">187</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { $$ } from '../utils/Dom';
+import { Result } from './Result/Result';
+import { Grammar } from './Grammar';
+import { doMagicBoxExport } from './doMagicBoxExport';
+import { Suggestion, SuggestionsManager } from './SuggestionsManager';
+import { InputManager } from './InputManager';
+import { isUndefined, each, find } from 'underscore';
+import { MagicBoxClear } from './MagicBoxClear';
+&nbsp;
+export interface Options {
+  inline?: boolean;
+  selectableSuggestionClass?: string;
+  selectedSuggestionClass?: string;
+  suggestionTimeout?: number;
+}
+&nbsp;
+export class MagicBoxInstance {
+  public onblur: () =&gt; void;
+  public onfocus: () =&gt; void;
+  public onchange: () =&gt; void;
+  public onsuggestions: (suggestions: Suggestion[]) =&gt; void;
+  public onsubmit: () =&gt; void;
+  public onselect: (suggestion: Suggestion) =&gt; void;
+  public onclear: () =&gt; void;
+  public onmove: () =&gt; void;
+  public ontabpress: () =&gt; void;
+&nbsp;
+  public getSuggestions: () =&gt; Array&lt;Promise&lt;Suggestion[]&gt; | Suggestion[]&gt;;
+&nbsp;
+  private inputManager: InputManager;
+  private suggestionsManager: SuggestionsManager;
+  private magicBoxClear: MagicBoxClear;
+&nbsp;
+  private lastSuggestions: Suggestion[] = [];
+&nbsp;
+  private result: Result;
+  private displayedResult: Result;
+&nbsp;
+  constructor(public element: HTMLElement, public grammar: Grammar, public options: Options = {}) {
+    if (isUndefined(this.options.inline)) {
+      this.options.inline = false;
+    }
+    $$(element).addClass('magic-box');
+    if (this.options.inline) {
+      $$(element).addClass('magic-box-inline');
+    }
+    $$(this.element).setAttribute('role', 'combobox');
+&nbsp;
+    this.result = this.grammar.parse('');
+    this.displayedResult = this.result.clean();
+&nbsp;
+    let inputContainer = $$(element).find('.magic-box-input');
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (!inputContainer) {
+      inputContainer = document.createElement('div');
+      inputContainer.className = 'magic-box-input';
+      element.appendChild(inputContainer);
+    }
+&nbsp;
+    this.inputManager = new InputManager(
+      inputContainer,
+<span class="fstat-no" title="function not covered" >      (text, wordCompletion)</span> =&gt; {
+<span class="cstat-no" title="statement not covered" >        if (!wordCompletion) {</span>
+<span class="cstat-no" title="statement not covered" >          this.setText(text);</span>
+<span class="cstat-no" title="statement not covered" >          this.showSuggestion();</span>
+<span class="cstat-no" title="statement not covered" >          this.onchange &amp;&amp; this.onchange();</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >          this.setText(text);</span>
+<span class="cstat-no" title="statement not covered" >          this.onselect &amp;&amp; this.onselect(this.getFirstSuggestionText());</span>
+        }
+      },
+      this
+    );
+&nbsp;
+    this.inputManager.ontabpress = () =&gt; {
+      this.ontabpress &amp;&amp; this.ontabpress();
+    };
+&nbsp;
+    const existingValue = this.inputManager.getValue();
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (existingValue) {
+<span class="cstat-no" title="statement not covered" >      this.displayedResult.input = existingValue;</span>
+    }
+&nbsp;
+    this.inputManager.setResult(this.displayedResult);
+&nbsp;
+    const suggestionsContainer = document.createElement('div');
+    suggestionsContainer.className = 'magic-box-suggestions';
+    this.element.appendChild(suggestionsContainer);
+&nbsp;
+    this.suggestionsManager = new SuggestionsManager(suggestionsContainer, this.element, this.inputManager, {
+      selectableClass: this.options.selectableSuggestionClass,
+      selectedClass: this.options.selectedSuggestionClass,
+      timeout: this.options.suggestionTimeout
+    });
+&nbsp;
+    this.magicBoxClear = new MagicBoxClear(this);
+    this.setupHandler();
+  }
+&nbsp;
+  public getResult() {
+    return this.result;
+  }
+&nbsp;
+  public getDisplayedResult() {
+    return this.displayedResult;
+  }
+&nbsp;
+  public setText(text: string) {
+    $$(this.element).toggleClass('magic-box-notEmpty', text.length &gt; 0);
+    this.magicBoxClear.toggleTabindex(text.length &gt; 0);
+&nbsp;
+    this.result = this.grammar.parse(text);
+    this.displayedResult = this.result.clean();
+&nbsp;
+    this.inputManager.setResult(this.displayedResult);
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  public setCursor(index: number)</span> {
+<span class="cstat-no" title="statement not covered" >    this.inputManager.setCursor(index);</span>
+  }
+&nbsp;
+  public getCursor() {
+    return this.inputManager.getCursor();
+  }
+&nbsp;
+  public resultAtCursor(match?: string | { (result: Result): boolean }): Result[] {
+    return this.displayedResult.resultAt(this.getCursor(), match);
+  }
+&nbsp;
+  private setupHandler() {
+    this.inputManager.onblur = () =&gt; {
+      $$(this.element).removeClass('magic-box-hasFocus');
+      this.onblur &amp;&amp; this.onblur();
+      <span class="missing-if-branch" title="else path not taken" >E</span>if (!this.options.inline) {
+        this.clearSuggestion();
+      }
+    };
+&nbsp;
+    this.inputManager.onfocus = <span class="fstat-no" title="function not covered" >() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      $$(this.element).addClass('magic-box-hasFocus');</span>
+<span class="cstat-no" title="statement not covered" >      this.showSuggestion();</span>
+<span class="cstat-no" title="statement not covered" >      this.onfocus &amp;&amp; this.onfocus();</span>
+    };
+&nbsp;
+    this.inputManager.onkeydown = <span class="fstat-no" title="function not covered" >(key: number)</span> =&gt; {
+<span class="cstat-no" title="statement not covered" >      if (key == 38 || key == 40) {</span>
+        // Up, Down
+<span class="cstat-no" title="statement not covered" >        return false;</span>
+      }
+<span class="cstat-no" title="statement not covered" >      if (key == 13) {</span>
+        // Enter
+<span class="cstat-no" title="statement not covered" >        const suggestion = this.suggestionsManager.selectAndReturnKeyboardFocusedElement();</span>
+<span class="cstat-no" title="statement not covered" >        if (suggestion == null) {</span>
+<span class="cstat-no" title="statement not covered" >          this.onsubmit &amp;&amp; this.onsubmit();</span>
+        }
+<span class="cstat-no" title="statement not covered" >        return false;</span>
+      } else <span class="cstat-no" title="statement not covered" >if (key == 27) {</span>
+        // ESC
+<span class="cstat-no" title="statement not covered" >        this.clearSuggestion();</span>
+<span class="cstat-no" title="statement not covered" >        this.blur();</span>
+      }
+<span class="cstat-no" title="statement not covered" >      return true;</span>
+    };
+&nbsp;
+    this.inputManager.onchangecursor = <span class="fstat-no" title="function not covered" >() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      this.showSuggestion();</span>
+    };
+&nbsp;
+    this.inputManager.onkeyup = (key: number) =&gt; {
+      <span class="missing-if-branch" title="if path not taken" >I</span>if (key == 38) {
+        // Up
+<span class="cstat-no" title="statement not covered" >        this.onmove &amp;&amp; this.onmove();</span>
+<span class="cstat-no" title="statement not covered" >        this.focusOnSuggestion(this.suggestionsManager.moveUp());</span>
+<span class="cstat-no" title="statement not covered" >        this.onchange &amp;&amp; this.onchange();</span>
+      } else <span class="missing-if-branch" title="if path not taken" >I</span>if (key == 40) {
+        // Down
+<span class="cstat-no" title="statement not covered" >        this.onmove &amp;&amp; this.onmove();</span>
+<span class="cstat-no" title="statement not covered" >        this.focusOnSuggestion(this.suggestionsManager.moveDown());</span>
+<span class="cstat-no" title="statement not covered" >        this.onchange &amp;&amp; this.onchange();</span>
+      } else {
+        return true;
+      }
+<span class="cstat-no" title="statement not covered" >      return false;</span>
+    };
+  }
+&nbsp;
+  public showSuggestion() {
+    this.suggestionsManager.mergeSuggestions(this.getSuggestions != null ? this.getSuggestions() : [], suggestions =&gt; {
+      this.updateSuggestion(suggestions);
+    });
+  }
+&nbsp;
+  private updateSuggestion(suggestions: Suggestion[]) {
+    this.lastSuggestions = suggestions;
+    const firstSuggestion = this.getFirstSuggestionText();
+    this.inputManager.setWordCompletion(firstSuggestion &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >firstSuggestion.text)</span>;
+    this.onsuggestions &amp;&amp; this.onsuggestions(suggestions);
+    each(suggestions, <span class="fstat-no" title="function not covered" >(suggestion: Suggestion)</span> =&gt; {
+<span class="cstat-no" title="statement not covered" >      if (suggestion.onSelect == null &amp;&amp; suggestion.text != null) {</span>
+<span class="cstat-no" title="statement not covered" >        suggestion.onSelect = <span class="fstat-no" title="function not covered" >() =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >          this.setText(suggestion.text);</span>
+<span class="cstat-no" title="statement not covered" >          this.onselect &amp;&amp; this.onselect(suggestion);</span>
+        };
+      }
+    });
+  }
+&nbsp;
+  public focus() {
+    $$(this.element).addClass('magic-box-hasFocus');
+    this.inputManager.focus();
+  }
+&nbsp;
+  public blur() {
+    this.inputManager.blur();
+  }
+&nbsp;
+  public clearSuggestion() {
+    this.suggestionsManager.mergeSuggestions([], suggestions =&gt; {
+      this.updateSuggestion(suggestions);
+    });
+    this.inputManager.setWordCompletion(null);
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  private focusOnSuggestion(suggestion: Suggestion)</span> {
+<span class="cstat-no" title="statement not covered" >    if (suggestion == null || suggestion.text == null) {</span>
+<span class="cstat-no" title="statement not covered" >      suggestion = this.getFirstSuggestionText();</span>
+<span class="cstat-no" title="statement not covered" >      this.inputManager.setResult(this.displayedResult, suggestion &amp;&amp; suggestion.text);</span>
+    } else {
+<span class="cstat-no" title="statement not covered" >      this.inputManager.setResult(this.grammar.parse(suggestion.text).clean(), suggestion.text);</span>
+    }
+  }
+&nbsp;
+  private getFirstSuggestionText(): Suggestion {
+    return find(this.lastSuggestions, <span class="fstat-no" title="function not covered" >suggestion </span>=&gt; <span class="cstat-no" title="statement not covered" >suggestion.text != null)</span>;
+  }
+&nbsp;
+  public getText() {
+    return this.inputManager.getValue();
+  }
+&nbsp;
+  public getWordCompletion() {
+    return this.inputManager.getWordCompletion();
+  }
+&nbsp;
+  public clear() {
+    this.setText('');
+    this.showSuggestion();
+    this.focus();
+    this.onclear &amp;&amp; this.onclear();
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  public hasSuggestions() {</span>
+<span class="cstat-no" title="statement not covered" >    return this.suggestionsManager.hasSuggestions;</span>
+  }
+}
+&nbsp;
+export function createMagicBox(element: HTMLElement, grammar: Grammar, options?: Options) {
+  return new MagicBoxInstance(element, grammar, options);
+}
+&nbsp;
+<span class="fstat-no" title="function not covered" >export function requestAnimationFrame(callback: () =&gt; void)</span> {
+<span class="cstat-no" title="statement not covered" >  if ('requestAnimationFrame' in window) {</span>
+<span class="cstat-no" title="statement not covered" >    return window.requestAnimationFrame(callback);</span>
+  }
+<span class="cstat-no" title="statement not covered" >  return setTimeout(callback);</span>
+}
+&nbsp;
+doMagicBoxExport();
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri May 10 2019 15:31:54 GMT+0000 (UTC)</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

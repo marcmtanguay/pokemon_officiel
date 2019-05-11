@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/ui/RelevanceInspector/ExecutionReportRankingModifiers.ts</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../../prettify.css">
+    <link rel="stylesheet" href="../../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header high">
+    <h1>Code coverage report for <span class="entity">src/ui/RelevanceInspector/ExecutionReportRankingModifiers.ts</span></h1>
+    <h2>
+        Statements: <span class="metric">100% <small>(42 / 42)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">100% <small>(6 / 6)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">100% <small>(6 / 6)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">100% <small>(37 / 37)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">src/ui/RelevanceInspector/</a> &#187; ExecutionReportRankingModifiers.ts</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { ExecutionReport } from './ExecutionReport';
+import { TableBuilder, ITableDataSource } from './TableBuilder';
+import { IQueryResult } from '../../rest/QueryResult';
+import { IRankingExpression } from '../../rest/RankingExpression';
+import { map, find } from 'underscore';
+import { GenericValueOutput } from './GenericValueOutput';
+import { Dom } from '../../utils/Dom';
+import { IComponentBindings } from '../Base/ComponentBindings';
+import agGridModule = require('ag-grid/main');
+import { QueryBuilder } from '../Base/QueryBuilder';
+&nbsp;
+export class ExecutionReportRankingModifiers {
+  public async build(
+    results: IQueryResult[],
+    rankingExpressions: IRankingExpression[],
+    bindings: IComponentBindings
+  ): Promise&lt;{ container: Dom; gridOptions: agGridModule.GridOptions }&gt; {
+    const { container, agGridElement } = ExecutionReport.standardSectionHeader('Ranking Modifiers &amp; Machine Learning Boosts');
+&nbsp;
+    const dataSourcePromises = map(rankingExpressions, async rankingExpression =&gt; {
+      const isAutomaticBoostRegex = /^(@permanentid|@urihash)="?([a-zA-Z0-9]+)"?$/;
+&nbsp;
+      let thumbnailPreview: Record&lt;string, ITableDataSource&gt; = TableBuilder.thumbnailCell(null, null);
+      let returnedByIndexForCurrentQuery = '-- NULL --';
+      let result: IQueryResult = null;
+&nbsp;
+      const isAutomaticBoost = rankingExpression.expression.match(isAutomaticBoostRegex);
+      if (isAutomaticBoost) {
+        const permanentIDUsedInAutomaticBoost = isAutomaticBoost[2];
+        const extracted = await this.extractDocumentInfoFromBoost(results, permanentIDUsedInAutomaticBoost, rankingExpression, bindings);
+        thumbnailPreview = TableBuilder.thumbnailCell(extracted.result, bindings);
+        result = extracted.result;
+        returnedByIndexForCurrentQuery = extracted.returnedByIndexForCurrentQuery.toString();
+      }
+&nbsp;
+      return {
+        ...thumbnailPreview,
+        ReturnedByIndexForCurrentQuery: new GenericValueOutput().output(returnedByIndexForCurrentQuery),
+        IsRecommendation: new GenericValueOutput().output(result ? result.isRecommendation : '-- NULL --'),
+        Expression: { ...new GenericValueOutput().output(rankingExpression.expression), width: 150 },
+        Modifier: new GenericValueOutput().output(rankingExpression.modifier)
+      };
+    });
+&nbsp;
+    const dataSource = await Promise.all(dataSourcePromises);
+&nbsp;
+    const { gridOptions } = await new TableBuilder().build(dataSource, agGridElement, {
+      rowHeight: 150
+    });
+&nbsp;
+    return {
+      container,
+      gridOptions
+    };
+  }
+&nbsp;
+  private async extractDocumentInfoFromBoost(
+    results: IQueryResult[],
+    permanentID: string,
+    rankingExpression: IRankingExpression,
+    bindings: IComponentBindings
+  ) {
+    let matchingResult = {
+      result: null,
+      returnedByIndexForCurrentQuery: false
+    };
+&nbsp;
+    const resultInResultSet = find(results, result =&gt; {
+      return result.raw.permanentid == permanentID || result.raw.urihash == permanentID;
+    });
+&nbsp;
+    if (resultInResultSet) {
+      matchingResult = {
+        result: resultInResultSet,
+        returnedByIndexForCurrentQuery: true
+      };
+      return matchingResult;
+    }
+&nbsp;
+    const queryBuilder = new QueryBuilder();
+    queryBuilder.advancedExpression.add(rankingExpression.expression);
+    const resultsFromIndex = await bindings.queryController.getEndpoint().search(queryBuilder.build());
+    matchingResult = {
+      result: resultsFromIndex.results[0],
+      returnedByIndexForCurrentQuery: false
+    };
+&nbsp;
+    return matchingResult;
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri May 10 2019 15:31:54 GMT+0000 (UTC)</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/ui/CategoryFacet/CategoryValueChildrenRenderer.ts</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../../prettify.css">
+    <link rel="stylesheet" href="../../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header high">
+    <h1>Code coverage report for <span class="entity">src/ui/CategoryFacet/CategoryValueChildrenRenderer.ts</span></h1>
+    <h2>
+        Statements: <span class="metric">100% <small>(30 / 30)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">100% <small>(0 / 0)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">100% <small>(8 / 8)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">100% <small>(28 / 28)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">src/ui/CategoryFacet/</a> &#187; CategoryValueChildrenRenderer.ts</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">997</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">997</span>
+<span class="cline-any cline-yes">997</span>
+<span class="cline-any cline-yes">997</span>
+<span class="cline-any cline-yes">997</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">143</span>
+<span class="cline-any cline-yes">143</span>
+<span class="cline-any cline-yes">97</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">143</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">41</span>
+<span class="cline-any cline-yes">41</span>
+<span class="cline-any cline-yes">458</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">417</span>
+<span class="cline-any cline-yes">417</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">875</span>
+<span class="cline-any cline-yes">875</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">875</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">875</span>
+<span class="cline-any cline-yes">875</span>
+<span class="cline-any cline-yes">875</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Dom } from '../../utils/Dom';
+import { CategoryFacetTemplates } from './CategoryFacetTemplates';
+import { CategoryValue, CategoryValueParent } from './CategoryValue';
+import { CategoryFacet } from './CategoryFacet';
+import { ICategoryFacetValue } from '../../rest/CategoryFacetValue';
+import { each } from 'underscore';
+&nbsp;
+export class CategoryChildrenValueRenderer {
+  public children: CategoryValue[] = [];
+&nbsp;
+  constructor(
+    private element: Dom,
+    private categoryFacetTemplates: CategoryFacetTemplates,
+    private categoryValue: CategoryValueParent,
+    private categoryFacet: CategoryFacet
+  ) {}
+&nbsp;
+  public clearChildren() {
+    this.element.removeClass('coveo-active-category-facet-parent');
+    this.children.forEach(child =&gt; {
+      child.clear();
+    });
+    this.children = [];
+  }
+&nbsp;
+  public renderChildren(values: ICategoryFacetValue[]) {
+    each(values, value =&gt; {
+      this.renderValue(value, true).makeSelectable();
+    });
+  }
+&nbsp;
+  public renderAsParent(value: ICategoryFacetValue) {
+    const categoryValue = this.renderValue(value, false);
+    return categoryValue;
+  }
+&nbsp;
+  private renderValue(value: ICategoryFacetValue, isChild: boolean) {
+    const path = this.categoryValue.path.concat([value.value]);
+    const categoryValueDescriptor = {
+      value: value.value,
+      count: value.numberOfResults,
+      path
+    };
+    const categoryValue = new CategoryValue(
+      this.categoryValue.listRoot,
+      categoryValueDescriptor,
+      this.categoryFacetTemplates,
+      this.categoryFacet
+    );
+    categoryValue.render(isChild);
+    this.children.push(categoryValue);
+    return categoryValue;
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri May 10 2019 15:31:54 GMT+0000 (UTC)</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>
