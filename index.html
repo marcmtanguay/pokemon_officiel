@@ -30,10 +30,11 @@
   </div>
   <div class="coveo-main-section">
     <div class="coveo-facet-column">
-      <div class="CoveoFacet" data-title="Type" data-field="@objecttype" data-tab="All"></div>
-      <div class="CoveoFacet" data-title="FileType" data-field="@filetype" data-tab="All"></div>
-      <div class="CoveoFacet" data-title="Author" data-field="@author" data-tab="All"></div>
-      <div class="CoveoTimespanFacet" data-tab="All"></div>
+        <div class="CoveoFacetSlider" data-title="Range" data-field="@number_poke" data-steps="10" data-range-slider="true"></div>
+        <div class="CoveoFacet" data-title="Generation" data-field="@generation" data-number-of-values="7"></div>
+        <div class="CoveoFacet" data-title="Pokemon Type" data-field="@pokemon_type" data-computed-field="@pokemon_type" data-use-and="true" data-enable-toggling-operator="true" data-number-of-values=""></div>
+        <div class="CoveoFacet" data-title="FileType" data-field="@filetype" data-tab="All"></div>
+        <div class="CoveoFacet" data-title="Author" data-field="@author" data-tab="All"></div>
     </div>
     <div class="coveo-results-column">
       <div class="CoveoShareQuery"></div>
